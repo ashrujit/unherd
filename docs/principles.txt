@@ -1,0 +1,25 @@
+Design principles
+=================
+
+1. Make code modular. Whenever possible make code
+   reusable by making a separate library to reuse the utility code.
+2. Do **NOT** hard code any config values in the code. 
+	 Write all the modules with configurable parameters. Read this parameters from 
+   separate config files.
+3. Put fail check and throw exception wherever required.
+
+
+Development principles
+======================
+
+Let's follow these points to make developers life easier
+
+1. Inculde tests for all the code we write.
+2. Document all the code and modules. Put extra comments to 
+   explain the code if you feel the code doesn't explain itself.
+   Follow any documention style but just be consistent with it.
+3. Please use the git development model (Explained in git-flow.txt).
+   There are other workflows as well. I find the above simple and 
+   elegant.
+4. Always get code reviewed by at least one more developer before
+   pushing the code.

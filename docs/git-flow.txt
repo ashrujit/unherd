@@ -1,4 +1,4 @@
-Source:
+Source
 We can use simplified git-workflow which is mentioned here
   http://nvie.com/posts/a-successful-git-branching-model/
 The approach I am describing below is what I think will 
@@ -16,9 +16,11 @@ There are basically 3 types of remote branches at any time.
   feature-tag : branch for any feature to be developed.
   hotfix-tag : branch to fix some bug in the prod.
 
-WORKFLOW :
+WORKFLOW
+========
 
-** New feature development
+++ New feature development
+
 1. Branch off from master or dev branch.
 2. Create a temporary <feature-tag> branch for development.
 3. When done with new feature, checkout to <dev> branch and pull in 
@@ -28,7 +30,7 @@ WORKFLOW :
 6. Merge latest commit from <dev> to <master>.
 7. Delete <feature-tag> branch
 
-** Urgent hot-fix bugs (Only critical bugs from PROD)
+++ Urgent hot-fix bugs (Only critical bugs from PROD)
 1. create a <hotfix-tag> branch off from <master>.
 2. Fix the bug and test it.
 3. Raise pull-request, code review and then merge in <master>
@@ -36,4 +38,7 @@ WORKFLOW :
 
 NOTE :
   use git merge --no-ff <feature-tag> to merge the branches.
+  Always get code reviewed before push.
+  Always raise pull-request before merging into <master> branch.
+
 
