@@ -1,0 +1,8 @@
+Design principles
+
+1. Make code modular. Whenever possible make code
+   reusable by making a separate library to reuse the utility code.
+2. Do **NOT** hard code any config values in the code. 
+	 Write all the modules with configurable parameters. Read this parameters from 
+   separate config files.
+3. Put fail check and throw exception wherever required.
