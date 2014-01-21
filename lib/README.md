@@ -11,11 +11,13 @@ input json tweet. It uses
 
 
 Test
-++++
+====
 runs the engine on sample tweets and outputs score for each of them.
 put sample json tweet object in earth.txt file to run on new tweets.
 
+<code>
 $ python -m engine.test.test
+</code>
 
 TODO
 ====
