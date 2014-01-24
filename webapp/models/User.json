@@ -1,0 +1,21 @@
+{
+
+	"_id" : ObjectId(1212121212),
+	"name" : "mithunsatheesh",
+	"email" : "mithunsatish@gmail.com",
+	"password" : "*******",
+	"providers" : {
+	
+		"twitter" : {
+		
+			"_id" : "678885885",
+			"OAuthToken" : "Eoo0999eElelELE00",
+			"OAuthSecretToken" "9090909000090090"
+ 			
+		}
+	
+	}
+	
+	 
+
+}

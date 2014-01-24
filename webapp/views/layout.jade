@@ -1,0 +1,18 @@
+html
+	head
+		title unheard app
+	body
+		- if (!user)
+			p
+				a(href="/") Home | 
+				a(href="/login") Log In			
+		- else
+			p
+				a(href="/") Home | 
+				a(href="/account") Account| 
+				a(href="/tweet") Tweet| 
+				a(href="/DM") DM| 
+				a(href="/timeline/"+user.username) timeline| 
+				a(href="/getTweets") getTweets| 
+				a(href="/logout") Log Out
+		block content

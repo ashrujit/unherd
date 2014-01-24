@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	- if(done)
+		p tweet posted successfully
+	form(action="",method="POST")
+		p tweet
+		p
+			textarea(name="tweet")
+		p
+			input(type="submit",value="tweet")

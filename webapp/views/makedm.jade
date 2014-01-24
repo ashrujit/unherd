@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	- if(done)
+		p message sent successfully
+	form(action="",method="POST")
+		p to
+		p
+			input(name="to")
+		p dm
+		p
+			textarea(name="dm")
+		p
+			input(type="submit",value="direct message")
