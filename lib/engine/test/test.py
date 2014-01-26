@@ -1,5 +1,5 @@
 from .. naive  import tscore
-# from .. interface  import nodeEngine
+from .. interface  import nodeEngine
 
 import json
 import sys
@@ -30,5 +30,5 @@ def batchTest():
 
 
 
-# rawTest()
-# batchTest()	
+rawTest()
+batchTest()	
