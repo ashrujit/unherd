@@ -9,11 +9,13 @@ def scoreBatch(tweetJSONArr, featureWeights =None):
 		same order as the input tweets.
 	"""
 	model = tscore.ScoreModel(featureWeights)
-	tweetScoreArr = []
+	model.score(t)
 	
-	for t in tweetJSONArr:
-		tweetScoreArr.append(model.score(t))	
+	# tweetScoreArr = []
 	
-	return 	tweetScoreArr
+	# for t in tweetJSONArr:
+		# tweetScoreArr.append(model.score(t))	
+	
+	# return 	tweetScoreArr
 
 # scoreBatch(sys.argv[1], sys.argv[2])

@@ -31,4 +31,4 @@ def batchTest():
 
 
 rawTest()
-batchTest()	
+# batchTest()	
