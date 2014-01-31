@@ -30,6 +30,16 @@ Only POST methods
    Reinitializes the model with the current feature weights vector. All subsequent
    calls till next update will be scored by this model.
 
+Dash Board
+=========
+Web interface to test and play with the current ranking model.
+change to this location unherd/lib/engine/dashboard and run folling command
+
+<code>
+$ python unherd.py
+</code>
+
+Install Flask, if not already.
 
 Test
 ====

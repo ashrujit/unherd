@@ -3,6 +3,8 @@
 
 <div>	
 		<!-- <h3>Upload new File</h3> -->
+		Please upload the file with Array of tweets in JSON.
+		Exactly what you get from <a href="http://web-unheard.rhcloud.com/json/getTweets"> here</a>
 		<form action="" method=post enctype=multipart/form-data>
 			<input type=hidden name ="control" value=upload>
 			<p><input type=file name=file>
@@ -13,11 +15,13 @@
 
 
 <div style="width:90% ">
-	<div style="background-color:#FFD700; width:19%;float : left">		
+	<div style="background-color:#FFD700; width:19%;float : left">		Relative weights (1 - 10)<br>
+		<small>Leave unfilled to use Default.
+		Fill all to use custom weights</small>
 		<form action="" method=post enctype=multipart/form-data>
 		<input type=submit value= Rank><br>
 		<input type=hidden name ="control" value=rank>
-		
+
 		<input type=number name="ner" placeholder="NER Weight"><small>NER</small>
 		<input type=number name="retweet" placeholder="RETWEET Weight"><small>RETWEET</small>
 		<input type=number name="url" placeholder="URL Weight"><small>URL</small>
