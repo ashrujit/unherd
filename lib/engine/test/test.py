@@ -1,12 +1,13 @@
 from .. naive  import tscore
-from .. interface  import nodeEngine
+# from .. interface  import nodeEngine
 
 import json
 import sys
+import requests
 
 def rawTest():
 	model = tscore.ScoreModel()
-	f = open('engine/test/earth.txt', 'r')
+	f = open('engine/test/sample8.txt', 'r')
 
 	for line in f.readlines():
 		tweetJSON = json.loads(line)
@@ -29,6 +30,26 @@ def batchTest():
 	return nodeEngine.scoreBatch(tweetJSONArr)
 
 
+def apiTest():
+	"""
+		Fire post request to the API.
+	"""
+	url = "http://localhost:5000/unherd/api/v0.1/tweet"
+	
+	f = open('engine/test/earth.txt', 'r')
+	line = f.readline()
+	line = line.replace("\n", "")
+	f.close();
 
-rawTest()
+	data = {'tweetJSON' : line}
+
+	headers = {'Content-type': 'application/json', 
+				'Accept': 'text/plain'}
+
+	r = requests.post(url, data = json.dumps(data), headers = headers)
+	print r.text
+
+
+# rawTest()
 # batchTest()	
+apiTest()

@@ -10,7 +10,7 @@ def scoreBatch(tweetJSONArr, featureWeights =None):
 	"""
 	model = tscore.ScoreModel(featureWeights)
 	model.score(t)
-	
+
 	# tweetScoreArr = []
 	
 	# for t in tweetJSONArr:
@@ -19,3 +19,5 @@ def scoreBatch(tweetJSONArr, featureWeights =None):
 	# return 	tweetScoreArr
 
 # scoreBatch(sys.argv[1], sys.argv[2])
+
+print "hello world!!!"
