@@ -36,3 +36,6 @@ class LinearModel:
 		# print self.featuresValues
 		self.featuresValues = []
 		return self.score
+
+	def updateWeight(self, featuresWeights):
+		self.featuresWeights = featuresWeights

@@ -27,3 +27,8 @@ class ScoreModel:
 			raise Exception("Error while loading json from the input!")
 		
 		return self.model.evaluate(tweetObj)
+
+	def updateWeight(self, featuresWeights):
+		"""Updates the weights"""
+
+		self.model.updateWeight(featuresWeights)
