@@ -6,7 +6,7 @@ from flask import request, redirect, url_for
 from werkzeug import secure_filename
 import json
 
-from .. import app
+# from .. import app
 
 @app.route('/')
 @app.route('/index')
