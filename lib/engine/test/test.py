@@ -34,6 +34,8 @@ def apiTest():
 	"""
 		Fire post request to the API.
 	"""
+	
+
 	url = "http://localhost:5000/unherd/api/v0.1/tweet"
 	
 	f = open('engine/test/earth.txt', 'r')
@@ -45,9 +47,17 @@ def apiTest():
 
 	headers = {'Content-type': 'application/json', 
 				'Accept': 'text/plain'}
+	
+	wts = {'featureWeights' : [10, 1, 1 ,1]}
+
+	urlUpdate = "http://localhost:5000/unherd/api/v0.1/model/update"
+	
+	r = requests.post(urlUpdate, data = json.dumps(wts), headers = headers)
+	print r.text
 
 	r = requests.post(url, data = json.dumps(data), headers = headers)
 	print r.text
+
 
 
 # rawTest()

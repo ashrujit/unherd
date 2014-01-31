@@ -17,7 +17,7 @@ def index():
 	return "<h1>Hello, Universe!</h1>-Unherd Team"
 
 
-@app.route('/unherd/api/v1.0/model/update', methods = ['POST'])
+@app.route('/unherd/api/v0.1/model/update', methods = ['POST'])
 def update_weight():
 	"""
 		Update the weight of the linear model.
@@ -25,8 +25,9 @@ def update_weight():
 	wts = request.json['featureWeights']
 
 	# Intialize new model with the latest weights
+	global model
 	model = tscore.ScoreModel(wts)
-	return jsonify( { 'updated': "True" } ), 201
+	return jsonify( { 'updated': "True", 'featureWeights': wts } ), 201
 
 
 @app.route('/unherd/api/v0.1/tweet', methods = ['POST'])
