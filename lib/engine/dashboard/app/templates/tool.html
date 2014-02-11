@@ -1,0 +1,49 @@
+{% extends "base_tool.html" %}
+{% block content %}
+
+<div>	
+		<!-- <h3>Upload new File</h3> -->
+		Please upload the file with Array of tweets in JSON.
+		Exactly what you get from <a href="http://web-unheard.rhcloud.com/json/getTweets"> here</a>
+		<form action="" method=post enctype=multipart/form-data>
+			<input type=hidden name ="control" value=upload>
+			<p><input type=file name=file>
+			<input type=submit value=Upload>
+			</p>
+		</form>		
+</div>
+
+
+<div style="width:90% ">
+	<div style="background-color:#FFD700; width:19%;float : left">		Relative weights (1 - 10)<br>
+		<small>Leave unfilled to use Default.
+		Fill all to use custom weights</small>
+		<form action="" method=post enctype=multipart/form-data>
+		<input type=submit value= Rank><br>
+		<input type=hidden name ="control" value=rank>
+
+		<input type=number name="ner" placeholder="NER Weight"><small>NER</small>
+		<input type=number name="retweet" placeholder="RETWEET Weight"><small>RETWEET</small>
+		<input type=number name="url" placeholder="URL Weight"><small>URL</small>
+		<input type=number name="fav" placeholder="FAVORITE Weight"><small>FAV</small>
+		
+		
+		
+		</form>		
+	</div>
+	<div style="background-color:#EEEEEE;width:80%;float:left;">
+		{% if tweets %}
+		<table>
+			<tr><th>Score</th><th>Tweet</th></tr>		
+		{% for tweet in tweets %}
+		<!-- <div> -->
+		    <tr><td>{{tweet[0]}}</td><td>{{tweet[1]}}</td></tr></b>
+		<!-- </div> -->
+		{% endfor %}
+		</table>
+		{% endif %}
+
+		
+	</div>
+</div>
+{% endblock %}

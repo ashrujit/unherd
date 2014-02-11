@@ -3,7 +3,9 @@ var config = require("../config.json");
 
 var connect = function(host, port, database, cb) {	
 	
-	MongoClient.connect('mongodb://'+host+':'+port+'/'+database, function(err, db) {
+	database = 'web';
+	MongoClient.connect('mongodb://admin:lILtzTSIaAFt@'+process.env.OPENSHIFT_MONGODB_DB_HOST+':'+process.env.OPENSHIFT_MONGODB_DB_PORT+'/'+database, function(err, db) {
+	//MongoClient.connect('mongodb://127.0.0.1:27017/'+database, function(err, db) {
 
 		if(err) throw err;
 			

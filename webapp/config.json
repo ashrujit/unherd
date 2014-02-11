@@ -1,8 +1,8 @@
 {
 "TWITTER_CONSUMER_KEY" : "nBxR4ADkukQIEHl5T5hA",
 "TWITTER_CONSUMER_SECRET" : "eP31J3rNFmduhKPUN9SxNkUsNq2nAI2P6Pywkgcc3h8",
-"host":"127.0.0.1",
-"port":"3000",
+"host":"web-unheard.rhcloud.com",
+"port":"80",
 "db" : {
 
 		"host":"127.0.0.1",
@@ -10,4 +10,5 @@
 		"database" : "unheard"
 
 	}
+
 }

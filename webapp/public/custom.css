@@ -1,0 +1,113 @@
+#wrapper .chat-wrapper .chat-inner {
+
+	left: 1px;
+
+}
+
+.chat-inner {
+
+	margin: 0 8%;
+
+}
+
+.bigTextIcon {
+
+	font-size: 1.8em;
+	color:#DDD;
+	padding:6px;
+
+}
+
+.bigTextIcon:hover,.bigTextIcon:active {
+
+	font-size: 2.2em;
+	color:#09C;
+	
+}
+
+.activeAction {
+	color:#09C;
+}
+
+#siteMenuBar
+{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: auto;
+	margin-top: -76px;
+	z-index:999;
+	padding:20px 5px;
+	background:#fff;
+	border-bottom:8px solid #DDD;
+}
+
+.tweetBox {
+
+	/*padding: 20px;
+	z-index:499;
+	
+	background-color: #ffffff;
+	white-space: nowrap;
+	min-width: 310px;
+	border-bottom: 1px solid #f2f2f2;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+*/
+
+margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: 35px;
+	padding-top: 5px;
+	background:#fff;
+	background-color: #ffffff;.
+	
+
+
+
+}
+
+#top-nav.fixed {
+	
+	z-index:500;
+	
+}
+
+.chat-inner {
+
+	top:80px!important;
+
+}
+
+#statsBox {
+
+	padding: 10px;
+	background-color: #ffffff;
+	margin-bottom: 15px;
+
+}
+
+.StatsIcon{
+
+	font-size:4em;
+
+}
+
+.inlineShow {
+
+	display:inline;
+
+}
+
+.marginless {
+	margin:2px;
+}
+
+
+
+

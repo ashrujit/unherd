@@ -1,0 +1,118 @@
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title Unheard App
+		meta(name="viewport",content="width=device-width, initial-scale=1.0 ,maximum-scale=1")
+		meta(name="description",content="")
+		meta(name="author",content="")
+		link(href="/bootstrap/css/bootstrap.min.css",rel="stylesheet")
+		link(href="/css/font-awesome.min.css",rel="stylesheet")
+		link(href="/css/pace.css",rel="stylesheet")
+		link(href="/css/endless.css",rel="stylesheet")
+		link(href="/custom.css",rel="stylesheet")
+	body(style="overflow:hidden;")
+		div(id="overlay",class="transparent")
+		div(id="wrapper",class="preload")
+			div(id="siteMenuBar",class="ui-widget")
+				div(class="tweetBox")
+					div(class="chat-box bg-white")
+						div(class="input-group")
+							input(class="form-control border no-shadow no-rounded",placeholder="Send a new Tweet")
+							span(class="input-group-btn")
+								button(class="btn btn-success no-rounded",type="button") Tweet
+			div(id="top-nav",class="fixed")
+				button(type="button",class="navbar-toggle pull-left",id="sidebarToggled")
+					span(class="icon-bar")
+					span(class="icon-bar")
+					span(class="icon-bar")
+				ul(class="nav-notification clearfix")
+					li(class="dropdown")
+						a(class="dropdown-toggle",data-toggle="dropdown",href="#")
+							i(class="fa fa-envelope fa-lg")
+							span(class="notification-label bounceIn animation-delay4") 1
+						ul(class="dropdown-menu message dropdown-1")
+							li
+								a You have 1 new unread messages
+							li
+								a(class="clearfix",href="#")
+									img(src="/img/user.jpg",alt="User Avatar")
+									div(class="detail")
+										strong John Doe
+										p(class="no-margin") Lorem ipsum dolor sit amet...
+										small(class="text-muted")
+											i(class="fa fa-check text-success")
+											| 27m ago							
+							li
+								a(href="#") View all messages					  
+					li(class="profile dropdown")
+						a(class="dropdown-toggle",data-toggle="dropdown",href="#")
+							strong #{user.username}
+							span
+								i(class="fa fa-chevron-down")
+						ul(class="dropdown-menu")
+							li
+								a(class="clearfix",href="#")
+									img(src="/img/user.jpg",alt="User Avatar")
+									div(class="detail")
+										strong #{user.username}
+										p(class="grey") John_Doe@email.com
+							li
+								a(tabindex="-1",href="#",class="main-link")
+									i(class="fa fa-edit fa-lg")
+									| Edit profile
+							li
+								a(tabindex="-1",href="/timeline",class="main-link")
+									i(class="fa fa-lock fa-lg")
+									| My Timeline
+							li(class="divider")
+							li
+								a(tabindex="-1",href="/logout",class="main-link")
+									i(class="fa fa-lock fa-lg")
+									| Log out
+
+			div(id="main-container")
+				div(class="chat-wrapper")
+					div(class="chat-inner scrollable-div")
+						div(class="chat-message")
+							div(id="statsBox",class="row")
+								div(class="col-md-1")
+								div(class="col-md-1")
+									span(style="width:30%;display:inline;")
+										h2(class="marginless") 7000
+										h6(class="marginless") tweets
+								div(class="col-md-1")
+									i(class="fa fa-adjust fa-lg StatsIcon")
+								div(class="col-md-1")
+									h2(class="marginless") 323
+									h6(class="marginless") followers
+									h2(class="marginless") 38
+									h6(class="marginless") followers
+								div(class="col-md-1")
+								div(class="col-md-1")
+									i(class="fa fa-bar-chart-o StatsIcon")
+								div(class="col-md-2")
+									h2(class="marginless") 525
+									h6(class="marginless") interactions
+									h6(class="marginless") this week
+								div(class="col-md-1")
+								div(class="col-md-1")
+									i(class="fa fa-picture-o fa-lg StatsIcon")
+								div(class="col-md-2")
+									h2(class="marginless") 35
+									h6(class="marginless") tweets
+									h2(class="marginless") 3
+									h6(class="marginless") new tweets
+							div(class="row")
+								hr
+							ul(class="chat" id="tweetsLister")								
+		a(href="",id="scroll-to-top",class="hidden-print")
+			i(class="fa fa-chevron-up")
+		script(src="/js/jquery-1.10.2.min.js")
+		script(src="/bootstrap/js/bootstrap.min.js")
+		script(src='/js/modernizr.min.js')
+		script(src='/js/pace.min.js')
+		script(src='/js/jquery.slimscroll.min.js')
+		script(src='/js/jquery.cookie.min.js')
+		script(src="/js/endless/endless.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js")
+		script(src='/unherd.js')

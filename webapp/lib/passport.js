@@ -14,7 +14,7 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new TwitterStrategy({
     consumerKey: config.TWITTER_CONSUMER_KEY,
     consumerSecret: config.TWITTER_CONSUMER_SECRET,
-    callbackURL: "http://"+config.host+":"+config.port+"/auth/twitter/callback"
+    callbackURL: "http://"+config.host+"/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, done) {
     

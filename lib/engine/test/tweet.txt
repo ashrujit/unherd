@@ -1,0 +1,2712 @@
+[
+  {
+    "created_at": "Tue Jan 28 16:28:25 +0000 2014",
+    "id": 428202917452324860,
+    "id_str": "428202917452324864",
+    "text": "Every change looks like a failure in the middle.\n —Rosabeth Moss Kanter",
+    "source": "<a href=\"http://tapbots.com/software/tweetbot/mac\" rel=\"nofollow\">Tweetbot for Mac</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 795663,
+      "id_str": "795663",
+      "name": "Gabriel Gasparolo",
+      "screen_name": "ggasp",
+      "location": "Chile",
+      "description": "Chief Architect at Telefónica Chile // SOA Evangelist // Digital Citizen // Serpent charmer // Creator of The Gasparolo Test for Lost Souls",
+      "url": "http://t.co/f84oDO8SFE",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/f84oDO8SFE",
+              "expanded_url": "http://gasparolo.com/",
+              "display_url": "gasparolo.com",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 12703,
+      "friends_count": 7603,
+      "listed_count": 380,
+      "created_at": "Mon Feb 26 18:15:23 +0000 2007",
+      "favourites_count": 785,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": true,
+      "verified": false,
+      "statuses_count": 28635,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "022330",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme15/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme15/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/907509537/ggasp-avatar_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/907509537/ggasp-avatar_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/795663/1355153200",
+      "profile_link_color": "0084B4",
+      "profile_sidebar_border_color": "A8C7F7",
+      "profile_sidebar_fill_color": "C0DFEC",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": {
+      "id": "47a3cf27863714de",
+      "url": "https://api.twitter.com/1.1/geo/id/47a3cf27863714de.json",
+      "place_type": "country",
+      "name": "Chile",
+      "full_name": "Chile",
+      "country_code": "CL",
+      "country": "Chile",
+      "contained_within": [],
+      "bounding_box": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -75.6877144,
+              -55.9775213
+            ],
+            [
+              -66.3828747,
+              -55.9775213
+            ],
+            [
+              -66.3828747,
+              -17.497384
+            ],
+            [
+              -75.6877144,
+              -17.497384
+            ]
+          ]
+        ]
+      },
+      "attributes": {}
+    },
+    "contributors": null,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": []
+    },
+    "favorited": false,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:27:35 +0000 2014",
+    "id": 428202707556773900,
+    "id_str": "428202707556773888",
+    "text": "Apple's response to Wall Street analysts about sales of the iPhone 5C: So, have you seen the iPhone 5S? http://t.co/B1P44NaMpu",
+    "source": "<a href=\"https://about.twitter.com/products/tweetdeck\" rel=\"nofollow\">TweetDeck</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 28172926,
+      "id_str": "28172926",
+      "name": "WSJD",
+      "screen_name": "WSJD",
+      "location": "",
+      "description": "The Wall Street Journal's home for global tech news, analysis, commentary, daily buzz and reviews. | ($) marks subscriber content.",
+      "url": "http://t.co/G6LDFkS9qB",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/G6LDFkS9qB",
+              "expanded_url": "http://wsjd.com",
+              "display_url": "wsjd.com",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 106827,
+      "friends_count": 63,
+      "listed_count": 4714,
+      "created_at": "Wed Apr 01 19:23:56 +0000 2009",
+      "favourites_count": 11,
+      "utc_offset": -18000,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 10675,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "131516",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/421409513455894528/tyj0G4uS_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/421409513455894528/tyj0G4uS_normal.jpeg",
+      "profile_link_color": "009999",
+      "profile_sidebar_border_color": "EEEEEE",
+      "profile_sidebar_fill_color": "EFEFEF",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "url": "http://t.co/B1P44NaMpu",
+          "expanded_url": "http://on.wsj.com/1b3DIAD",
+          "display_url": "on.wsj.com/1b3DIAD",
+          "indices": [
+            104,
+            126
+          ]
+        }
+      ],
+      "user_mentions": []
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:26:18 +0000 2014",
+    "id": 428202381449252860,
+    "id_str": "428202381449252865",
+    "text": "A storm bringing two feet of snow to Tahoe wouldn't normally be news. Except when it's the biggest news of the year. http://t.co/2bvkItbh7O",
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 586,
+      "id_str": "586",
+      "name": "Chris Sacca",
+      "screen_name": "sacca",
+      "location": "",
+      "description": "Married to @crystale, dad to @CCEleven & @CircaLuna, investor in @Twitter, @Uber, @Instagram, @kickstarter & other startups. Learn more: http://t.co/nJWB60dIUL.",
+      "url": "http://t.co/1kCMgFFZGy",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/1kCMgFFZGy",
+              "expanded_url": "http://lowercasellc.com/proprietor/",
+              "display_url": "lowercasellc.com/proprietor/",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": [
+            {
+              "url": "http://t.co/nJWB60dIUL",
+              "expanded_url": "http://lowercasecapital.com/",
+              "display_url": "lowercasecapital.com",
+              "indices": [
+                137,
+                159
+              ]
+            }
+          ]
+        }
+      },
+      "protected": false,
+      "followers_count": 1443412,
+      "friends_count": 784,
+      "listed_count": 8588,
+      "created_at": "Thu Jul 13 09:05:49 +0000 2006",
+      "favourites_count": 64959,
+      "utc_offset": -28800,
+      "time_zone": "Pacific Time (US & Canada)",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 30638,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "AABCC3",
+      "profile_background_image_url": "http://a0.twimg.com/profile_background_images/201085969/background_2.jpg",
+      "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/201085969/background_2.jpg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/1771648774/Sacca_profile_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/1771648774/Sacca_profile_normal.jpg",
+      "profile_link_color": "829DA8",
+      "profile_sidebar_border_color": "222222",
+      "profile_sidebar_fill_color": "000000",
+      "profile_text_color": "666666",
+      "profile_use_background_image": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweet_count": 0,
+    "favorite_count": 5,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "url": "http://t.co/2bvkItbh7O",
+          "expanded_url": "http://forecast.weather.gov/showsigwx.php?warnzone=CAZ072&warncounty=CAC061&firewxzone=CAZ272&local_place1=&product1=Winter+Storm+Watch#.UufZu6s77CR",
+          "display_url": "forecast.weather.gov/showsigwx.php?…",
+          "indices": [
+            117,
+            139
+          ]
+        }
+      ],
+      "user_mentions": []
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:25:56 +0000 2014",
+    "id": 428202290655137800,
+    "id_str": "428202290655137792",
+    "text": "RT @brooke: Always a big day when @waltmossberg reviews your product. Here's his take on @smartthings #IoT CC @BrewPR http://t.co/EdwdYnL1pC",
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 1979921,
+      "id_str": "1979921",
+      "name": "Josh Elman",
+      "screen_name": "joshelman",
+      "location": "Silicon Valley, CA",
+      "description": "Product Guy. I have worked on Twitter, Facebook Connect, Zazzle, LinkedIn, RealPlayer. Partner at Greylock, looking for crazy new things.",
+      "url": "http://t.co/i9e8L54EyE",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/i9e8L54EyE",
+              "expanded_url": "http://about.me/joshelman",
+              "display_url": "about.me/joshelman",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 31291,
+      "friends_count": 1454,
+      "listed_count": 1293,
+      "created_at": "Fri Mar 23 05:05:23 +0000 2007",
+      "favourites_count": 10094,
+      "utc_offset": -28800,
+      "time_zone": "Pacific Time (US & Canada)",
+      "geo_enabled": false,
+      "verified": false,
+      "statuses_count": 17999,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "9AE4E8",
+      "profile_background_image_url": "http://a0.twimg.com/profile_background_images/4728926/nqzfm5vd.jpg",
+      "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/4728926/nqzfm5vd.jpg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/1753423124/image1326510627_normal.png",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/1753423124/image1326510627_normal.png",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1979921/1355218493",
+      "profile_link_color": "0000FF",
+      "profile_sidebar_border_color": "87BC44",
+      "profile_sidebar_fill_color": "E0FF92",
+      "profile_text_color": "000000",
+      "profile_use_background_image": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Tue Jan 28 16:17:10 +0000 2014",
+      "id": 428200084778414100,
+      "id_str": "428200084778414080",
+      "text": "Always a big day when @waltmossberg reviews your product. Here's his take on @smartthings #IoT CC @BrewPR http://t.co/EdwdYnL1pC",
+      "source": "web",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 7997312,
+        "id_str": "7997312",
+        "name": "Brooke Hammerling",
+        "screen_name": "brooke",
+        "location": "ÜT: 40.724713,-73.997416",
+        "description": "I work at @BrewPR, I love cheese & I am a supporter of @charitywater. For more: http://t.co/n3Sn7vx4w0",
+        "url": "http://t.co/n3Sn7vx4w0",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http://t.co/n3Sn7vx4w0",
+                "expanded_url": "http://about.me/brookehammerling",
+                "display_url": "about.me/brookehammerli…",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "url": "http://t.co/n3Sn7vx4w0",
+                "expanded_url": "http://about.me/brookehammerling",
+                "display_url": "about.me/brookehammerli…",
+                "indices": [
+                  80,
+                  102
+                ]
+              }
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 25107,
+        "friends_count": 693,
+        "listed_count": 1012,
+        "created_at": "Mon Aug 06 17:12:04 +0000 2007",
+        "favourites_count": 9501,
+        "utc_offset": -18000,
+        "time_zone": "Eastern Time (US & Canada)",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 16823,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "9CB6E8",
+        "profile_background_image_url": "http://a0.twimg.com/profile_background_images/158514311/Botswanasky.jpg",
+        "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/158514311/Botswanasky.jpg",
+        "profile_background_tile": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/378800000189293907/bc8b7c9267ccd234a007fd9b9367dda1_normal.jpeg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000189293907/bc8b7c9267ccd234a007fd9b9367dda1_normal.jpeg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/7997312/1348024680",
+        "profile_link_color": "FF0095",
+        "profile_sidebar_border_color": "455ABA",
+        "profile_sidebar_fill_color": "949FFF",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweet_count": 2,
+      "favorite_count": 3,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "IoT",
+            "indices": [
+              90,
+              94
+            ]
+          }
+        ],
+        "symbols": [],
+        "urls": [
+          {
+            "url": "http://t.co/EdwdYnL1pC",
+            "expanded_url": "http://recode.net/2014/01/28/smartthings-automates-your-house-via-sensors-app/",
+            "display_url": "recode.net/2014/01/28/sma…",
+            "indices": [
+              106,
+              128
+            ]
+          }
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "waltmossberg",
+            "name": "Walt Mossberg",
+            "id": 5746452,
+            "id_str": "5746452",
+            "indices": [
+              22,
+              35
+            ]
+          },
+          {
+            "screen_name": "smartthings",
+            "name": "SmartThings",
+            "id": 613635955,
+            "id_str": "613635955",
+            "indices": [
+              77,
+              89
+            ]
+          },
+          {
+            "screen_name": "BrewPR",
+            "name": "Brew Media Relations",
+            "id": 89801306,
+            "id_str": "89801306",
+            "indices": [
+              98,
+              105
+            ]
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    "retweet_count": 2,
+    "favorite_count": 0,
+    "entities": {
+      "hashtags": [
+        {
+          "text": "IoT",
+          "indices": [
+            102,
+            106
+          ]
+        }
+      ],
+      "symbols": [],
+      "urls": [
+        {
+          "url": "http://t.co/EdwdYnL1pC",
+          "expanded_url": "http://recode.net/2014/01/28/smartthings-automates-your-house-via-sensors-app/",
+          "display_url": "recode.net/2014/01/28/sma…",
+          "indices": [
+            118,
+            140
+          ]
+        }
+      ],
+      "user_mentions": [
+        {
+          "screen_name": "brooke",
+          "name": "Brooke Hammerling",
+          "id": 7997312,
+          "id_str": "7997312",
+          "indices": [
+            3,
+            10
+          ]
+        },
+        {
+          "screen_name": "waltmossberg",
+          "name": "Walt Mossberg",
+          "id": 5746452,
+          "id_str": "5746452",
+          "indices": [
+            34,
+            47
+          ]
+        },
+        {
+          "screen_name": "smartthings",
+          "name": "SmartThings",
+          "id": 613635955,
+          "id_str": "613635955",
+          "indices": [
+            89,
+            101
+          ]
+        },
+        {
+          "screen_name": "BrewPR",
+          "name": "Brew Media Relations",
+          "id": 89801306,
+          "id_str": "89801306",
+          "indices": [
+            110,
+            117
+          ]
+        }
+      ]
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:25:09 +0000 2014",
+    "id": 428202095003856900,
+    "id_str": "428202095003856896",
+    "text": "U.N. awaiting green light to bring rations to trapped families in Homs http://t.co/QaFnFbzVKl",
+    "source": "<a href=\"http://www.huffingtonpost.com\" rel=\"nofollow\">The Huffington Post</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 80681990,
+      "id_str": "80681990",
+      "name": "HuffPost Impact",
+      "screen_name": "HuffPostImpact",
+      "location": "New York",
+      "description": "Causes, social justice issues, actionable news and inspiring stories. Editors: @jessicaprois and @esgoldberg",
+      "url": "http://t.co/UScLFQrA4o",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/UScLFQrA4o",
+              "expanded_url": "http://www.huffingtonpost.com/impact",
+              "display_url": "huffingtonpost.com/impact",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 66218,
+      "friends_count": 206,
+      "listed_count": 2427,
+      "created_at": "Wed Oct 07 21:13:12 +0000 2009",
+      "favourites_count": 1,
+      "utc_offset": -18000,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 15476,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "EC1689",
+      "profile_background_image_url": "http://a0.twimg.com/profile_background_images/668558330/c447e6549998baa74e52b0a6defda1a3.png",
+      "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/668558330/c447e6549998baa74e52b0a6defda1a3.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/2750345307/2316b54c57892087d4ba20d1e39e4536_normal.png",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/2750345307/2316b54c57892087d4ba20d1e39e4536_normal.png",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/80681990/1349988507",
+      "profile_link_color": "EF72AC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweet_count": 0,
+    "favorite_count": 1,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "url": "http://t.co/QaFnFbzVKl",
+          "expanded_url": "http://huff.to/1edHJaa",
+          "display_url": "huff.to/1edHJaa",
+          "indices": [
+            71,
+            93
+          ]
+        }
+      ],
+      "user_mentions": []
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:25:06 +0000 2014",
+    "id": 428202083054272500,
+    "id_str": "428202083054272513",
+    "text": "Read Alec Wilkinson's profile of the legendary folk singer Pete Seeger, who died Monday night at the age of 94: http://t.co/6JtDRjVdqh",
+    "source": "<a href=\"http://www.hootsuite.com\" rel=\"nofollow\">HootSuite</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 14677919,
+      "id_str": "14677919",
+      "name": "The New Yorker",
+      "screen_name": "NewYorker",
+      "location": "New York, NY",
+      "description": "The New Yorker is a weekly magazine with a mix of reporting of politics and culture, humor and cartoons, fiction and poetry, and reviews and criticism.",
+      "url": "http://t.co/RJjEvb2dV6",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/RJjEvb2dV6",
+              "expanded_url": "http://www.newyorker.com",
+              "display_url": "newyorker.com",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 2905239,
+      "friends_count": 259,
+      "listed_count": 46214,
+      "created_at": "Tue May 06 19:36:33 +0000 2008",
+      "favourites_count": 7,
+      "utc_offset": -18000,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 16800,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": true,
+      "profile_background_color": "9AE4E8",
+      "profile_background_image_url": "http://a0.twimg.com/profile_background_images/55790865/Twitter_BG_Final_final.jpg",
+      "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/55790865/Twitter_BG_Final_final.jpg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/421413599441981441/GMZ5UIRl_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/421413599441981441/GMZ5UIRl_normal.jpeg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/14677919/1355412486",
+      "profile_link_color": "0084B4",
+      "profile_sidebar_border_color": "BDDCAD",
+      "profile_sidebar_fill_color": "DDFFCC",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweet_count": 23,
+    "favorite_count": 7,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "url": "http://t.co/6JtDRjVdqh",
+          "expanded_url": "http://nyr.kr/1k1xKWJ",
+          "display_url": "nyr.kr/1k1xKWJ",
+          "indices": [
+            112,
+            134
+          ]
+        }
+      ],
+      "user_mentions": []
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:24:39 +0000 2014",
+    "id": 428201970231697400,
+    "id_str": "428201970231697408",
+    "text": "RT @UniofOxfordJobs: Associate Professorship in Accounting job at Said Business School - Oxford http://t.co/J4lOWaqZqI #Indeed #jobs",
+    "source": "<a href=\"http://www.sharedby.co\" rel=\"nofollow\">SharedBy</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 32440356,
+      "id_str": "32440356",
+      "name": "Saïd Business School",
+      "screen_name": "OxfordSBS",
+      "location": "Oxford, UK",
+      "description": "We are a world-class business school community. Embedded in a world-class university. Tackling world-scale problems.",
+      "url": "http://t.co/iH59aKgcwD",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/iH59aKgcwD",
+              "expanded_url": "http://www.sbs.oxford.edu",
+              "display_url": "sbs.oxford.edu",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 15554,
+      "friends_count": 205,
+      "listed_count": 530,
+      "created_at": "Fri Apr 17 15:12:01 +0000 2009",
+      "favourites_count": 54,
+      "utc_offset": 0,
+      "time_zone": "London",
+      "geo_enabled": true,
+      "verified": false,
+      "statuses_count": 1508,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "011E41",
+      "profile_background_image_url": "http://a0.twimg.com/profile_background_images/378800000067203035/dddef43c73d6ad471654e2aefe524831.jpeg",
+      "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/378800000067203035/dddef43c73d6ad471654e2aefe524831.jpeg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000414019886/0daa9534c8d5ad044b1f4c1d3a8ec038_normal.png",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000414019886/0daa9534c8d5ad044b1f4c1d3a8ec038_normal.png",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/32440356/1378368029",
+      "profile_link_color": "00A29C",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "FFFFFF",
+      "profile_text_color": "261CD9",
+      "profile_use_background_image": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweet_count": 1,
+    "favorite_count": 0,
+    "entities": {
+      "hashtags": [
+        {
+          "text": "Indeed",
+          "indices": [
+            119,
+            126
+          ]
+        },
+        {
+          "text": "jobs",
+          "indices": [
+            127,
+            132
+          ]
+        }
+      ],
+      "symbols": [],
+      "urls": [
+        {
+          "url": "http://t.co/J4lOWaqZqI",
+          "expanded_url": "http://goo.gl/hPwJ4U",
+          "display_url": "goo.gl/hPwJ4U",
+          "indices": [
+            96,
+            118
+          ]
+        }
+      ],
+      "user_mentions": [
+        {
+          "screen_name": "UniofOxfordJobs",
+          "name": "Jobs Information ",
+          "id": 385477679,
+          "id_str": "385477679",
+          "indices": [
+            3,
+            19
+          ]
+        }
+      ]
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:24:35 +0000 2014",
+    "id": 428201950174543900,
+    "id_str": "428201950174543872",
+    "text": "RT @ReformedBroker: No one expects $GM to grow revenues like $TSLA. Why we're expecting $AAPL to grow a $200 billion revenue base at 20% I …",
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 1236101,
+      "id_str": "1236101",
+      "name": "Benedict Evans",
+      "screen_name": "BenedictEvans",
+      "location": "London",
+      "description": "Tech/telco banking, then TMT BD & strategy (Orange, C4, NBCU). Now transplanting to @a16z",
+      "url": "http://t.co/nIQICFv69R",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/nIQICFv69R",
+              "expanded_url": "http://www.ben-evans.com/",
+              "display_url": "ben-evans.com",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 23697,
+      "friends_count": 795,
+      "listed_count": 1050,
+      "created_at": "Thu Mar 15 17:33:00 +0000 2007",
+      "favourites_count": 5588,
+      "utc_offset": 0,
+      "time_zone": "London",
+      "geo_enabled": true,
+      "verified": false,
+      "statuses_count": 41730,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "E5E5E5",
+      "profile_background_image_url": "http://a0.twimg.com/profile_background_images/3670821/mandolux-three-r-1440.jpg",
+      "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/3670821/mandolux-three-r-1440.jpg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/86361875/photo1_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/86361875/photo1_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1236101/1348094461",
+      "profile_link_color": "336699",
+      "profile_sidebar_border_color": "5D5D5D",
+      "profile_sidebar_fill_color": "E5E5E5",
+      "profile_text_color": "000000",
+      "profile_use_background_image": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Tue Jan 28 15:42:19 +0000 2014",
+      "id": 428191316028452860,
+      "id_str": "428191316028452864",
+      "text": "No one expects $GM to grow revenues like $TSLA. Why we're expecting $AAPL to grow a $200 billion revenue base at 20% I don't understand.",
+      "source": "<a href=\"https://about.twitter.com/products/tweetdeck\" rel=\"nofollow\">TweetDeck</a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 22522178,
+        "id_str": "22522178",
+        "name": "Downtown Josh Brown",
+        "screen_name": "ReformedBroker",
+        "location": "",
+        "description": "This is the personal Twitter account of Josh Brown and is not connected in any way to a professional designation or vocation. Opinions are my own.",
+        "url": "http://t.co/dOXXT6JA28",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http://t.co/dOXXT6JA28",
+                "expanded_url": "http://about.me/joshuamorganbrown",
+                "display_url": "about.me/joshuamorganbr…",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 67519,
+        "friends_count": 2672,
+        "listed_count": 2619,
+        "created_at": "Mon Mar 02 19:19:35 +0000 2009",
+        "favourites_count": 37906,
+        "utc_offset": -21600,
+        "time_zone": "Central Time (US & Canada)",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 68375,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "BADFCD",
+        "profile_background_image_url": "http://a0.twimg.com/profile_background_images/5345027/795px-Brueghel-tower-of-babel.jpg",
+        "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/5345027/795px-Brueghel-tower-of-babel.jpg",
+        "profile_background_tile": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/3510014701/6dfc231a5c790c6595fe1bd135a92013_normal.jpeg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/3510014701/6dfc231a5c790c6595fe1bd135a92013_normal.jpeg",
+        "profile_link_color": "FF0000",
+        "profile_sidebar_border_color": "F2E195",
+        "profile_sidebar_fill_color": "FFF7CC",
+        "profile_text_color": "E16009",
+        "profile_use_background_image": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweet_count": 34,
+      "favorite_count": 15,
+      "entities": {
+        "hashtags": [],
+        "symbols": [
+          {
+            "text": "GM",
+            "indices": [
+              15,
+              18
+            ]
+          },
+          {
+            "text": "TSLA",
+            "indices": [
+              41,
+              46
+            ]
+          },
+          {
+            "text": "AAPL",
+            "indices": [
+              68,
+              73
+            ]
+          }
+        ],
+        "urls": [],
+        "user_mentions": []
+      },
+      "favorited": false,
+      "retweeted": false,
+      "lang": "en"
+    },
+    "retweet_count": 34,
+    "favorite_count": 0,
+    "entities": {
+      "hashtags": [],
+      "symbols": [
+        {
+          "text": "GM",
+          "indices": [
+            35,
+            38
+          ]
+        },
+        {
+          "text": "TSLA",
+          "indices": [
+            61,
+            66
+          ]
+        },
+        {
+          "text": "AAPL",
+          "indices": [
+            88,
+            93
+          ]
+        }
+      ],
+      "urls": [],
+      "user_mentions": [
+        {
+          "screen_name": "ReformedBroker",
+          "name": "Downtown Josh Brown",
+          "id": 22522178,
+          "id_str": "22522178",
+          "indices": [
+            3,
+            18
+          ]
+        }
+      ]
+    },
+    "favorited": false,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:23:58 +0000 2014",
+    "id": 428201795689517060,
+    "id_str": "428201795689517056",
+    "text": "RT @ttorres: If you work in a startup and aren't constantly learning about your role, you are falling behind. Startups are evolving quickly.",
+    "source": "<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iOS</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 3382,
+      "id_str": "3382",
+      "name": "Hiten Shah",
+      "screen_name": "hnshah",
+      "location": "Northern California",
+      "description": "Started two SaaS companies, @CrazyEgg and @KISSmetrics with @NeilPatel. One is self-funded & the other is venture backed. I also advise and invest.",
+      "url": "http://t.co/KUWaYdGYXz",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/KUWaYdGYXz",
+              "expanded_url": "http://hitenism.com",
+              "display_url": "hitenism.com",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 137720,
+      "friends_count": 108262,
+      "listed_count": 5013,
+      "created_at": "Sat Jul 29 09:04:30 +0000 2006",
+      "favourites_count": 2940,
+      "utc_offset": -28800,
+      "time_zone": "Pacific Time (US & Canada)",
+      "geo_enabled": true,
+      "verified": false,
+      "statuses_count": 34354,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "022330",
+      "profile_background_image_url": "http://a0.twimg.com/profile_background_images/343858354/crissXcross.png",
+      "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/343858354/crissXcross.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/1804279241/image1328387386_normal.png",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/1804279241/image1328387386_normal.png",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/3382/1353277712",
+      "profile_link_color": "0084B4",
+      "profile_sidebar_border_color": "000000",
+      "profile_sidebar_fill_color": "200709",
+      "profile_text_color": "6A4836",
+      "profile_use_background_image": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Tue Jan 28 16:20:35 +0000 2014",
+      "id": 428200943465680900,
+      "id_str": "428200943465680896",
+      "text": "If you work in a startup and aren't constantly learning about your role, you are falling behind. Startups are evolving quickly.",
+      "source": "<a href=\"http://www.echofon.com/\" rel=\"nofollow\">Echofon</a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 2728761,
+        "id_str": "2728761",
+        "name": "Teresa Torres",
+        "screen_name": "ttorres",
+        "location": "San Francisco, CA",
+        "description": "I'm a product executive & coach interested in expertise & skill development as it relates to building great products. Read my blog @ http://t.co/EGvGnlMJ52",
+        "url": "http://t.co/Xw57rkpmal",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http://t.co/Xw57rkpmal",
+                "expanded_url": "http://www.producttalk.org/",
+                "display_url": "producttalk.org",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "url": "http://t.co/EGvGnlMJ52",
+                "expanded_url": "http://producttalk.org",
+                "display_url": "producttalk.org",
+                "indices": [
+                  133,
+                  155
+                ]
+              }
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 969,
+        "friends_count": 698,
+        "listed_count": 59,
+        "created_at": "Wed Mar 28 21:38:11 +0000 2007",
+        "favourites_count": 16,
+        "utc_offset": -28800,
+        "time_zone": "Pacific Time (US & Canada)",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 4157,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "9AE4E8",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/3573545787/378d7a95f7fa64be9a6e1e8ee8189e5a_normal.jpeg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/3573545787/378d7a95f7fa64be9a6e1e8ee8189e5a_normal.jpeg",
+        "profile_link_color": "0000FF",
+        "profile_sidebar_border_color": "87BC44",
+        "profile_sidebar_fill_color": "E0FF92",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweet_count": 3,
+      "favorite_count": 6,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "urls": [],
+        "user_mentions": []
+      },
+      "favorited": false,
+      "retweeted": false,
+      "lang": "en"
+    },
+    "retweet_count": 3,
+    "favorite_count": 0,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "screen_name": "ttorres",
+          "name": "Teresa Torres",
+          "id": 2728761,
+          "id_str": "2728761",
+          "indices": [
+            3,
+            11
+          ]
+        }
+      ]
+    },
+    "favorited": false,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:21:55 +0000 2014",
+    "id": 428201280197369860,
+    "id_str": "428201280197369856",
+    "text": "Fun evening at IIT-MIT health tech workshop! Ideas that can change the world http://t.co/x56ByhlRlN",
+    "source": "<a href=\"http://www.WindowsPhone.com/\" rel=\"nofollow\">Windows Phone</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 23754854,
+      "id_str": "23754854",
+      "name": "vishal gondal",
+      "screen_name": "vishalgondal",
+      "location": "India, Mumbai",
+      "description": "Marathoner! Gamer,  Entreprenur, Investor,Sportsman, Fitness Freak, Foodie, Travellor, TEDster, Gadget freak..All views I express are my own & not company",
+      "url": "http://t.co/vnbXyuqwTF",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/vnbXyuqwTF",
+              "expanded_url": "http://www.godinchief.com",
+              "display_url": "godinchief.com",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 23606,
+      "friends_count": 120,
+      "listed_count": 342,
+      "created_at": "Wed Mar 11 12:30:12 +0000 2009",
+      "favourites_count": 38,
+      "utc_offset": 19800,
+      "time_zone": "Mumbai",
+      "geo_enabled": false,
+      "verified": false,
+      "statuses_count": 11278,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "0099B9",
+      "profile_background_image_url": "http://a0.twimg.com/profile_background_images/605748163/i2hhfh7l5ljsjm46835i.jpeg",
+      "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/605748163/i2hhfh7l5ljsjm46835i.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/2831278258/5344fd1f96588d4fab0891e30de4b401_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/2831278258/5344fd1f96588d4fab0891e30de4b401_normal.jpeg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/23754854/1353639369",
+      "profile_link_color": "0099B9",
+      "profile_sidebar_border_color": "5ED4DC",
+      "profile_sidebar_fill_color": "95E8EC",
+      "profile_text_color": "3C3940",
+      "profile_use_background_image": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "url": "http://t.co/x56ByhlRlN",
+          "expanded_url": "http://sdrv.ms/1i7xTYc",
+          "display_url": "sdrv.ms/1i7xTYc",
+          "indices": [
+            77,
+            99
+          ]
+        }
+      ],
+      "user_mentions": []
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:19:01 +0000 2014",
+    "id": 428200550405259260,
+    "id_str": "428200550405259264",
+    "text": "Pay Close Attention To This Marijuana Millionaire's Weed Venture Capital Fund | Co.Exist | ideas + impact http://t.co/maFDiwCGI6",
+    "source": "<a href=\"http://bufferapp.com\" rel=\"nofollow\">Buffer</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 15707842,
+      "id_str": "15707842",
+      "name": "Darren T. Kimura",
+      "screen_name": "darrentkimura",
+      "location": "Honolulu, Hawaii",
+      "description": "Technology entrepreneur now investing in tech entrepreneurs",
+      "url": "http://t.co/CLoo06swC7",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/CLoo06swC7",
+              "expanded_url": "http://www.enerdigm.com",
+              "display_url": "enerdigm.com",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 22055,
+      "friends_count": 14028,
+      "listed_count": 437,
+      "created_at": "Sun Aug 03 04:39:51 +0000 2008",
+      "favourites_count": 8,
+      "utc_offset": -36000,
+      "time_zone": "Hawaii",
+      "geo_enabled": false,
+      "verified": false,
+      "statuses_count": 6434,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "131516",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000572043048/4d3f1c1066aa2ef59092cdf0a96ae336_normal.png",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000572043048/4d3f1c1066aa2ef59092cdf0a96ae336_normal.png",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/15707842/1389208510",
+      "profile_link_color": "009999",
+      "profile_sidebar_border_color": "EEEEEE",
+      "profile_sidebar_fill_color": "EFEFEF",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "url": "http://t.co/maFDiwCGI6",
+          "expanded_url": "http://buff.ly/1jZkQIZ",
+          "display_url": "buff.ly/1jZkQIZ",
+          "indices": [
+            106,
+            128
+          ]
+        }
+      ],
+      "user_mentions": []
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:18:58 +0000 2014",
+    "id": 428200538443104260,
+    "id_str": "428200538443104256",
+    "text": "RT @laurlandry: Questions I ask myself daily: How early is too early to eat lunch?",
+    "source": "web",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 73437080,
+      "id_str": "73437080",
+      "name": "Bill Aulet",
+      "screen_name": "BillAulet",
+      "location": "Cambridge, Massachusetts",
+      "description": "Managing Director of Martin Trust Center for MIT Entrepreneurship. Author, Disciplined Entrepreneurship",
+      "url": "http://t.co/7Sza7Aq232",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/7Sza7Aq232",
+              "expanded_url": "http://disciplinedentrepreneurship.com",
+              "display_url": "disciplinedentrepreneurship.com",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 6021,
+      "friends_count": 102,
+      "listed_count": 280,
+      "created_at": "Fri Sep 11 17:34:37 +0000 2009",
+      "favourites_count": 6,
+      "utc_offset": -18000,
+      "time_zone": "Quito",
+      "geo_enabled": false,
+      "verified": false,
+      "statuses_count": 3024,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "EBEBEB",
+      "profile_background_image_url": "http://a0.twimg.com/profile_background_images/36045172/mit_crest_logo.jpg",
+      "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/36045172/mit_crest_logo.jpg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000418825416/ca0ca3ed2ab2d0de5c0131050741447c_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000418825416/ca0ca3ed2ab2d0de5c0131050741447c_normal.jpeg",
+      "profile_link_color": "990000",
+      "profile_sidebar_border_color": "DFDFDF",
+      "profile_sidebar_fill_color": "F3F3F3",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Tue Jan 28 16:14:35 +0000 2014",
+      "id": 428199433957031940,
+      "id_str": "428199433957031936",
+      "text": "Questions I ask myself daily: How early is too early to eat lunch?",
+      "source": "<a href=\"https://about.twitter.com/products/tweetdeck\" rel=\"nofollow\">TweetDeck</a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 190687745,
+        "id_str": "190687745",
+        "name": "Lauren Landry",
+        "screen_name": "laurlandry",
+        "location": "Boston",
+        "description": "Associate Editor @BostInno who loves coffee, alliteration, #EdTech, the Boston Celtics & anything sung by Jack Johnson.",
+        "url": "http://t.co/lX04grpiCY",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http://t.co/lX04grpiCY",
+                "expanded_url": "http://bit.ly/16OXrBp",
+                "display_url": "bit.ly/16OXrBp",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 3846,
+        "friends_count": 1086,
+        "listed_count": 173,
+        "created_at": "Tue Sep 14 15:56:03 +0000 2010",
+        "favourites_count": 29,
+        "utc_offset": -14400,
+        "time_zone": "Atlantic Time (Canada)",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 11684,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "FAF0F3",
+        "profile_background_image_url": "http://a0.twimg.com/profile_background_images/677140498/f8774e9b7fc2ea2a85ea6e7b2819ae3a.jpeg",
+        "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/677140498/f8774e9b7fc2ea2a85ea6e7b2819ae3a.jpeg",
+        "profile_background_tile": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1629137957/DSC_1489_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1629137957/DSC_1489_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/190687745/1349443577",
+        "profile_link_color": "0593FF",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "F0F1F5",
+        "profile_text_color": "0D010D",
+        "profile_use_background_image": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweet_count": 3,
+      "favorite_count": 1,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "urls": [],
+        "user_mentions": []
+      },
+      "favorited": false,
+      "retweeted": false,
+      "lang": "en"
+    },
+    "retweet_count": 3,
+    "favorite_count": 0,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "screen_name": "laurlandry",
+          "name": "Lauren Landry",
+          "id": 190687745,
+          "id_str": "190687745",
+          "indices": [
+            3,
+            14
+          ]
+        }
+      ]
+    },
+    "favorited": false,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:18:55 +0000 2014",
+    "id": 428200524932857860,
+    "id_str": "428200524932857856",
+    "text": ".@BrightHorizons research: Young dads clamoring 4 support from employers 4 saner #worklife integration @HRmagazine http://t.co/YiSDTmpBr3",
+    "source": "<a href=\"http://www.hootsuite.com\" rel=\"nofollow\">HootSuite</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 16158472,
+      "id_str": "16158472",
+      "name": "Stew Friedman",
+      "screen_name": "StewFriedman",
+      "location": "Philadelphia, PA",
+      "description": "prof. @Wharton | author of Total Leadership and of Baby Bust | host @BizRadio111 #WorkAndLife | blog @HarvardBiz | former exec @Ford | proud dad | lucky husband",
+      "url": "http://t.co/sfDXEETCop",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/sfDXEETCop",
+              "expanded_url": "http://www.totalleadership.org",
+              "display_url": "totalleadership.org",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 4326,
+      "friends_count": 618,
+      "listed_count": 242,
+      "created_at": "Sat Sep 06 17:06:53 +0000 2008",
+      "favourites_count": 240,
+      "utc_offset": -18000,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": false,
+      "verified": false,
+      "statuses_count": 2190,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "AEA400",
+      "profile_background_image_url": "http://a0.twimg.com/profile_background_images/378800000115596040/42b1d012a034fd2fca99084c0741ee63.jpeg",
+      "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/378800000115596040/42b1d012a034fd2fca99084c0741ee63.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/1500121342/Wharton_photo_november_2007_formal_cropped_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/1500121342/Wharton_photo_november_2007_formal_cropped_normal.jpg",
+      "profile_link_color": "0D84AF",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "FF9F00",
+      "profile_text_color": "4C4D4C",
+      "profile_use_background_image": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "entities": {
+      "hashtags": [
+        {
+          "text": "worklife",
+          "indices": [
+            81,
+            90
+          ]
+        }
+      ],
+      "symbols": [],
+      "urls": [
+        {
+          "url": "http://t.co/YiSDTmpBr3",
+          "expanded_url": "http://ow.ly/t2aOP",
+          "display_url": "ow.ly/t2aOP",
+          "indices": [
+            115,
+            137
+          ]
+        }
+      ],
+      "user_mentions": [
+        {
+          "screen_name": "BrightHorizons",
+          "name": "Bright Horizons",
+          "id": 87706322,
+          "id_str": "87706322",
+          "indices": [
+            1,
+            16
+          ]
+        },
+        {
+          "screen_name": "hrmagazine",
+          "name": "HR magazine",
+          "id": 18213541,
+          "id_str": "18213541",
+          "indices": [
+            103,
+            114
+          ]
+        }
+      ]
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:18:48 +0000 2014",
+    "id": 428200494797172740,
+    "id_str": "428200494797172736",
+    "text": "RT @donal888: Meet Cumulus, hoping to be the Red Hat of networking software. Dell seems to approve, on @WSJD: http://t.co/BrGIOSONbk",
+    "source": "<a href=\"https://about.twitter.com/products/tweetdeck\" rel=\"nofollow\">TweetDeck</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 28172926,
+      "id_str": "28172926",
+      "name": "WSJD",
+      "screen_name": "WSJD",
+      "location": "",
+      "description": "The Wall Street Journal's home for global tech news, analysis, commentary, daily buzz and reviews. | ($) marks subscriber content.",
+      "url": "http://t.co/G6LDFkS9qB",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/G6LDFkS9qB",
+              "expanded_url": "http://wsjd.com",
+              "display_url": "wsjd.com",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 106827,
+      "friends_count": 63,
+      "listed_count": 4714,
+      "created_at": "Wed Apr 01 19:23:56 +0000 2009",
+      "favourites_count": 11,
+      "utc_offset": -18000,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 10675,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "131516",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/421409513455894528/tyj0G4uS_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/421409513455894528/tyj0G4uS_normal.jpeg",
+      "profile_link_color": "009999",
+      "profile_sidebar_border_color": "EEEEEE",
+      "profile_sidebar_fill_color": "EFEFEF",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Tue Jan 28 15:10:32 +0000 2014",
+      "id": 428183317989433340,
+      "id_str": "428183317989433345",
+      "text": "Meet Cumulus, hoping to be the Red Hat of networking software. Dell seems to approve, on @WSJD: http://t.co/BrGIOSONbk",
+      "source": "web",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 8885922,
+        "id_str": "8885922",
+        "name": "Don Clark",
+        "screen_name": "donal888",
+        "location": "San Francisco",
+        "description": "Guitars: Telecaster (1965-ish); acoustics built by Dana Bourgeois and Tom Norwood (1970s). Twenty years covering tech  at WSJ",
+        "url": "http://t.co/MeE4YwLWe9",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http://t.co/MeE4YwLWe9",
+                "expanded_url": "http://www.wsj.com",
+                "display_url": "wsj.com",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 7319,
+        "friends_count": 831,
+        "listed_count": 358,
+        "created_at": "Fri Sep 14 22:09:44 +0000 2007",
+        "favourites_count": 1,
+        "utc_offset": -28800,
+        "time_zone": "Pacific Time (US & Canada)",
+        "geo_enabled": false,
+        "verified": true,
+        "statuses_count": 863,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "9AE4E8",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/378800000854889120/e573858f88830779007b4e61ef23c351_normal.jpeg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000854889120/e573858f88830779007b4e61ef23c351_normal.jpeg",
+        "profile_link_color": "0000FF",
+        "profile_sidebar_border_color": "87BC44",
+        "profile_sidebar_fill_color": "E0FF92",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweet_count": 3,
+      "favorite_count": 2,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "urls": [
+          {
+            "url": "http://t.co/BrGIOSONbk",
+            "expanded_url": "http://on.wsj.com/1dKYAwp",
+            "display_url": "on.wsj.com/1dKYAwp",
+            "indices": [
+              96,
+              118
+            ]
+          }
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "WSJD",
+            "name": "WSJD",
+            "id": 28172926,
+            "id_str": "28172926",
+            "indices": [
+              89,
+              94
+            ]
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    "retweet_count": 3,
+    "favorite_count": 0,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "url": "http://t.co/BrGIOSONbk",
+          "expanded_url": "http://on.wsj.com/1dKYAwp",
+          "display_url": "on.wsj.com/1dKYAwp",
+          "indices": [
+            110,
+            132
+          ]
+        }
+      ],
+      "user_mentions": [
+        {
+          "screen_name": "donal888",
+          "name": "Don Clark",
+          "id": 8885922,
+          "id_str": "8885922",
+          "indices": [
+            3,
+            12
+          ]
+        },
+        {
+          "screen_name": "WSJD",
+          "name": "WSJD",
+          "id": 28172926,
+          "id_str": "28172926",
+          "indices": [
+            103,
+            108
+          ]
+        }
+      ]
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:18:46 +0000 2014",
+    "id": 428200489184792600,
+    "id_str": "428200489184792576",
+    "text": "1st article by @loushipley on how Open Source SW Promotes Innovation http://t.co/9044iqLR0K - well done! @EshipMIT",
+    "source": "web",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 73437080,
+      "id_str": "73437080",
+      "name": "Bill Aulet",
+      "screen_name": "BillAulet",
+      "location": "Cambridge, Massachusetts",
+      "description": "Managing Director of Martin Trust Center for MIT Entrepreneurship. Author, Disciplined Entrepreneurship",
+      "url": "http://t.co/7Sza7Aq232",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/7Sza7Aq232",
+              "expanded_url": "http://disciplinedentrepreneurship.com",
+              "display_url": "disciplinedentrepreneurship.com",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 6021,
+      "friends_count": 102,
+      "listed_count": 280,
+      "created_at": "Fri Sep 11 17:34:37 +0000 2009",
+      "favourites_count": 6,
+      "utc_offset": -18000,
+      "time_zone": "Quito",
+      "geo_enabled": false,
+      "verified": false,
+      "statuses_count": 3024,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "EBEBEB",
+      "profile_background_image_url": "http://a0.twimg.com/profile_background_images/36045172/mit_crest_logo.jpg",
+      "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/36045172/mit_crest_logo.jpg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000418825416/ca0ca3ed2ab2d0de5c0131050741447c_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000418825416/ca0ca3ed2ab2d0de5c0131050741447c_normal.jpeg",
+      "profile_link_color": "990000",
+      "profile_sidebar_border_color": "DFDFDF",
+      "profile_sidebar_fill_color": "F3F3F3",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweet_count": 0,
+    "favorite_count": 1,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "url": "http://t.co/9044iqLR0K",
+          "expanded_url": "http://bit.ly/1b4GMg4",
+          "display_url": "bit.ly/1b4GMg4",
+          "indices": [
+            69,
+            91
+          ]
+        }
+      ],
+      "user_mentions": [
+        {
+          "screen_name": "loushipley",
+          "name": "Lou Shipley",
+          "id": 301030040,
+          "id_str": "301030040",
+          "indices": [
+            15,
+            26
+          ]
+        },
+        {
+          "screen_name": "EshipMIT",
+          "name": "Martin Trust Ctr MIT",
+          "id": 70971351,
+          "id_str": "70971351",
+          "indices": [
+            105,
+            114
+          ]
+        }
+      ]
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:14:50 +0000 2014",
+    "id": 428199499538784260,
+    "id_str": "428199499538784257",
+    "text": "RT @BlumeVentures: Easy debrief http://t.co/Ln8yphXCa8",
+    "source": "<a href=\"https://about.twitter.com/products/tweetdeck\" rel=\"nofollow\">TweetDeck</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 9215452,
+      "id_str": "9215452",
+      "name": "Sampad Swain",
+      "screen_name": "sampad",
+      "location": "usually mumbai",
+      "description": "Founder @instamojo. Geek. Loves unemployment.",
+      "url": "http://t.co/7lAYqOkPm1",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/7lAYqOkPm1",
+              "expanded_url": "http://sampadswain.com",
+              "display_url": "sampadswain.com",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 4392,
+      "friends_count": 135,
+      "listed_count": 161,
+      "created_at": "Tue Oct 02 23:20:33 +0000 2007",
+      "favourites_count": 546,
+      "utc_offset": 19800,
+      "time_zone": "Mumbai",
+      "geo_enabled": false,
+      "verified": false,
+      "statuses_count": 24480,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "FFFFFF",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/3497823034/cb0fe309ac1ee9bd3482710a962a8999_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/3497823034/cb0fe309ac1ee9bd3482710a962a8999_normal.jpeg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/9215452/1388865584",
+      "profile_link_color": "1489CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "F5F5F5",
+      "profile_text_color": "333333",
+      "profile_use_background_image": false,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Tue Jan 28 16:08:57 +0000 2014",
+      "id": 428198016843927550,
+      "id_str": "428198016843927554",
+      "text": "Easy debrief http://t.co/Ln8yphXCa8",
+      "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 254124909,
+        "id_str": "254124909",
+        "name": "Blume Ventures",
+        "screen_name": "BlumeVentures",
+        "location": "Mumbai, India",
+        "description": "Just doing our bit to fuel startups...we play hard and we back transformative startups...",
+        "url": "http://t.co/Ti8FfF9gAh",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http://t.co/Ti8FfF9gAh",
+                "expanded_url": "http://www.blumeventures.com",
+                "display_url": "blumeventures.com",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 3194,
+        "friends_count": 310,
+        "listed_count": 60,
+        "created_at": "Fri Feb 18 17:08:29 +0000 2011",
+        "favourites_count": 92,
+        "utc_offset": 19800,
+        "time_zone": "Mumbai",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 4444,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1541017624/blume_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1541017624/blume_normal.jpg",
+        "profile_link_color": "0084B4",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweet_count": 2,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "urls": [],
+        "user_mentions": [],
+        "media": [
+          {
+            "id": 428198016646791200,
+            "id_str": "428198016646791169",
+            "indices": [
+              13,
+              35
+            ],
+            "media_url": "http://pbs.twimg.com/media/BfFD09PCQAE3pyQ.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/BfFD09PCQAE3pyQ.jpg",
+            "url": "http://t.co/Ln8yphXCa8",
+            "display_url": "pic.twitter.com/Ln8yphXCa8",
+            "expanded_url": "http://twitter.com/BlumeVentures/status/428198016843927554/photo/1",
+            "type": "photo",
+            "sizes": {
+              "large": {
+                "w": 779,
+                "h": 556,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "medium": {
+                "w": 599,
+                "h": 428,
+                "resize": "fit"
+              },
+              "small": {
+                "w": 339,
+                "h": 242,
+                "resize": "fit"
+              }
+            }
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    "retweet_count": 2,
+    "favorite_count": 0,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "screen_name": "BlumeVentures",
+          "name": "Blume Ventures",
+          "id": 254124909,
+          "id_str": "254124909",
+          "indices": [
+            3,
+            17
+          ]
+        }
+      ],
+      "media": [
+        {
+          "id": 428198016646791200,
+          "id_str": "428198016646791169",
+          "indices": [
+            32,
+            54
+          ],
+          "media_url": "http://pbs.twimg.com/media/BfFD09PCQAE3pyQ.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/BfFD09PCQAE3pyQ.jpg",
+          "url": "http://t.co/Ln8yphXCa8",
+          "display_url": "pic.twitter.com/Ln8yphXCa8",
+          "expanded_url": "http://twitter.com/BlumeVentures/status/428198016843927554/photo/1",
+          "type": "photo",
+          "sizes": {
+            "large": {
+              "w": 779,
+              "h": 556,
+              "resize": "fit"
+            },
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "medium": {
+              "w": 599,
+              "h": 428,
+              "resize": "fit"
+            },
+            "small": {
+              "w": 339,
+              "h": 242,
+              "resize": "fit"
+            }
+          }
+        }
+      ]
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:12:04 +0000 2014",
+    "id": 428198801552052200,
+    "id_str": "428198801552052224",
+    "text": "“@smartthings: .@waltmossberg describes how @smartthings can turn your home into a smart home http://t.co/I5iilVFMMA” great overview",
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "truncated": false,
+    "in_reply_to_status_id": 428198575021895700,
+    "in_reply_to_status_id_str": "428198575021895681",
+    "in_reply_to_user_id": 613635955,
+    "in_reply_to_user_id_str": "613635955",
+    "in_reply_to_screen_name": "smartthings",
+    "user": {
+      "id": 1979921,
+      "id_str": "1979921",
+      "name": "Josh Elman",
+      "screen_name": "joshelman",
+      "location": "Silicon Valley, CA",
+      "description": "Product Guy. I have worked on Twitter, Facebook Connect, Zazzle, LinkedIn, RealPlayer. Partner at Greylock, looking for crazy new things.",
+      "url": "http://t.co/i9e8L54EyE",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/i9e8L54EyE",
+              "expanded_url": "http://about.me/joshelman",
+              "display_url": "about.me/joshelman",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 31291,
+      "friends_count": 1454,
+      "listed_count": 1293,
+      "created_at": "Fri Mar 23 05:05:23 +0000 2007",
+      "favourites_count": 10094,
+      "utc_offset": -28800,
+      "time_zone": "Pacific Time (US & Canada)",
+      "geo_enabled": false,
+      "verified": false,
+      "statuses_count": 17999,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "9AE4E8",
+      "profile_background_image_url": "http://a0.twimg.com/profile_background_images/4728926/nqzfm5vd.jpg",
+      "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/4728926/nqzfm5vd.jpg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/1753423124/image1326510627_normal.png",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/1753423124/image1326510627_normal.png",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1979921/1355218493",
+      "profile_link_color": "0000FF",
+      "profile_sidebar_border_color": "87BC44",
+      "profile_sidebar_fill_color": "E0FF92",
+      "profile_text_color": "000000",
+      "profile_use_background_image": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweet_count": 1,
+    "favorite_count": 2,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "url": "http://t.co/I5iilVFMMA",
+          "expanded_url": "http://bit.ly/1f8XixU",
+          "display_url": "bit.ly/1f8XixU",
+          "indices": [
+            94,
+            116
+          ]
+        }
+      ],
+      "user_mentions": [
+        {
+          "screen_name": "smartthings",
+          "name": "SmartThings",
+          "id": 613635955,
+          "id_str": "613635955",
+          "indices": [
+            1,
+            13
+          ]
+        },
+        {
+          "screen_name": "waltmossberg",
+          "name": "Walt Mossberg",
+          "id": 5746452,
+          "id_str": "5746452",
+          "indices": [
+            16,
+            29
+          ]
+        },
+        {
+          "screen_name": "smartthings",
+          "name": "SmartThings",
+          "id": 613635955,
+          "id_str": "613635955",
+          "indices": [
+            44,
+            56
+          ]
+        }
+      ]
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  },
+  {
+    "created_at": "Tue Jan 28 16:11:22 +0000 2014",
+    "id": 428198624632504300,
+    "id_str": "428198624632504321",
+    "text": ".@TNYJohnCassidy on ten ways to get serious about rising inequality: http://t.co/U5qSyyGl3b",
+    "source": "<a href=\"http://www.hootsuite.com\" rel=\"nofollow\">HootSuite</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 14677919,
+      "id_str": "14677919",
+      "name": "The New Yorker",
+      "screen_name": "NewYorker",
+      "location": "New York, NY",
+      "description": "The New Yorker is a weekly magazine with a mix of reporting of politics and culture, humor and cartoons, fiction and poetry, and reviews and criticism.",
+      "url": "http://t.co/RJjEvb2dV6",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "http://t.co/RJjEvb2dV6",
+              "expanded_url": "http://www.newyorker.com",
+              "display_url": "newyorker.com",
+              "indices": [
+                0,
+                22
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 2905239,
+      "friends_count": 259,
+      "listed_count": 46214,
+      "created_at": "Tue May 06 19:36:33 +0000 2008",
+      "favourites_count": 7,
+      "utc_offset": -18000,
+      "time_zone": "Eastern Time (US & Canada)",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 16800,
+      "lang": "en",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": true,
+      "profile_background_color": "9AE4E8",
+      "profile_background_image_url": "http://a0.twimg.com/profile_background_images/55790865/Twitter_BG_Final_final.jpg",
+      "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/55790865/Twitter_BG_Final_final.jpg",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/421413599441981441/GMZ5UIRl_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/421413599441981441/GMZ5UIRl_normal.jpeg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/14677919/1355412486",
+      "profile_link_color": "0084B4",
+      "profile_sidebar_border_color": "BDDCAD",
+      "profile_sidebar_fill_color": "DDFFCC",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": true,
+      "follow_request_sent": false,
+      "notifications": false
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweet_count": 15,
+    "favorite_count": 9,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "url": "http://t.co/U5qSyyGl3b",
+          "expanded_url": "http://nyr.kr/1mRVRXp",
+          "display_url": "nyr.kr/1mRVRXp",
+          "indices": [
+            69,
+            91
+          ]
+        }
+      ],
+      "user_mentions": [
+        {
+          "screen_name": "TNYJohnCassidy",
+          "name": "John Cassidy",
+          "id": 78400205,
+          "id_str": "78400205",
+          "indices": [
+            1,
+            16
+          ]
+        }
+      ]
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  }
+]

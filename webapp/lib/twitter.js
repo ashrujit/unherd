@@ -9,7 +9,7 @@ function TwitterActions() {
 	  , config.TWITTER_CONSUMER_KEY
 	  , config.TWITTER_CONSUMER_SECRET
 	  , "1.0A"
-	  , "http://"+config.host+":"+config.port+"/auth/twitter/callback"
+	  , "http://"+config.host+"/auth/twitter/callback"
 	  , "HMAC-SHA1"
 	);
 		
@@ -24,6 +24,18 @@ function TwitterActions() {
 		  , user.providers.twitter.OAuthToken
 		  , user.providers.twitter.OAuthSecretToken
 		  , { "status": tweet }
+		  , cb
+	  );
+
+	}
+		
+	var FnReTweet = function (user,tid,cb) {
+
+	  oa.post(
+			"https://api.twitter.com/1.1/statuses/retweet/"+tid+".json"
+		  , user.providers.twitter.OAuthToken
+		  , user.providers.twitter.OAuthSecretToken
+		  , { "id": tid }
 		  , cb
 	  );
 
@@ -72,6 +84,7 @@ function TwitterActions() {
 		tweet : FnTweet,
 		directmessage : FnDm,
 		gettweets : FnGetTweets,
+		doretweet : FnReTweet,
 		timeline : FnGetUserTimeline
 		
 	}
