@@ -45,11 +45,29 @@ $(document).ready(function(){
 
 
 $( ".BtnRT" ).on( "click", function() {
-  alert( $( this ).text() );
+  
+  var tid = $( this ).prop("data");
+  console.log("RT",tid);
+  
+  $.post( "/ajaxRetweet", {"tid":tid}, function( tweets ) {
+	
+	FnLoadTweets();
+	  
+  });
+  
 });
 
 $( ".BtnFv" ).on( "click", function() {
-  alert( $( this ).text() );
+  
+  var tid = $( this ).prop("data");
+  console.log("FV",tid);
+  
+  $.post( "/ajaxFavourite", {"tid":tid}, function( tweets ) {
+	
+	FnLoadTweets();
+	  
+  });
+
 });
 
 function FnLoadTweets() {
