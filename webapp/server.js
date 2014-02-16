@@ -61,6 +61,23 @@ app.get('/ranktweet'/*,validate.ensureAuthenticated*/, function(req, res){
 	  
 });
 
+app.post('/ajaxRetweet', validate.ensureAuthenticated, function(req, res){
+	twitter.doretweet(req.user,req.body.tid,function(err,data){
+		if(err)
+			res.json(err);
+		else
+			res.json({"status":true});
+	});
+});
+
+app.post('/ajaxFavourite', validate.ensureAuthenticated, function(req, res){
+	twitter.dofavourite(req.user,req.body.tid,function(err,data){
+		if(err)
+			res.json(err);
+		else
+			res.json({"status":true});
+	});
+});
 
 app.all('/tweet', validate.ensureAuthenticated, function(req, res){
 	

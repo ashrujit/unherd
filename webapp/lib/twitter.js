@@ -40,6 +40,18 @@ function TwitterActions() {
 	  );
 
 	}
+		
+	var FnFavourite = function (user,tid,cb) {
+
+	  oa.post(
+			"https://api.twitter.com/1.1/favorites/create.json"
+		  , user.providers.twitter.OAuthToken
+		  , user.providers.twitter.OAuthSecretToken
+		  , { "id": tid }
+		  , cb
+	  );
+
+	}
 
 	var FnDm = function (user, to, message, cb) {
 		
@@ -85,6 +97,7 @@ function TwitterActions() {
 		directmessage : FnDm,
 		gettweets : FnGetTweets,
 		doretweet : FnReTweet,
+		dofavourite : FnFavourite,
 		timeline : FnGetUserTimeline
 		
 	}

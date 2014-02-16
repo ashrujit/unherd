@@ -44,6 +44,14 @@ $(document).ready(function(){
 });
 
 
+$( ".BtnRT" ).on( "click", function() {
+  alert( $( this ).text() );
+});
+
+$( ".BtnFv" ).on( "click", function() {
+  alert( $( this ).text() );
+});
+
 function FnLoadTweets() {
 	
 	$.get( "/json/getTweets", function( tweets ) {
@@ -69,8 +77,8 @@ function FnLoadTweets() {
 			html += '<strong>@'+tweet.user.screen_name+'</strong>';
 			html += '<small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>';
 			html += '</div><p>'+tweet.text+'</p>';
-			html += '<i class="fa fa-retweet bigTextIcon'+retweeted+'"></i>';
-			html += '<i class="fa fa-star bigTextIcon'+favorited+'"></i>';
+			html += '<i data="'+tweet.id+'" class="fa fa-retweet BtnRT bigTextIcon'+retweeted+'"></i>';
+			html += '<i data="'+tweet.id+'" class="fa fa-star BtnFV bigTextIcon'+favorited+'"></i>';
 			html += '<i class="fa fa-reply bigTextIcon"></i>';
 			html += '<i class="fa fa-share bigTextIcon"></i>';
 			html += '</div></li>';
