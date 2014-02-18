@@ -38,12 +38,18 @@ def apiTest():
 
 	url = "http://localhost:5000/unherd/api/v0.1/tweet"
 	
-	f = open('engine/test/earth.txt', 'r')
+	f = open('engine/test/earth_batch.txt', 'r')
+	dataArr = []
 	line = f.readline()
 	line = line.replace("\n", "")
+	dataArr.append(line);
+	line = f.readline()
+	line = line.replace("\n", "")
+	dataArr.append(line);
+
 	f.close();
 
-	data = {'tweetJSON' : line}
+	data = {'tweetJSON' : dataArr}
 
 	headers = {'Content-type': 'application/json', 
 				'Accept': 'text/plain'}
@@ -52,8 +58,8 @@ def apiTest():
 
 	urlUpdate = "http://localhost:5000/unherd/api/v0.1/model/update"
 	
-	r = requests.post(urlUpdate, data = json.dumps(wts), headers = headers)
-	print r.text
+	# r = requests.post(urlUpdate, data = json.dumps(wts), headers = headers)
+	# print r.text
 
 	r = requests.post(url, data = json.dumps(data), headers = headers)
 	print r.text
