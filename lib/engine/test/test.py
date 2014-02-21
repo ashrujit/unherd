@@ -40,12 +40,13 @@ def apiTest():
 	
 	f = open('engine/test/earth_batch.txt', 'r')
 	dataArr = []
-	line = f.readline()
-	line = line.replace("\n", "")
-	dataArr.append(line);
-	line = f.readline()
-	line = line.replace("\n", "")
-	dataArr.append(line);
+	for i in range(20):
+		line = f.readline()
+		line = line.replace("\n", "")
+		# This works as well
+		# But was just testing for the stringify issue in node
+		# dataArr.append(line)		
+		dataArr.append(json.dumps(json.loads(line)))		
 
 	f.close();
 
