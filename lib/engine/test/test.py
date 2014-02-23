@@ -10,7 +10,7 @@ import time
 class BasicUnitTests(unittest.TestCase):
 
     def setUp(self):
-        self.raw_sample = 'engine/resource/sample8.txt'
+        self.raw_sample = 'engine/resource/sample1.txt'
         self.api_batch_sample = 'engine/resource/earth.txt'
         self.api_sample = 'engine/resource/earth_batch.txt'
         self.startTime = time.time()
@@ -22,12 +22,17 @@ class BasicUnitTests(unittest.TestCase):
     def testRaw(self):
         model = tscore.ScoreModel()
         f = open(self.raw_sample, 'r')
+        responseArr = []
 
         for line in f.readlines():
             tweetJSON = json.loads(line)
-            model.score(line), tweetJSON['text']
-
+            responseArr.append([model.score(line), tweetJSON['text']])
+            # break;
         f.close()
+
+        responseArr.sort(key = lambda tup:tup[0], reverse=True)
+        for res in responseArr:
+            print res[0], res[1]
 
 
     # def testBatchCallToAPI(self):
@@ -42,7 +47,7 @@ class BasicUnitTests(unittest.TestCase):
     #         tweetJSONArr.append(line)
     #     f.close()
 
-    def testAPI(self):
+    def NOtestAPI(self):
         """
             Fire post request to the API.
         """
