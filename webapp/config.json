@@ -5,10 +5,16 @@
 "port":"80",
 "db" : {
 
-		"host":"127.0.0.1",
-		"port":27017,
-		"database" : "unheard"
+	"host":"127.0.0.1",
+	"port":27017,
+	"database" : "unheard"
 
-	}
+},
+"api" : {
+	
+	"host" : "54.200.117.129",
+	"port" : 5000
+	
+}
 
 }

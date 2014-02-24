@@ -13,8 +13,8 @@ function TwitterActions() {
 	  , "HMAC-SHA1"
 	);
 		
-	var FnTweet = function (user,tweet,cb) {
-
+	var FnTweet = function (user,tweet,replyto,cb) {
+		
 	  if (!user.providers.twitter.OAuthToken) {
 		console.error("You didn't have the user log in first");
 	  }
@@ -23,7 +23,7 @@ function TwitterActions() {
 			"https://api.twitter.com/1.1/statuses/update.json"
 		  , user.providers.twitter.OAuthToken
 		  , user.providers.twitter.OAuthSecretToken
-		  , { "status": tweet }
+		  , { "status": tweet,"in_reply_to_status_id":replyto }
 		  , cb
 	  );
 
@@ -35,8 +35,38 @@ function TwitterActions() {
 			"https://api.twitter.com/1.1/statuses/retweet/"+tid+".json"
 		  , user.providers.twitter.OAuthToken
 		  , user.providers.twitter.OAuthSecretToken
-		  , { "id": tid }
+		  , {  }
 		  , cb
+	  );
+
+	}
+		
+	var FnDelTweet = function (user,tid,cb) {
+
+		oa.get(
+			"https://api.twitter.com/1.1/statuses/show.json?id="+tid+"&include_my_retweet=true"
+		  , user.providers.twitter.OAuthToken
+		  , user.providers.twitter.OAuthSecretToken
+		  , function(err,data) {
+			  data = JSON.parse(data);
+			  console.log(data.current_user_retweet);
+			  if(typeof(data.current_user_retweet.id_str) != "undefined") {
+									
+				oa.post(
+					"https://api.twitter.com/1.1/statuses/destroy/"+data.current_user_retweet.id_str+".json"
+				  , user.providers.twitter.OAuthToken
+				  , user.providers.twitter.OAuthSecretToken
+				  , {  }
+				  , cb
+				);
+				
+			  } else {
+				  cb(true);
+			  }
+			  
+			  
+		  }
+			  
 	  );
 
 	}
@@ -45,6 +75,18 @@ function TwitterActions() {
 
 	  oa.post(
 			"https://api.twitter.com/1.1/favorites/create.json"
+		  , user.providers.twitter.OAuthToken
+		  , user.providers.twitter.OAuthSecretToken
+		  , { "id": tid }
+		  , cb
+	  );
+
+	}
+		
+	var FnDelFavourite = function (user,tid,cb) {
+
+	  oa.post(
+			"https://api.twitter.com/1.1/favorites/destroy.json"
 		  , user.providers.twitter.OAuthToken
 		  , user.providers.twitter.OAuthSecretToken
 		  , { "id": tid }
@@ -68,7 +110,7 @@ function TwitterActions() {
 	var FnGetTweets = function (user, count, cb) {
 		
 	  oa.get(
-			"https://api.twitter.com/1.1/statuses/home_timeline.json"
+			"https://api.twitter.com/1.1/statuses/home_timeline.json?count="+count
 		  , user.providers.twitter.OAuthToken
 		  , user.providers.twitter.OAuthSecretToken
 		  , cb
@@ -97,7 +139,9 @@ function TwitterActions() {
 		directmessage : FnDm,
 		gettweets : FnGetTweets,
 		doretweet : FnReTweet,
+		dodeltweet : FnDelTweet,
 		dofavourite : FnFavourite,
+		dodelfavourite : FnDelFavourite,
 		timeline : FnGetUserTimeline
 		
 	}

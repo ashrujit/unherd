@@ -1,0 +1,59 @@
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title Welcome to Unheard
+		meta(name="viewport",content="width=device-width, initial-scale=1.0 ,maximum-scale=1")
+		meta(name="description",content="")
+		meta(name="author",content="")
+		link(href="http://necolas.github.io/normalize.css/3.0.0/normalize.css",rel="stylesheet")
+		link(href="/newtheme/build/main.css",rel="stylesheet")
+		link(href="/newtheme/build/home.css",rel="stylesheet")
+		link(href="/newtheme/build/topmenu.css",rel="stylesheet")
+	body
+		#doc
+			#page-outer
+				div#topbox.wrapper
+					input(type="hidden",id="whoami",value="#{user.username}")
+					div.rfloat
+						ul.pg-nav
+							li #{user.username}
+							li
+								a(href="/logout") logout
+							li
+								img(src="https://pbs.twimg.com/profile_images/417199164007538688/VD2g3OMz_bigger.jpeg",height="25",width="25")
+				div#tweetbox.wrapper
+					div.tweetBox
+						div
+							input(type="hidden",value="",id="ReplyTo")
+							div(class="input-group")
+								textarea(class="compose-text",placeholder="What's happening?",id="TweetText")
+								div
+									button#TwBtn(type="button",class="btn") Tweet
+				div.wrapper
+					a(class="tweetCloudIcon",title="Make a Tweet") &nbsp;
+					div(class="content-main",id="timeline")
+						div.topbar
+							div(class="global-nav")
+								div(class="global-nav-inner")
+									div(class="container")
+										div(role="navigation")
+											ul(class="nav",id="global-actions")
+												li#tweetsLister(class="home active")
+													a(href="#")
+														span(class="Icon Icon--home Icon--large")
+														span(class="text") Top Stories
+												li#chatterLister(class="topics")
+													a(href="#")
+														span(class="Icon Icon--discover Icon--large")
+														span(class="text") Chatter
+												li#mytweetsLister(class="profile")
+													a(href="#")
+														span(class="Icon Icon--me Icon--large")
+														span(class="text") Me				
+						div(class="stream-container")
+							div(class="stream home-stream")
+								ol(class="stream-items",id="datatweetsLister")
+								ol(class="stream-items",id="datachatterLister",style="display:none;")
+								ol(class="stream-items",id="datamytweetsLister",style="display:none;")
+		script(src="/newtheme/js/jquery-1.10.2.min.js")
+		script(src="/newtheme/js/unherd.js")

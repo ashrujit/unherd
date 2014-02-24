@@ -50,8 +50,26 @@ var insert = function(col,doc,cb) {
 	
 };
 
+var FnDelete = function(col,query,cb) {
+	
+	connect(config.db.host,config.db.port,config.db.database,function(db) {
+		
+		var collection = db.collection(col);
+		
+		collection.remove(query, function(err, docs) {
+			
+			cb(docs);
+            db.close();
+		
+		});
+		
+	});
+	
+};
+
 module.exports.find = find;
 module.exports.insert = insert;
+module.exports.FnDelete = FnDelete;
 
 
 
