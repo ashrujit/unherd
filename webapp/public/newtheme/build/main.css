@@ -234,3 +234,24 @@ color:#FFF;font-weight:bold;font-size:.9em;padding:3px;background:#09C;border:1p
 .scorebox a,.scorebox a:hover,.scorebox a:active {
 color:#FFF;font-weight:bold;font-size:.9em;
 }
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace .pace-progress {
+  background-color: rgba(0, 0, 0, 0.19999999999999996);
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  -webkit-transition: width 1s;
+  -moz-transition: width 1s;
+  -o-transition: width 1s;
+  transition: width 1s;
+}
