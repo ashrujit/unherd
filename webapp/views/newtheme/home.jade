@@ -22,7 +22,7 @@ html(lang="en")
 								a(href="/logout") logout
 							li
 								img(src="https://pbs.twimg.com/profile_images/417199164007538688/VD2g3OMz_bigger.jpeg",height="25",width="25")
-				div#tweetbox.wrapper
+				div#tweetbox.wrapper.float-wrapper
 					div.tweetBox
 						div
 							input(type="hidden",value="",id="ReplyTo")
@@ -31,7 +31,7 @@ html(lang="en")
 								div
 									button#TwBtn(type="button",class="btn") Tweet
 				div.wrapper
-					a(class="tweetCloudIcon",title="Make a Tweet") &nbsp;
+					a(class="tweetCloudIcon float-anchor",title="Make a Tweet") &nbsp;
 					div(class="content-main",id="timeline")
 						div.topbar
 							div(class="global-nav")

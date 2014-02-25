@@ -255,3 +255,13 @@ color:#FFF;font-weight:bold;font-size:.9em;
   -o-transition: width 1s;
   transition: width 1s;
 }
+.float-wrapper {top: 0px;
+				right: 0px;
+position: fixed;
+z-index: 3;
+width: 99%;}
+
+.float-anchor {
+	position: fixed;
+	z-index: 4;
+}
