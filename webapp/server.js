@@ -43,7 +43,7 @@ app.get('/newui',validate.ensureAuthenticated, function(req, res){
 
 app.get('/ranktweet',validate.ensureAuthenticated, function(req, res){
   
-	mongo.find("Tweets",{"expire": {"$gte": new Date()}},function(results,err) {
+	mongo.find("Tweets",{"expire": {"$gte": new Date()},"userid":req.user.username},function(results,err) {
 		
 		//console.log(err,results.length);
 		
@@ -77,6 +77,7 @@ app.get('/ranktweet',validate.ensureAuthenticated, function(req, res){
 								
 								tweets[y].score = ranks.batchResult[x].score;
 								tweets[y].expire = expiryDateObj;
+								tweets[y].userid = req.user.username;
 								//add a date stamp for mongo queries
 								
 							}
