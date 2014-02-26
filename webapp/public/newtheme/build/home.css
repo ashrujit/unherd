@@ -33,14 +33,16 @@ background: #fff;
 background-clip: padding-box;
 line-height: inherit;
 border-top: none;
+margin-bottom: 7px;
 }
 
 
 .tweet {
 cursor: pointer;
 position: relative;
-min-height: 51px;
-padding: 9px 12px;
+/*min-height: 55px;*/
+margin-bottom: 12px;
+padding: 15px 12px;
 }
 
 .stream-item .content, .permalink-tweet .content {
@@ -67,4 +69,12 @@ word-wrap: break-word;
 .input-group {
 width: 590px;
 margin: auto;
+}
+
+ul.tweet-actions li {
+	padding: 5px;
+}
+.tweet-text {
+	font-family: 'Vollkorn';
+	font-size: 16px;
 }

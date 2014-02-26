@@ -34,6 +34,9 @@
 	float: left;
 }
 .nav {
+	font-family: 'Lato',sans-serif;
+	/*font-style: normal;*/
+	font-weight: 300;
 	text-align: left;
 	list-style: none;
 	margin: 0;
@@ -58,7 +61,7 @@
 .nav > li > a {
 	color: inherit;
 	display: block;
-	font-size: 13px;
+	font-size: 15px;
 	font-weight: 500;
 	height: 46px;
 	padding: 0 14px 0 4px;

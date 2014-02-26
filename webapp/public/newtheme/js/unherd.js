@@ -6,7 +6,7 @@ $(document).ready(function(){
 	
 
 	$(".tweetCloudIcon").click(function(){
-		
+		//$(".tweetCloudIcon").css('margin-top','50px');
 		$("#TweetText").val("");
 		$("#ReplyTo").val("");
 		$("#tweetbox").slideToggle('fast');
@@ -71,21 +71,21 @@ function FnLoadTweets() {
 			html += '<li class="stream-item">';
 			html += '<div class="tweet">';
 			html += '<div class="content"><div>';
-			html += '<a class="fade" href="https://twitter.com/'+tweet.user.screen_name+'">';
 			html += '<img class="avatar" src="'+tweet.user.profile_image_url_https+'" alt="">';
+			html += '<span class="tweet-header"><a class="fade" href="https://twitter.com/'+tweet.user.screen_name+'">'
 			html += '<strong class="fullname">'+tweet.user.name+'</strong>';
 			html += '&nbsp;<span class="username">@'+tweet.user.screen_name+'</span>';
 			html += '</a>';
-			html += '&nbsp;<small class="time"><a><span class="fade">'+FnTimeAgo(tweet.created_at)+'</span></a></small>';
+			html += '&nbsp;<small class="time"><a><span class="fade">'+FnTimeAgo(tweet.created_at)+'</span></a></small></span></span>';
 			html += '&nbsp;<small class="scorebox"><a><span>'+parseFloat(tweet.score).toFixed(2)+'</span></a></small>';
 			html += '</div>';
 			html += '<p class="tweet-text">'+tweet.text+'</p>';
 			html += '</div>';
-			html += '<div>';
+			html += '<div class="rFloat">';
 			html += '<ul class="tweet-actions" style="display: inline-block">';
-			html += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'"><span class="Icon Icon--retweet"></span>'+RTtext+'</a></li>';
-			html += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statFV+'" class="BtnFv'+favorited+'"><span class="Icon Icon--favorite"></span>Favourite</a></li>';
-			html += '<li><a class="BtnRP" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'"><span class="Icon Icon--reply"></span>Reply</a></li>';
+			html += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'"><span class="Icon Icon--retweet"></span></a></li>';
+			html += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statFV+'" class="BtnFv'+favorited+'"><span class="Icon Icon--favorite"></span></a></li>';
+			html += '<li><a class="BtnRP" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'"><span class="Icon Icon--reply"></span></a></li>';
 			html += '</ul></div></div></li>';
 			
 							
