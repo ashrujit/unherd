@@ -4,6 +4,7 @@
 "host":"127.0.0.1:8080",
 "port":"80",
 "tweet_fetch_count":100,
+"tweet_fetch_gap":3,
 "db" : {
 
 	"host":"127.0.0.1",

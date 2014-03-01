@@ -69,9 +69,7 @@ function FnLoadTweets() {
 				statRT="true";
 			}
 			
-			for(url in tweet.entities.urls) {
-				console.log(tweet.entities.urls[url].url);
-			}
+			tweet.text = linkify_entities(tweet);
 			
 			var tweetSection = "";
 			tweetSection += '<li class="stream-item">';
@@ -201,6 +199,8 @@ function FnLoadMyTimeline() {
 	
 	
 }
+
+
 
 
 

@@ -65,7 +65,7 @@ app.get('/ranktweet',validate.ensureAuthenticated, function(req, res){
 						 
 					}
 					
-					var expiryDateObj = new Date(new Date().getTime() + (2*60000));
+					var expiryDateObj = new Date(new Date().getTime() + (config.tweet_fetch_gap*60000));
 					
 					post_data = validate.HTMLEncode(JSON.stringify({"tweetJSON": joop}));
 					
