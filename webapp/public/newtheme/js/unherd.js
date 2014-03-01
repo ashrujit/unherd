@@ -68,6 +68,11 @@ function FnLoadTweets() {
 				RTtext="Retweeted"
 				statRT="true";
 			}
+			
+			for(url in tweet.entities.urls) {
+				console.log(tweet.entities.urls[url].url);
+			}
+			
 			var tweetSection = "";
 			tweetSection += '<li class="stream-item">';
 			tweetSection += '<div class="tweet">';

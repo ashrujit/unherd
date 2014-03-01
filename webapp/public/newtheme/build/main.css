@@ -114,7 +114,7 @@ margin: 10px 0 10px 5px;
 #topbox,#tweetbox {
 
 	 padding:10px;
-	 background:transparent;
+	 background:#FFF;
 	 height:22px;	 
 	 border-top: 1px solid #EEE;
 }
@@ -188,6 +188,7 @@ outline: none;
 }
 
 .tweet-actions li {
+cursor:pointer;
 display: inline;
 }
 .tweet-actions a {
