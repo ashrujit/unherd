@@ -228,12 +228,17 @@ font-family: "rosettaicons";
 content: "\f152";
 }
 
-.scorebox{
+.scorebox,.scorenew{
 color:#FFF;font-weight:bold;font-size:.9em;padding:3px;background:#09C;border:1px solid #08A;float:right;
 }
-.scorebox a,.scorebox a:hover,.scorebox a:active {
+.scorebox a,.scorebox a:hover,.scorebox a:active,.scorenew a,.scorenew a:hover,.scorenew a:active {
 color:#FFF;font-weight:bold;font-size:.9em;
 }
+.scorenew{
+border:1px solid #812;
+background:#d81b22;
+}
+
 .pace {
   -webkit-pointer-events: none;
   pointer-events: none;

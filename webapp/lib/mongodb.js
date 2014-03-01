@@ -67,9 +67,28 @@ var FnDelete = function(col,query,cb) {
 	
 };
 
+var FnUpdate = function(col,query,doc,options,cb) {
+	
+	connect(config.db.host,config.db.port,config.db.database,function(db) {
+		
+		var collection = db.collection(col);
+		
+		collection.update(query, doc, options, function(err, docs) {
+			
+			cb(err,docs);
+            db.close();
+		
+		});
+		
+	});
+	
+};
+
 module.exports.find = find;
 module.exports.insert = insert;
+module.exports.FnUpdate = FnUpdate;
 module.exports.FnDelete = FnDelete;
+
 
 
 

@@ -78,6 +78,9 @@ function FnLoadTweets() {
 			html += '</a>';
 			html += '&nbsp;<small class="time"><a><span class="fade">'+FnTimeAgo(tweet.created_at)+'</span></a></small></span></span>';
 			html += '&nbsp;<small class="scorebox"><a><span>'+parseFloat(tweet.score).toFixed(2)+'</span></a></small>';
+			if(tweet.isNew == true) {
+				html += '&nbsp;<small class="scorenew"><a><span>NEW</span></a></small>';
+			}
 			html += '</div>';
 			html += '<p class="tweet-text">'+tweet.text+'</p>';
 			html += '</div>';

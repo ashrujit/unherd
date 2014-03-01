@@ -43,69 +43,86 @@ app.get('/newui',validate.ensureAuthenticated, function(req, res){
 
 app.get('/ranktweet',validate.ensureAuthenticated, function(req, res){
   
-	mongo.find("Tweets",{"expire": {"$gte": new Date()}},function(results,err) {
+	mongo.find("Tweets",{"expire": {"$gte": new Date()},"userid":req.user.username},function(results,err) {
 		
 		//console.log(err,results.length);
 		
 		if(results.length == 0 || err) {
 		
-			twitter.gettweets(req.user,60,function(err,data){
+			mongo.find("Users",{"username":req.user.username},function(lastfetch,err) {
 				
-				var tweets = JSON.parse(data);
+				lasttimeobj = lastfetch[0].lastfetch;
 				
-				var joop = [];	
-		  
-				for(x in tweets) {
-					  
-					joop.push(JSON.stringify(tweets[x]));	 
-					 
-				}
-				
-				var expiryDateObj = new Date(new Date().getTime() + (15*60000));
-				
-				post_data = validate.HTMLEncode(JSON.stringify({"tweetJSON": joop}));
-				
-				post.post(post_data,function(chunk) {
+				twitter.gettweets(req.user,60,function(err,data){
 					
-					var ranks = JSON.parse(chunk);
+					var tweets = JSON.parse(data);
 					
-					for(x in ranks.batchResult) {
+					var joop = [];	
+			  
+					for(x in tweets) {
+						  
+						joop.push(JSON.stringify(tweets[x]));	 
+						 
+					}
+					
+					var expiryDateObj = new Date(new Date().getTime() + (2*60000));
+					
+					post_data = validate.HTMLEncode(JSON.stringify({"tweetJSON": joop}));
+					
+					post.post(post_data,function(chunk) {
 						
-						for(y in tweets) {
+						var ranks = JSON.parse(chunk);
+						
+						for(x in ranks.batchResult) {
 							
-							if(ranks.batchResult[x].tid == tweets[y].id) {
+							for(y in tweets) {
 								
-								tweets[y].score = ranks.batchResult[x].score;
-								tweets[y].expire = expiryDateObj;
-								//add a date stamp for mongo queries
+								if(ranks.batchResult[x].tid == tweets[y].id) {
+									
+									tweets[y].score = ranks.batchResult[x].score;
+									tweets[y].expire = expiryDateObj;
+									tweets[y].userid = req.user.username;
+									//console.log(new Date(tweets[y].created_at).getTime(),lasttimeobj.getTime());							
+									if(new Date(tweets[y].created_at).getTime()>lasttimeobj.getTime()) {
+										tweets[y].isNew = true;	
+									} else {
+										tweets[y].isNew = false;
+									}
+									
+									//add a date stamp for mongo queries
+									
+								}
 								
 							}
 							
 						}
 						
-					}
-					
-					tweets.sort(function(a,b) { return parseFloat(b.score) - parseFloat(a.score) } );
-					console.log("fetch from api");
-					res.json(tweets);
-					
-					mongo.FnDelete("Tweets",{},function(err, docs){
+						if(tweets instanceof Array) {
+							tweets.sort(function(a,b) { return parseFloat(b.score) - parseFloat(a.score) } );
+						}
 						
-						mongo.insert("Tweets",tweets,function(s){});
+						console.log("from API");
+						res.json(tweets);
+						
+						mongo.FnDelete("Tweets",{"userid":req.user.username},function(err, docs){
+							
+							mongo.insert("Tweets",tweets,function(s){});
+							mongo.FnUpdate("Users",{"username":req.user.username},{$set:{"lastfetch":new Date()}},{},function() {});
+							
+						});
+						
+						
+						
 						
 					});
-					
-					
-					
-					
-				});
 				
+				});
 			
 			});
 	
 		} else {
 			
-			console.log("fetch from db");
+			console.log("from DB");
 			res.json(results);
 			
 		}	
