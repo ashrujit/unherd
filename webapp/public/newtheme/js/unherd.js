@@ -23,7 +23,7 @@ $(document).ready(function(){
 		$.post("/ajaxTweet", {"tweet":tweet,"replyto":replyto}, function( data ) {
 			
 			console.log(data);
-			FnLoadTweets();
+			//FnLoadTweets();
 			$("#TweetText").val("");
 			$("#ReplyTo").val("");
 			$("#tweetbox").slideUp('fast');
@@ -53,7 +53,7 @@ function FnLoadTweets() {
 		
 		var html = "";
 		
-	  	for(i in tweets) {
+	  	for(i=0; i<tweets.length;i++) {
 			
 			var tweet = tweets[i];
 			
@@ -101,12 +101,13 @@ function FnLoadTweets() {
 		  var tid = $( this ).data("tid");
 		  var stat = $( this ).data("stat");
 		  console.log("RT",stat,tid);
-		  
+		  var el = $( this );
 		  if(stat!="true") {
-		  
 			  $.post( "/ajaxRetweet", {"tid":tid,"stat":stat}, function( tweets ) {
 				
-				FnLoadTweets();
+				el.addClass("activeAction");
+				el.data("stat","true");
+				//FnLoadTweets();
 				  
 			  });
 		  }			
@@ -118,10 +119,17 @@ function FnLoadTweets() {
 		  var tid = $( this ).data("tid");
 		  var stat = $( this ).data("stat");
 		  console.log("FV",tid);
-		  
+		  var el = $( this );
 		  $.post( "/ajaxFavourite", {"tid":tid,"stat":stat}, function( tweets ) {
 			
-			FnLoadTweets();
+			if(stat!="true") {
+				el.addClass("activeAction");
+				el.data("stat","true");
+			} else {
+				el.removeClass("activeAction");
+				el.data("stat","false");	
+			}
+			//FnLoadTweets();
 			  
 		  });
 

@@ -33,6 +33,23 @@ var find = function(col,query,cb) {
 	
 };
 
+var findAndSort = function(col,query,sortdoc,cb) {
+	
+	connect(config.db.host,config.db.port,config.db.database,function(db) {
+		
+		var collection = db.collection(col);
+		
+		collection.find(query).sort(sortdoc).toArray(function(err, results) {
+			
+			cb(results);
+            db.close();
+		
+		});
+		
+	});
+	
+};
+
 var insert = function(col,doc,cb) {
 	
 	connect(config.db.host,config.db.port,config.db.database,function(db) {
@@ -85,6 +102,7 @@ var FnUpdate = function(col,query,doc,options,cb) {
 };
 
 module.exports.find = find;
+module.exports.findAndSort = findAndSort;
 module.exports.insert = insert;
 module.exports.FnUpdate = FnUpdate;
 module.exports.FnDelete = FnDelete;

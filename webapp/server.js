@@ -43,7 +43,7 @@ app.get('/newui',validate.ensureAuthenticated, function(req, res){
 
 app.get('/ranktweet',validate.ensureAuthenticated, function(req, res){
   
-	mongo.find("Tweets",{"expire": {"$gte": new Date()},"userid":req.user.username},function(results,err) {
+	mongo.findAndSort("Tweets",{"expire": {"$gte": new Date()},"userid":req.user.username},{"score":-1},function(results,err) {
 		
 		//console.log(err,results.length);
 		
@@ -79,7 +79,7 @@ app.get('/ranktweet',validate.ensureAuthenticated, function(req, res){
 								
 								if(ranks.batchResult[x].tid == tweets[y].id) {
 									
-									tweets[y].score = ranks.batchResult[x].score;
+									tweets[y].score = parseFloat(ranks.batchResult[x].score);
 									tweets[y].expire = expiryDateObj;
 									tweets[y].userid = req.user.username;
 									//console.log(new Date(tweets[y].created_at).getTime(),lasttimeobj.getTime());							
@@ -98,7 +98,7 @@ app.get('/ranktweet',validate.ensureAuthenticated, function(req, res){
 						}
 						
 						if(tweets instanceof Array) {
-							tweets.sort(function(a,b) { return parseFloat(b.score) - parseFloat(a.score) } );
+							tweets.sort(function(a,b) { return b.score - a.score } );
 						}
 						
 						console.log("from API");
@@ -138,11 +138,15 @@ app.post('/ajaxRetweet', validate.ensureAuthenticated, function(req, res){
 		twitter.doretweet(req.user,req.body.tid,function(err,data){
 			
 			//console.log("RT",err,data);
-			
-			if(err)
+			mongo.FnUpdate("Tweets",{"id_str":req.body.tid},{$set:{"retweeted":true}},{},function() {
+				
+				if(err)
 				res.json(err);
-			else
+				else
 				res.json({"status":true});
+				
+			});
+			
 		});
 	
 	} else {
@@ -150,11 +154,15 @@ app.post('/ajaxRetweet', validate.ensureAuthenticated, function(req, res){
 		twitter.dodeltweet(req.user,req.body.tid,function(err,data){
 			
 			console.log("DRT",err,data);
-			
-			if(err)
+			mongo.FnUpdate("Tweets",{"id_str":req.body.tid},{$set:{"retweeted":false}},{},function() {
+				
+				if(err)
 				res.json(err);
-			else
+				else
 				res.json({"status":true});
+				
+			});
+			
 		});
 		
 	}
@@ -167,20 +175,30 @@ app.post('/ajaxFavourite', validate.ensureAuthenticated, function(req, res){
 		
 		twitter.dofavourite(req.user,req.body.tid,function(err,data){
 			//console.log("FV",err,data);
-			if(err)
+			mongo.FnUpdate("Tweets",{"id_str":req.body.tid},{$set:{"favorited":true}},{},function() {
+				
+				if(err)
 				res.json(err);
-			else
+				else
 				res.json({"status":true});
+				
+			});
+			
 		});
 
 	} else {
 	
 		twitter.dodelfavourite(req.user,req.body.tid,function(err,data){
 			//console.log("DFV",err,data);
-			if(err)
+			mongo.FnUpdate("Tweets",{"id_str":req.body.tid},{$set:{"favorited":false}},{},function() {
+				
+				if(err)
 				res.json(err);
-			else
+				else
 				res.json({"status":true});
+				
+			});
+			
 		});
 		
 	}

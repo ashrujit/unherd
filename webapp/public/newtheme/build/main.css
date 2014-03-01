@@ -201,7 +201,7 @@ margin-left:8px;
 color: #09C;
 }
 
-.tweet-actions activeAction {
+.tweet-actions .activeAction {
 color: #09C;
 }
 
