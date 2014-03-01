@@ -51,7 +51,8 @@ function FnLoadTweets() {
 	
 	$.get( "/ranktweet", function( tweets ) {
 		
-		var html = "";
+		var tophtml = "";
+		var chatterhtml = "";
 		
 	  	for(i=0; i<tweets.length;i++) {
 			
@@ -67,34 +68,41 @@ function FnLoadTweets() {
 				RTtext="Retweeted"
 				statRT="true";
 			}
-			
-			html += '<li class="stream-item">';
-			html += '<div class="tweet">';
-			html += '<div class="content"><div>';
-			html += '<img class="avatar" src="'+tweet.user.profile_image_url_https+'" alt="">';
-			html += '<span class="tweet-header"><a class="fade" href="https://twitter.com/'+tweet.user.screen_name+'">'
-			html += '<strong class="fullname">'+tweet.user.name+'</strong>';
-			html += '&nbsp;<span class="username">@'+tweet.user.screen_name+'</span>';
-			html += '</a>';
-			html += '&nbsp;<small class="time"><a><span class="fade">'+FnTimeAgo(tweet.created_at)+'</span></a></small></span></span>';
-			html += '&nbsp;<small class="scorebox"><a><span>'+parseFloat(tweet.score).toFixed(2)+'</span></a></small>';
+			var tweetSection = "";
+			tweetSection += '<li class="stream-item">';
+			tweetSection += '<div class="tweet">';
+			tweetSection += '<div class="content"><div>';
+			tweetSection += '<img class="avatar" src="'+tweet.user.profile_image_url_https+'" alt="">';
+			tweetSection += '<span class="tweet-header"><a class="fade" href="https://twitter.com/'+tweet.user.screen_name+'">'
+			tweetSection += '<strong class="fullname">'+tweet.user.name+'</strong>';
+			tweetSection += '&nbsp;<span class="username">@'+tweet.user.screen_name+'</span>';
+			tweetSection += '</a>';
+			tweetSection += '&nbsp;<small class="time"><a><span class="fade">'+FnTimeAgo(tweet.created_at)+'</span></a></small></span></span>';
+			tweetSection += '&nbsp;<small class="scorebox"><a><span>'+parseFloat(tweet.score).toFixed(2)+'</span></a></small>';
 			if(tweet.isNew == true) {
-				html += '&nbsp;<small class="scorenew"><a><span>NEW</span></a></small>';
+				tweetSection += '&nbsp;<small class="scorenew"><a><span>NEW</span></a></small>';
 			}
-			html += '</div>';
-			html += '<p class="tweet-text">'+tweet.text+'</p>';
-			html += '</div>';
-			html += '<div class="rFloat">';
-			html += '<ul class="tweet-actions" style="display: inline-block">';
-			html += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'"><span class="Icon Icon--retweet"></span></a></li>';
-			html += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statFV+'" class="BtnFv'+favorited+'"><span class="Icon Icon--favorite"></span></a></li>';
-			html += '<li><a class="BtnRP" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'"><span class="Icon Icon--reply"></span></a></li>';
-			html += '</ul></div></div></li>';
+			tweetSection += '</div>';
+			tweetSection += '<p class="tweet-text">'+tweet.text+'</p>';
+			tweetSection += '</div>';
+			tweetSection += '<div class="rFloat">';
+			tweetSection += '<ul class="tweet-actions" style="display: inline-block">';
+			tweetSection += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'"><span class="Icon Icon--retweet"></span></a></li>';
+			tweetSection += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statFV+'" class="BtnFv'+favorited+'"><span class="Icon Icon--favorite"></span></a></li>';
+			tweetSection += '<li><a class="BtnRP" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'"><span class="Icon Icon--reply"></span></a></li>';
+			tweetSection += '</ul></div></div></li>';
 			
-							
+			if(i<=tweets.length/2) {
+				tophtml += tweetSection;
+			} else {
+				chatterhtml += tweetSection;
+			}
+			
+					
 		}
 		
-		$("#datatweetsLister").html(html);
+		$("#datatweetsLister").html(tophtml);
+		$("#datachatterLister").html(chatterhtml);
 
 		$(".BtnRT").on("click", function() {
 		  
@@ -145,8 +153,7 @@ function FnLoadTweets() {
 		  $(".tweetCloudIcon").addClass("cloudup");	  
 
 		});
-		
-		$("#datachatterLister").html(html);
+				
 		FnLoadMyTimeline();
 		
 	});
