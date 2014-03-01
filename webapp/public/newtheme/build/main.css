@@ -114,16 +114,14 @@ margin: 10px 0 10px 5px;
 #topbox,#tweetbox {
 
 	 padding:10px;
-	 background:#FFF;
+	 background:transparent;
 	 height:22px;	 
 	 border-top: 1px solid #EEE;
-	 background:#000;
 }
 
 #tweetbox {
 	height:auto;
 	display:none;	
-	background:#FFF;
 }
 
 #tweetbox button,#tweetbox button:active,#tweetbox button:hover {
