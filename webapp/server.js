@@ -53,7 +53,7 @@ app.get('/ranktweet',validate.ensureAuthenticated, function(req, res){
 				
 				lasttimeobj = lastfetch[0].lastfetch;
 				
-				twitter.gettweets(req.user,60,function(err,data){
+				twitter.gettweets(req.user,config.tweet_fetch_count,function(err,data){
 					
 					var tweets = JSON.parse(data);
 					
