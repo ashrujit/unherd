@@ -19,14 +19,14 @@ passport.use(new TwitterStrategy({
   function(token, tokenSecret, profile, done) {
     
     process.nextTick(function () {    
-      
-		mongo.find("Users",{"providers.twitter.id":profile.id},function(results) {
 		
-			if(results.length == 0) {
+		mongo.find("Users",{"providers.twitter.id":profile.id},function(results) {
+			
+			if(results.length == 0) {			
 				
 				var doc = { "displayName" : profile.displayName,"username":profile.username,"email" : "","providers" : {"twitter" : {"id" : profile.id,
 				"OAuthToken" : token,
-				"OAuthSecretToken" : tokenSecret } } };
+				"OAuthSecretToken" : tokenSecret } }, "profile_pic":profile._json.profile_image_url_https };
 				
 				mongo.insert("Users",doc,function(doc) {
 					
