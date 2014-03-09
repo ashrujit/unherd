@@ -24,13 +24,24 @@ html(lang="en")
 							li
 								img(src="#{user.profile_pic}",height="25",width="25")
 				div#tweetbox.wrapper.float-wrapper
-					div.tweetBox
+					div.tweetBox#normalBox
 						div
 							input(type="hidden",value="",id="ReplyTo")
 							div(class="input-group")
 								textarea(class="compose-text",placeholder="What's happening?",id="TweetText")
 								div
 									button#TwBtn(type="button",class="btn") Tweet
+
+					div.tweetBox#recommendBox
+						div
+							
+							input(type="hidden",value="",id="ForwTweet")
+							div(class="input-group")
+								input(class="compose-text",style="height:10px;",type="text",value="",placeholder="Userid here",id="ForwardTo")
+							div(class="input-group")
+								textarea(class="compose-text",placeholder="Place your message here!",id="RecText")
+								div
+									button#RcBtn(type="button",class="btn") Forward Tweet 
 				div.wrapper
 					a(class="tweetCloudIcon float-anchor",title="Make a Tweet") &nbsp;
 					div(class="content-main",id="timeline")

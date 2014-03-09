@@ -1,12 +1,12 @@
-
-
 $(document).ready(function(){ 
 	
 	FnLoadTweets();
-	
+	$("#recommendBox").hide();
 
 	$(".tweetCloudIcon").click(function(){
 		//$(".tweetCloudIcon").css('margin-top','50px');
+		$("#recommendBox").hide();
+		$("#normalBox").show();
 		$("#TweetText").val("");
 		$("#ReplyTo").val("");
 		$("#tweetbox").slideToggle('fast');
@@ -16,6 +16,8 @@ $(document).ready(function(){
 	
 	$("#TwBtn").click(function(){
 		
+		$("#recommendBox").hide();	
+		$("#normalBox").show();
 		var tweet = $("#TweetText").val();
 		var replyto = $("#ReplyTo").val();
 		
@@ -32,6 +34,29 @@ $(document).ready(function(){
 		});	
 		
 	});
+
+	$("#RcBtn").click(function(){
+		
+		$("#recommendBox").hide();	
+		$("#normalBox").show();
+		var recommendto = $("#ForwardTo").val();
+		var custommsg = $("#RecText").val();
+		var tweet = $("#ForwTweet").val();
+		
+		
+		$.post("/ajaxRecommend", {"tweet_id":tweet,"forward_to": recommendto,"custom_msg":custommsg}, function( data ) {
+			
+			console.log(data);
+			$("#RecText").val("");
+			$("#ForwardTo").val("");
+			$("#tweetbox").slideUp('fast');
+			$(".tweetCloudIcon").removeClass("cloudup");
+			  
+		});	
+		
+	});
+
+
 	
 	$(".nav li").click(function() {
 	
@@ -93,6 +118,7 @@ function FnLoadTweets() {
 			tweetSection += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'"><span class="Icon Icon--retweet"></span></a></li>';
 			tweetSection += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statFV+'" class="BtnFv'+favorited+'"><span class="Icon Icon--favorite"></span></a></li>';
 			tweetSection += '<li><a class="BtnRP" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'"><span class="Icon Icon--reply"></span></a></li>';
+			tweetSection += '<li><a class="BtnFW" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'"><span class="Icon Icon--forward"></span></a></li>';
 			tweetSection += '</ul></div></div></li>';
 			
 			if(i<=tweets.length/2) {
@@ -148,6 +174,8 @@ function FnLoadTweets() {
 
 		$(".BtnRP").on("click", function() {
 		  
+		  $("#recommendBox").hide();	
+		  $("#normalBox").show(); 
 		  var tid = $( this ).data("tid");
 		  var user = $( this ).data("user");
 		  $("#TweetText").val("@"+user);
@@ -156,7 +184,18 @@ function FnLoadTweets() {
 		  $(".tweetCloudIcon").addClass("cloudup");	  
 
 		});
-				
+	
+		$(".BtnFW").on("click", function() {
+		  
+		  var tid = $( this ).data("tid");
+		  $("#recommendBox").show();	
+		  $("#ForwTweet").val(tid);
+		  $("#normalBox").hide(); 
+		  $("#tweetbox").slideDown('fast');
+		  $(".tweetCloudIcon").addClass("cloudup");	  
+
+		});
+			
 		FnLoadMyTimeline();
 		
 	});

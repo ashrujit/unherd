@@ -33,6 +33,24 @@ var find = function(col,query,cb) {
 	
 };
 
+var FnFindOne = function(col,query,cb) {
+	
+	connect(config.db.host,config.db.port,config.db.database,function(db) {
+		
+		var collection = db.collection(col);
+		
+		collection.findOne(query, function(err, result) {
+			
+			cb(err,result);
+            db.close();
+		
+		});
+		
+	});
+	
+};
+
+
 var findAndSort = function(col,query,sortdoc,cb) {
 	
 	connect(config.db.host,config.db.port,config.db.database,function(db) {
@@ -106,7 +124,7 @@ module.exports.findAndSort = findAndSort;
 module.exports.insert = insert;
 module.exports.FnUpdate = FnUpdate;
 module.exports.FnDelete = FnDelete;
-
+module.exports.FnFindOne = FnFindOne;
 
 
 

@@ -214,6 +214,52 @@ app.post('/ajaxTweet', validate.ensureAuthenticated, function(req, res){
 });
 
 
+app.post('/ajaxRecommend', validate.ensureAuthenticated, function(req, res){
+		
+	//req.body.tweet_id
+	//req.body.forward_to
+	//req.user
+	//req.user.id
+	//full tweet data
+	//forward user full data
+	//date time
+	
+	mongo.FnFindOne("Tweets",{"id_str":req.body.tweet_id},function(err,data){
+
+		mongo.FnFindOne("Users",{"username":req.body.forward_to},function(err1,data1){
+			
+			var insertdoc = {
+				"from_id":req.user.username,
+				"from":req.user,
+				"to":data1,
+				"to_id":data1.username,
+				"custom_msg":req.body.custom_msg,
+				"tweetid":req.body.tweet_id,
+				"tweet":data,
+				"at":new Date(),
+				"checked":false
+			};
+			mongo.insert("Forwards",insertdoc,function(err2,data2){
+				
+				res.json({ "status": data,"error":err });
+			
+			});			
+
+
+		});		
+
+	});
+
+	//From mongo select tweet data by the id_str
+	//On CB find the forwrd user data if exists on the unherd db
+	//if exists in unherd db then insert to forwrddb
+	//else send a direct message
+
+		
+});
+
+
+
 
 app.all('/tweet', validate.ensureAuthenticated, function(req, res){
 	

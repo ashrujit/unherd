@@ -217,6 +217,9 @@ width: auto;
 content: "\f151";
 }
 
+.Icon--forward:before {
+content: "\f147";
+}
 .Icon--favorite:before {
 content: "\f147";
 }
