@@ -52,6 +52,9 @@ app.get('/ranktweet',validate.ensureAuthenticated, function(req, res){
 			mongo.find("Users",{"username":req.user.username},function(lastfetch,err) {
 				
 				lasttimeobj = lastfetch[0].lastfetch;
+				if (typeof(lasttimeobj) == "undefined" || lasttimeobj == null) {
+                   lasttimeobj = new Date(new Date().getTime() - 3600000) ;
+				}
 				
 				twitter.gettweets(req.user,config.tweet_fetch_count,function(err,data){
 					
