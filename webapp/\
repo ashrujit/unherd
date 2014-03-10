@@ -282,15 +282,24 @@ app.post('/ajaxMessageOnTopic', validate.ensureAuthenticated, function(req, res)
 
 	mongo.insert("ForwardReplies",inserdoc,function(){
 
-		mongo.FnUpdate("Forwards",{"topic_id":req.body.topic_id},{"$set":{"checked":true},"$inc":{"message_count":1}},{},function(){
-						
-			res.json({ "status":"OK","error":null });
+		mongo.FnUpdate("Forwards",{"topic_id":req.body.topic_id},{},{},function(){
+
+			
 
 		});	
 
+	res.json({ "status":"OK","error":null });
+
+
+
 	});
 
+			
+
 });
+
+
+
 
 app.all('/tweet', validate.ensureAuthenticated, function(req, res){
 	
@@ -303,6 +312,9 @@ app.all('/tweet', validate.ensureAuthenticated, function(req, res){
 	} else {
 		res.render('maketweet', { user: req.user, done:false });
 	}
+	
+	
+	
 	
 });
 
