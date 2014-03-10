@@ -43,20 +43,26 @@ def score_tweets():
 	status = 'Error'
 	reason = ""
 	tid = -1
+	tjson = request.json['tweetJSON']
+	batchResult = []
 
-	try:
-		tjson = request.json['tweetJSON']
-		tobj = json.loads(tjson)
-		s = model.score(tjson)
-		status = 'ok'
-		tid = tobj['id']
+	for tweet in tjson:
+		try:		
+			s = model.score(tweet)
+			status = 'OK'
+			tobj = json.loads(tweet)
+			tid = tobj['id']
 
-	except e:
-		reason = str(e)
+		except:
+			reason = "Error loading json."
 
-	return jsonify({ 
+		batchResult.append({ 
 					 'status' : status,
 					 'score' : s,
 					 'tid' : tid,
 					 'reason' : reason
 					 })
+
+	return jsonify({
+			'batchResult' : batchResult
+		})

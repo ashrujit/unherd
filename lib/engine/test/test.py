@@ -4,62 +4,84 @@ from .. naive  import tscore
 import json
 import sys
 import requests
+import unittest
+import time
 
-def rawTest():
-	model = tscore.ScoreModel()
-	f = open('engine/test/sample8.txt', 'r')
+class BasicUnitTests(unittest.TestCase):
 
-	for line in f.readlines():
-		tweetJSON = json.loads(line)
-		print model.score(line), tweetJSON['text']
+    def setUp(self):
+        self.raw_sample = 'engine/resource/sample1.txt'
+        self.api_batch_sample = 'engine/resource/earth.txt'
+        self.api_sample = 'engine/resource/earth_batch.txt'
+        self.startTime = time.time()
+    
+    def tearDown(self):
+        t = time.time() - self.startTime
+        print "%s: %.3f" % (self.id(), t)
+    
+    def testRaw(self):
+        model = tscore.ScoreModel()
+        f = open(self.raw_sample, 'r')
+        responseArr = []
 
-	f.close()
+        for line in f.readlines():
+            tweetJSON = json.loads(line)
+            responseArr.append([model.score(line), tweetJSON['text']])
+            # break;
+        f.close()
 
-
-def batchTest():
-	"""
-		Testing the node interface for batch tweet processing.
-	"""
-	tweetJSONArr = []
-	
-	f = open('engine/test/earth.txt', 'r')
-	
-	for line in f.readlines():
-		tweetJSONArr.append(line)
-	f.close()
-	return nodeEngine.scoreBatch(tweetJSONArr)
-
-
-def apiTest():
-	"""
-		Fire post request to the API.
-	"""
-	
-
-	url = "http://localhost:5000/unherd/api/v0.1/tweet"
-	
-	f = open('engine/test/earth.txt', 'r')
-	line = f.readline()
-	line = line.replace("\n", "")
-	f.close();
-
-	data = {'tweetJSON' : line}
-
-	headers = {'Content-type': 'application/json', 
-				'Accept': 'text/plain'}
-	
-	wts = {'featureWeights' : [10, 1, 1 ,1]}
-
-	urlUpdate = "http://localhost:5000/unherd/api/v0.1/model/update"
-	
-	r = requests.post(urlUpdate, data = json.dumps(wts), headers = headers)
-	print r.text
-
-	r = requests.post(url, data = json.dumps(data), headers = headers)
-	print r.text
+        responseArr.sort(key = lambda tup:tup[0], reverse=True)
+        for res in responseArr:
+            print res[0], res[1]
 
 
+    # def testBatchCallToAPI(self):
+    #     """
+    #         Testing the node interface for batch tweet processing.
+    #     """
+    #     tweetJSONArr = []
+        
+    #     f = open(self.api_batch_sample, 'r')
+        
+    #     for line in f.readlines():
+    #         tweetJSONArr.append(line)
+    #     f.close()
 
-# rawTest()
-# batchTest()	
-apiTest()
+    def NOtestAPI(self):
+        """
+            Fire post request to the API.
+        """
+        
+
+        url = "http://localhost:5000/unherd/api/v0.1/tweet"
+        
+        f = open(self.api_sample, 'r')
+        dataArr = []
+        for i in range(20):
+            line = f.readline()
+            line = line.replace("\n", "")
+            # This works as well
+            # But was just testing for the stringify issue in node
+            # dataArr.append(line)		
+            dataArr.append(json.dumps(json.loads(line)))		
+
+        f.close();
+
+        data = {'tweetJSON' : dataArr}
+
+        headers = {'Content-type': 'application/json', 
+                    'Accept': 'text/plain'}
+        
+        wts = {'featureWeights' : [10, 1, 1 ,1]}
+
+        urlUpdate = "http://localhost:5000/unherd/api/v0.1/model/update"
+        
+        # r = requests.post(urlUpdate, data = json.dumps(wts), headers = headers)
+        # print r.text
+
+        r = requests.post(url, data = json.dumps(data), headers = headers)
+        # print r.text
+
+
+if __name__ == '__main__':
+    unittest.main()

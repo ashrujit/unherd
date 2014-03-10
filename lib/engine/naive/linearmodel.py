@@ -6,7 +6,7 @@ class LinearModel:
 		Linear model to evaluate score of the tweet.
 	"""
 
-	featuresWeights = [5.1, 2, 1, 1]
+	featuresWeights = [5.1, 2, 1, 1, 1, 1, 1]
 	featuresValues = []
 
 	def __init__(self, features_weights =None):
@@ -29,6 +29,10 @@ class LinearModel:
 		self.featuresValues.append(tweetFeatures.getURL(tweetObj))
 		self.featuresValues.append(tweetFeatures.getFavorite(tweetObj))		
 		
+		self.featuresValues.append(tweetFeatures.getHashTags(tweetObj))
+		self.featuresValues.append(tweetFeatures.getMentions(tweetObj))
+		self.featuresValues.append(tweetFeatures.getFollowersCount(tweetObj))
+
 
 		# Weighted sum of the features values.
 		self.score = sum(value * weight for value, weight in \
