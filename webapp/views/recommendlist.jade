@@ -2,5 +2,9 @@ extends layout
 
 block content
 	ul
-	- each recomend in rec 
-		p #{recomend.custom_msg}
+	- each recomend in rec
+		p #{recomend.custom_msg} - #{recomend.from_id}
+		p #{recomend.tweet.text} - #{recomend.tweet.user.name}
+		p 
+			a(href="/readRecommendations/#{recomend.topic_id}") see more
+		hr

@@ -264,9 +264,62 @@ app.post('/ajaxRecommend', validate.ensureAuthenticated, function(req, res){
 
 
 app.get('/getRecommendations', validate.ensureAuthenticated, function(req, res){
-	mongo.find("Forwards",{"to_id":req.user.userid},function(err,data){
+	mongo.find("Forwards",{"to_id":req.user.username},function(data,err){ 
 		res.render('recommendlist', { user: req.user, rec:data });
 	});
+});
+
+
+app.all('/readRecommendations/:id', validate.ensureAuthenticated, function(req, res){
+	
+	if(req.method == 'POST') {
+		
+		var insertdoc = {
+			"topic_id":req.params.id,
+			"from_id":req.user.username,
+			"message":req.body.message,
+			"at":new Date(),
+			"checked":false,
+		};
+
+		mongo.insert("ForwardReplies",insertdoc,function(){
+
+			mongo.FnUpdate("Forwards",{"topic_id":req.body.topic_id},{"$inc":{"message_count":1}},{},function(){
+							
+				mongo.find("Forwards",{"topic_id":req.params.id},function(data,err){ 
+				
+					mongo.find("ForwardReplies",{"topic_id":req.params.id},function(data1,err1){ 
+					
+						res.render('recommenddetails', { user: req.user, recomend:data[0], msg:data1 });
+							
+					});
+					
+				});
+
+			});	
+
+		});
+		
+	} else {
+	
+		mongo.find("Forwards",{"topic_id":req.params.id},function(data,err){ 
+		
+			mongo.find("ForwardReplies",{"topic_id":req.params.id},function(data1,err1){ 
+				
+				mongo.FnUpdate("ForwardReplies"
+					,{"topic_id":req.body.topic_id,"from_id":{"$ne":req.user.username}}
+					,{"$set":{"checked":true}}
+					,{"multi":true}
+					,function(){
+					res.render('recommenddetails', { user: req.user, recomend:data[0], msg:data1 });
+				});
+			});
+			
+		});
+	
+	}
+	
+	
 });
 
 
@@ -275,12 +328,12 @@ app.post('/ajaxMessageOnTopic', validate.ensureAuthenticated, function(req, res)
 
 	var insertdoc = {
 		"topic_id":req.body.topic_id,
-		"from_id":req.user.userid,
+		"from_id":req.user.username,
 		"message":req.body.message,
 		"at":new Date()
 	};
 
-	mongo.insert("ForwardReplies",inserdoc,function(){
+	mongo.insert("ForwardReplies",insertdoc,function(){
 
 		mongo.FnUpdate("Forwards",{"topic_id":req.body.topic_id},{"$set":{"checked":true},"$inc":{"message_count":1}},{},function(){
 						

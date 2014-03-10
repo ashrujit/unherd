@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	p #{recomend.custom_msg} - #{recomend.from_id}
+	p #{recomend.tweet.text} - #{recomend.tweet.user.name}
+	hr
+	hr
+	ul
+	- each ms in msg
+		p #{ms.message} - #{ms.from_id}
+		hr
+	form(action="",method="post")
+		textarea(name="message")
+		input(type="submit",value="reply")
