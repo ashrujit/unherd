@@ -11,5 +11,10 @@ block content
 		hr
 	form(action="",method="post")
 		textarea(name="message")
-		input(type="hidden",name="msg_to")
+		- var to = recomend.to_id;
+		- if(user.username != recomend.from_id) {
+		- to = recomend.from_id;
+		- }
+		input(type="hidden",name="topic_id",value="#{recomend.topic_id}")
+		input(type="hidden",name="msg_to",value="#{to}")
 		input(type="submit",value="reply")

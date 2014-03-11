@@ -251,7 +251,7 @@ app.post('/ajaxRecommend', validate.ensureAuthenticated, function(req, res){
 
 			} else {
 
-				var dmmsg = "You have a tweet recommendation on unherd.Check the tweet here. ";
+				var dmmsg = "You have a tweet recommendation on unherd.Check the tweet here. https://twitter.com/sample/status/"+req.body.tweet_id;
 				twitter.directmessage(req.user,req.body.forward_to,dmmsg,function(){
 						
 					res.json({ "status":"OK","error":null });
@@ -271,7 +271,7 @@ app.post('/ajaxRecommend', validate.ensureAuthenticated, function(req, res){
 
 app.get('/getRecommendations', validate.ensureAuthenticated, function(req, res){
 	
-	mongo.find("Forwards",{"to_id":req.user.username},function(data,err){ 
+	mongo.find("Forwards",{"$or":[{"from_id":req.user.username},{"to_id":req.user.username}]},function(data,err){ 
 		
 		res.render('recommendlist', { user: req.user, rec:data });
 	
@@ -292,9 +292,18 @@ app.all('/readRecommendations/:id', validate.ensureAuthenticated, function(req, 
 		};
 
 		mongo.insert("ForwardReplies",insertdoc,function(){
-
-			mongo.FnUpdate("Forwards",{"topic_id":req.body.topic_id},{"$inc":{"message_count":1},{"$set":{"checked."+req.body.msg_to:false,"checked."+req.user.username:true}}},{},function(){
-							
+			
+			var tmp_obj = {}; 
+			tmp_obj["checked."+req.body.msg_to] = false;
+			tmp_obj["checked."+req.user.username] = true;
+			
+			
+			mongo.FnUpdate("Forwards"
+				,{"topic_id":req.body.topic_id}
+				,{"$inc":{"message_count":1},"$set":tmp_obj}
+				,{}
+				,function(d,e){
+				
 				mongo.find("Forwards",{"topic_id":req.params.id},function(data,err){ 
 				
 					mongo.find("ForwardReplies",{"topic_id":req.params.id},function(data1,err1){ 
@@ -315,11 +324,15 @@ app.all('/readRecommendations/:id', validate.ensureAuthenticated, function(req, 
 		
 			mongo.find("ForwardReplies",{"topic_id":req.params.id},function(data1,err1){ 
 				
+				var tmp_obj = {}; 
+				tmp_obj["checked."+req.user.username] = true;
+			
+				
 				mongo.FnUpdate("Forwards"
-					,{"topic_id":req.body.topic_id}
-					,{"$set":{"checked."+req.user.username:true}}
+					,{"topic_id":req.params.id}
+					,{"$set":tmp_obj}
 					,{}
-					,function(){
+					,function(d,e){
 					res.render('recommenddetails', { user: req.user, recomend:data[0], msg:data1 });
 				});
 			});
