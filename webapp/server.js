@@ -26,6 +26,10 @@ app.get('/', function(req, res){
   res.render('index', { user: req.user });
 });
 
+app.get('/foundation', function(req, res){
+  res.render('foundation/index',{user: req.user});
+});
+
 app.get('/test',validate.ensureAuthenticated, function(req, res){
   
   twitter.gettweets(req.user,10,function(err,data){
