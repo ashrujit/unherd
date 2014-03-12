@@ -127,7 +127,24 @@ function TwitterActions() {
 		  , cb
 	  );
 	  
-	}
+	};
+	
+	var getUserlist = function(user,cursor,count,cb){
+            oa.get('https://api.twitter.com/1.1/followers/ids.json?count='+count+'&cursor='+cursor
+                , user.providers.twitter.OAuthToken
+		, user.providers.twitter.OAuthSecretToken
+		, cb
+            );
+        };
+
+	var getUserDetails = function(user, ids,cb){
+		oa.post('https://api.twitter.com/1.1/users/lookup.json'
+				, user.providers.twitter.OAuthToken
+				, user.providers.twitter.OAuthSecretToken
+				, {user_id : ids},
+				cb
+			);
+	};
 
 	
 	
@@ -142,9 +159,11 @@ function TwitterActions() {
 		dodeltweet : FnDelTweet,
 		dofavourite : FnFavourite,
 		dodelfavourite : FnDelFavourite,
-		timeline : FnGetUserTimeline
+		timeline : FnGetUserTimeline,
+		followers : getUserlist,
+        followersDetails : getUserDetails
 		
-	}
+	};
 		
 	
 }

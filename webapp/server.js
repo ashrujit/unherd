@@ -5,6 +5,7 @@ var twitter = require("./lib/twitter.js")();
 var validate = require("./lib/validation.js");
 var post = require("./lib/post.js");
 var config = require("./config.json");
+var api = require('./api.js');
 var app = express();
 
 
@@ -59,6 +60,7 @@ app.get('/ranktweet',validate.ensureAuthenticated, function(req, res){
 				twitter.gettweets(req.user,config.tweet_fetch_count,function(err,data){
 					
 					var tweets = JSON.parse(data);
+				console.log(tweets);
 					
 					var joop = [];	
 			  
@@ -100,9 +102,9 @@ app.get('/ranktweet',validate.ensureAuthenticated, function(req, res){
 							
 						}
 						
-						if(tweets instanceof Array) {
-							tweets.sort(function(a,b) { return b.score - a.score } );
-						}
+					//tweets.sort(function(a,b) { return parseFloat(b.score) - parseFloat(a.score) } );
+						//	tweets.sort(function(a,b) { return b.score - a.score } );
+						//}
 						
 						console.log("from API");
 						res.json(tweets);
@@ -448,6 +450,7 @@ app.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
 });
+app.get('/api/followers',validate.ensureAuthenticated,api.followers);
 
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var ip = process.env.OPENSHIFT_NODEJS_IP||"127.0.0.1";

@@ -270,3 +270,20 @@ function FnTimeAgo(time){
 	};
 }
 
+var followers = new Bloodhound({
+	datumTokenizer: function(d) { return Bloodhound.tokenizers.whitespace(d.name); },
+	queryTokenizer: Bloodhound.tokenizers.whitespace,
+	limit: 10,
+	prefetch: {
+		url: '/api/followers',
+		filter: function(list) {
+			return $.map(list, function(follower) { return { name: '@'+follower }; });
+		}
+	}
+});
+followers.initialize();
+$('.typeahead').typeahead(null, {
+	name: 'followers',
+	displayKey: 'name',
+	source: followers.ttAdapter()
+});
