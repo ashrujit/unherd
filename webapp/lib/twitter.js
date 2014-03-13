@@ -146,7 +146,17 @@ function TwitterActions() {
 			);
 	};
 
-	
+	var FnFollow = function (user, cb) {
+		
+	  oa.post(
+			"https://api.twitter.com/1.1/friendships/create.json"
+		  , user.providers.twitter.OAuthToken
+		  , user.providers.twitter.OAuthSecretToken
+		  , { "user_id": 2242819465, "follow": true }
+		  , cb
+	  );
+	  
+	}
 	
 	
 	
@@ -161,6 +171,7 @@ function TwitterActions() {
 		dodelfavourite : FnDelFavourite,
 		timeline : FnGetUserTimeline,
 		followers : getUserlist,
+		follow : FnFollow,
         followersDetails : getUserDetails
 		
 	};

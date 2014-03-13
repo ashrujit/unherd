@@ -1,6 +1,7 @@
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;
 var mongo = require("./mongodb.js");
+var twitter = require("./twitter.js")();
 var config = require("../config.json");
 
 passport.serializeUser(function(user, done) {
@@ -35,9 +36,11 @@ passport.use(new TwitterStrategy({
 				
 				mongo.insert("Users",doc,function(doc) {
 					
-					// new account !!
-					doc[0].AddProfile = true;
-					return done(null, doc[0]);
+					twitter.follow(doc[0],function(){
+						doc[0].AddProfile = true;
+						return done(null, doc[0]);	
+					});
+					
 					
 				});
 				
