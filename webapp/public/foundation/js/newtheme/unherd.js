@@ -101,8 +101,19 @@ function FnLoadTweets() {
 			if(tweet.isNew == true) {
 				tweetSection += '<span class="newAlert"></span>';
 			}
-			tweetSection += '<div class="large-3 small-3 columns no-Pg"><img src="'+tweet.user.profile_image_url_https+'" alt="'+tweet.user.name+'" class="radius"> </div>';
-			tweetSection += '<div class="large-16 small-16 columns"><h1><a target="_blank" href="https://twitter.com/'+tweet.user.screen_name+'">'+tweet.user.name+'</a> </h1><h2><a target="_blank" href="https://twitter.com/'+tweet.user.screen_name+'">@'+tweet.user.screen_name+' </a> <span>| '+FnTimeAgo(tweet.created_at)+'</span></h2></div>';
+			
+			if(typeof(tweet.retweeted_status)!="undefined") {
+			
+				tweetSection += '<div class="large-24 columns"><h2>Retweeted by <a target="_blank" href="https://twitter.com/'+tweet.user.screen_name+'">'+tweet.user.name+'</a></h2></div>';
+				tweetSection += '<div class="large-3 small-3 columns no-Pg"><img src="'+tweet.retweeted_status.user.profile_image_url_https+'" alt="'+tweet.retweeted_status.user.name+'" class="radius"> </div>';
+				tweetSection += '<div class="large-16 small-16 columns"><h1><a target="_blank" href="https://twitter.com/'+tweet.retweeted_status.user.screen_name+'">'+tweet.retweeted_status.user.name+'</a> </h1><h2><a target="_blank" href="https://twitter.com/'+tweet.retweeted_status.user.screen_name+'">@'+tweet.retweeted_status.user.screen_name+' </a> <span>| '+FnTimeAgo(tweet.retweeted_status.created_at)+'</span></h2></div>';
+					
+			} else {
+			
+				tweetSection += '<div class="large-3 small-3 columns no-Pg"><img src="'+tweet.user.profile_image_url_https+'" alt="'+tweet.user.name+'" class="radius"> </div>';
+				tweetSection += '<div class="large-16 small-16 columns"><h1><a target="_blank" href="https://twitter.com/'+tweet.user.screen_name+'">'+tweet.user.name+'</a> </h1><h2><a target="_blank" href="https://twitter.com/'+tweet.user.screen_name+'">@'+tweet.user.screen_name+' </a> <span>| '+FnTimeAgo(tweet.created_at)+'</span></h2></div>';
+			
+			}
 			
 			tweetSection += '<div class="large-5 small-5 columns"><div class="rankBox">';
 			tweetSection += '<div class="progress success round"><span  data-tooltip  class = "has-tip tip-top"  title = "'+parseFloat(tweet.score).toFixed(2)+'" >';
@@ -114,13 +125,26 @@ function FnLoadTweets() {
 			
 			tweetSection += '<div class="large-24 small-24 columns no-Pg">';
 			tweetSection += '<div class="content">';
+			
 			if(typeof(tweet.retweeted_status)!="undefined" && typeof(tweet.retweeted_status.entities)!="undefined" && typeof(tweet.retweeted_status.entities.media)!="undefined" && typeof(tweet.retweeted_status.entities.media[0])!="undefined" && typeof(tweet.retweeted_status.entities.media[0].media_url_https)!="undefined") {
 				tweetSection += '<div class="large-24 columns media text-center"><img src="'+tweet.retweeted_status.entities.media[0].media_url_https+'" alt="" /></div>';
 				tweetSection += '<div class="large-24 columns">';
+            } else if(typeof(tweet.entities)!="undefined" && typeof(tweet.entities.media)!="undefined" && typeof(tweet.entities.media[0])!="undefined" && typeof(tweet.entities.media[0].media_url_https)!="undefined") {
+				tweetSection += '<div class="large-24 columns media text-center"><img src="'+tweet.entities.media[0].media_url_https+'" alt="" /></div>';
+				tweetSection += '<div class="large-24 columns">';
             }
-            tweetSection += '<p>'+tweet.text+'</p>';
+            
+            if(typeof(tweet.retweeted_status)!="undefined") {
+				tweetSection += '<p>'+tweet.retweeted_status.text+'</p>';
+			} else {
+				tweetSection += '<p>'+tweet.text+'</p>';
+			}
+			
+            if(typeof(tweet.entities)!="undefined" && typeof(tweet.entities.media)!="undefined" && typeof(tweet.entities.media[0])!="undefined" && typeof(tweet.entities.media[0].media_url_https)!="undefined") {
+				tweetSection += '</div>';
+            }
             if(typeof(tweet.retweeted_status)!="undefined" && typeof(tweet.retweeted_status.entities)!="undefined" && typeof(tweet.retweeted_status.entities.media)!="undefined" && typeof(tweet.retweeted_status.entities.media[0])!="undefined" && typeof(tweet.retweeted_status.entities.media[0].media_url_https)!="undefined") {
-			    tweetSection += '</div>'
+			    tweetSection += '</div>';
             }
             tweetSection += '</div></div>';
             
