@@ -26,15 +26,15 @@ function linkify_entities(tweet) {
     var index_map = {}
     
     $.each(tweet.entities.urls, function(i,entry) {
-        index_map[entry.indices[0]] = [entry.indices[1], function(text) {return "<a href='"+escapeHTML(entry.url)+"'>"+escapeHTML(entry.display_url)+"</a>"}]
+        index_map[entry.indices[0]] = [entry.indices[1], function(text) {return "<a target='_blank' href='"+escapeHTML(entry.url)+"'>"+escapeHTML(entry.display_url)+"</a>"}]
     })
     
     $.each(tweet.entities.hashtags, function(i,entry) {
-        index_map[entry.indices[0]] = [entry.indices[1], function(text) {return "<a href='http://twitter.com/search?q="+escape("#"+entry.text)+"'>"+escapeHTML(text)+"</a>"}]
+        index_map[entry.indices[0]] = [entry.indices[1], function(text) {return "<a target='_blank' href='http://twitter.com/search?q="+escape("#"+entry.text)+"'>"+escapeHTML(text)+"</a>"}]
     })
     
     $.each(tweet.entities.user_mentions, function(i,entry) {
-        index_map[entry.indices[0]] = [entry.indices[1], function(text) {return "<a title='"+escapeHTML(entry.name)+"' href='http://twitter.com/"+escapeHTML(entry.screen_name)+"'>"+escapeHTML(text)+"</a>"}]
+        index_map[entry.indices[0]] = [entry.indices[1], function(text) {return "<a target='_blank' title='"+escapeHTML(entry.name)+"' href='http://twitter.com/"+escapeHTML(entry.screen_name)+"'>"+escapeHTML(text)+"</a>"}]
     })
     
     $.each(tweet.entities.media || [], function(i,entry) {
