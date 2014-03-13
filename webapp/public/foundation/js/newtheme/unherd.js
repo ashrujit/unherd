@@ -61,7 +61,7 @@ function FnLoadTweets() {
 		
 		/**percent calculation**/
 		var max_score = 1;
-		if(i==0) {
+		if(typeof(tweets)!="undefined" && typeof(tweets[0])!="undefined" ) {
 			
 			max_score =  parseFloat(tweets[0].score).toFixed(2);
 
@@ -203,7 +203,6 @@ function FnLoadTweets() {
 
 		});
 			
-		//FnLoadMyTimeline();
 		
 	});
 	

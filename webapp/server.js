@@ -26,7 +26,7 @@ app.get('/', function(req, res){
   res.render('index', { user: req.user });
 });
 
-app.get('/foundation', function(req, res){
+app.get('/foundation',validate.ensureAuthenticated, function(req, res){
   res.render('foundation/index',{user: req.user});
 });
 
