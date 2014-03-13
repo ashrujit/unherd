@@ -64,7 +64,7 @@ app.get('/ranktweet',validate.ensureAuthenticated, function(req, res){
 				twitter.gettweets(req.user,config.tweet_fetch_count,function(err,data){
 					
 					var tweets = JSON.parse(data);
-				console.log(tweets);
+				//console.log(tweets);
 					
 					var joop = [];	
 			  
@@ -147,7 +147,7 @@ app.post('/ajaxRetweet', validate.ensureAuthenticated, function(req, res){
 		twitter.doretweet(req.user,req.body.tid,function(err,data){
 			
 			//console.log("RT",err,data);
-			mongo.FnUpdate("Tweets",{"id_str":req.body.tid},{$set:{"retweeted":true}},{},function() {
+			mongo.FnUpdate("Tweets",{"id_str":req.body.tid},{$set:{"retweeted":true},$inc:{"retweet_count":1}},{},function() {
 				
 				if(err)
 				res.json(err);
@@ -163,7 +163,7 @@ app.post('/ajaxRetweet', validate.ensureAuthenticated, function(req, res){
 		twitter.dodeltweet(req.user,req.body.tid,function(err,data){
 			
 			console.log("DRT",err,data);
-			mongo.FnUpdate("Tweets",{"id_str":req.body.tid},{$set:{"retweeted":false}},{},function() {
+			mongo.FnUpdate("Tweets",{"id_str":req.body.tid},{$set:{"retweeted":false},$inc:{"retweet_count":-1}},{},function() {
 				
 				if(err)
 				res.json(err);
@@ -184,7 +184,7 @@ app.post('/ajaxFavourite', validate.ensureAuthenticated, function(req, res){
 		
 		twitter.dofavourite(req.user,req.body.tid,function(err,data){
 			//console.log("FV",err,data);
-			mongo.FnUpdate("Tweets",{"id_str":req.body.tid},{$set:{"favorited":true}},{},function() {
+			mongo.FnUpdate("Tweets",{"id_str":req.body.tid},{$set:{"favorited":true},$inc:{"favorite_count":1}},{},function() {
 				
 				if(err)
 				res.json(err);
@@ -458,5 +458,6 @@ app.get('/api/followers',validate.ensureAuthenticated,api.followers);
 
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var ip = process.env.OPENSHIFT_NODEJS_IP||"172.31.47.200";
+//ip = process.env.OPENSHIFT_NODEJS_IP||"127.0.0.1";
 
 app.listen(port,ip);
