@@ -42,7 +42,7 @@ $(document).ready(function(){
 
 		var el = $(this).data("id");	
 		$(".tweetsclass").hide();
-		$("type-"+el).show();			
+		$(".type-"+el).show();			
 		
 	});
 	
@@ -106,7 +106,7 @@ function FnLoadTweets() {
 			tweetSection += '<div class="large-5 small-5 columns"><div class="rankBox">';
 			tweetSection += '<div class="progress success round"><span  data-tooltip  class = "has-tip tip-top"  title = "'+parseFloat(tweet.score).toFixed(2)+'" >';
 
-		    var percent = 	parseFloat(tweet.score).toFixed(2)/max_score;			
+		    var percent = 	(parseFloat(tweet.score).toFixed(2))*100/max_score;			
 
 			tweetSection += '<span class="meter" style="width: '+percent.toFixed(0)+'%"></span> </span>';
 			tweetSection += '</div></div></div>';
@@ -209,43 +209,6 @@ function FnLoadTweets() {
 	
 	
 }
-
-
-//function FnLoadMyTimeline() {
-	
-	//$.get( "/json/timeline/"+$("#whoami").val(), function( tweets ) {
-		
-		//var html = "";
-		
-	  	//for(i in tweets) {
-			
-			//var tweet = tweets[i];				
-			//html += '<li class="stream-item">';
-			//html += '<div class="tweet">';
-			//html += '<div class="content"><div>';
-			//html += '<a class="fade" href="https://twitter.com/'+tweet.user.screen_name+'">';
-			//html += '<img class="avatar" src="'+tweet.user.profile_image_url_https+'" alt="">';
-			//html += '<strong class="fullname">'+tweet.user.name+'</strong>';
-			//html += '&nbsp;<span class="username">@'+tweet.user.screen_name+'</span>';
-			//html += '</a>';
-			//html += '&nbsp;<small class="time"><a><span class="fade">'+FnTimeAgo(tweet.created_at)+'</span></a></small>';
-			//html += '</div>';
-			//html += '<p class="tweet-text">'+tweet.text+'</p>';
-			//html += '</div>';
-			//html += '<div>';
-			//html += '</div></div></li>';	
-							
-		//}
-		
-		//$("#datamytweetsLister").html(html);
-	
-	//});
-	
-	
-	
-//}
-
-
 
 
 
