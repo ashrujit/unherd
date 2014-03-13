@@ -1,17 +1,5 @@
 $(document).ready(function(){ 
 	FnLoadTweets();
-	//$("#recommendBox").hide();
-
-	//$(".tweetCloudIcon").click(function(){
-		////$(".tweetCloudIcon").css('margin-top','50px');
-		//$("#recommendBox").hide();
-		//$("#normalBox").show();
-		//$("#TweetText").val("");
-		//$("#ReplyTo").val("");
-		//$("#tweetbox").slideToggle('fast');
-		//$(this).toggleClass("cloudup");
-		
-	//});
 	
 	$("#TwBtn").click(function(){
 		
@@ -50,14 +38,13 @@ $(document).ready(function(){
 
 
 	
-	//$(".nav li").click(function() {
-	
-		//$(this).siblings("li").removeClass("active");
-		//$(this).addClass("active");	
-		//$(".stream-items").hide();
-		//$("#data"+$(this).prop("id")).show();
+	$(".content_type").click(function() {
+
+		var el = $(this).data("id");	
+		$(".tweetsclass").hide();
+		$("type-"+el).show();			
 		
-	//});
+	});
 	
 	
 		
@@ -72,10 +59,21 @@ function FnLoadTweets() {
 		var chatterhtml = "";
 		var tweetSection = "";
 		
+		/**percent calculation**/
+		var max_score = 1;
+		if(i==0) {
+			
+			max_score =  parseFloat(tweets[0].score).toFixed(2);
+
+		}		
+		/**percent calculation**/
+	
+
 	  	for(i=0; i<tweets.length;i++) {
 			
 			var tweet = tweets[i];
-			
+
+				
 			var retweeted = "",favorited = "",statRT="false",statFV="false",RTtext="Retweet";
 			if(tweet.favorited!=false) {
 				favorited = " activeAction";
@@ -92,12 +90,12 @@ function FnLoadTweets() {
 			tweet_class="topnews";
 			
 			if(i<=tweets.length/2) {
-				tweet_class="type-topnews";
+				tweet_class="type-topstories";
 			} else {
 				tweet_class="type-chatter";
 			}
 			
-			tweetSection += '<li class="large-24 small-24 no-Pg columns optimize '+tweet_class+'">';
+			tweetSection += '<li class="large-24 small-24 no-Pg columns optimize tweetsclass '+tweet_class+'">';
 			tweetSection += '<article class="tweetBox clearfix">';
 			if(tweet.isNew == true) {
 				tweetSection += '<span class="newAlert"></span>';
@@ -107,7 +105,10 @@ function FnLoadTweets() {
 			
 			tweetSection += '<div class="large-5 small-5 columns"><div class="rankBox">';
 			tweetSection += '<div class="progress success round"><span  data-tooltip  class = "has-tip tip-top"  title = "'+parseFloat(tweet.score).toFixed(2)+'" >';
-			tweetSection += '<span class="meter" style="width: 70%"></span> </span>';
+
+		    var percent = 	parseFloat(tweet.score).toFixed(2)/max_score;			
+
+			tweetSection += '<span class="meter" style="width: '+percent.toFixed(0)+'%"></span> </span>';
 			tweetSection += '</div></div></div>';
 			
 			tweetSection += '<div class="large-24 small-24 columns no-Pg">';
@@ -136,7 +137,9 @@ function FnLoadTweets() {
 		}
 		
 		$("#mainSection").html(tweetSection);
+		$(".type-chatter").hide();	
 		
+	
 		$(".BtnRT").on("click", function() {
 		  
 		  var tid = $( this ).data("tid");

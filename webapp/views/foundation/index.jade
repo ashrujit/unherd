@@ -1,6 +1,6 @@
 doctype html5
 html.no-js(lang='en')
-head
+  head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Unherd
@@ -8,6 +8,10 @@ head
     link(rel='stylesheet', href='/foundation/stylesheets/font-awesome.min.css')
     script(src='/foundation/bower_components/modernizr/modernizr.js')
     script(src="/foundation/js/newtheme/pace.min.js")
+    style(type="text/css")
+      .activeAction {
+	   color: #1168b6;
+      }
   body
     .off-canvas-wrap
       .inner-wrap
@@ -47,15 +51,15 @@ head
                   a(href='', data-dropdown='message', data-options='is_hover:true')
                     i.fa.fa-envelope-o
                 li
-                  a(href='')
+                  a(href='/logout')
                     i.fa.fa-sign-out
             .large-24.columns.no-Pg.profile
               .large-7.columns.no-Pg-Rt
                 span.th.radius
-                  img.radius(src='https://pbs.twimg.com/profile_images/3368588846/256379c601670ec2a0adf2d6a678a46d_bigger.jpeg', alt='Aral')
+                  img.radius(src='#{user.profile_pic}', alt='#{user.displayName}')
               .large-17.columns
-                h4 Aral Balkan
-                h5 @aral
+                h4 #{user.displayName}
+                h5 @#{user.username}
             .large-24.columns.text-center.no-Pg.twttrStatus
               .large-8.small-8.columns.no-Pg
                 .large-24.columns.sectionHeader Tweets
@@ -74,10 +78,10 @@ head
               .large-24.columns
                 form(style='margin: 10px 0;')
                   label
-                    input(type='radio', value='1', required='')
+                    input(type='radio', value='1', required='', name="content_type", class="content_type" data-id="topstories")
                     | Top Stories
                   label
-                    input(type='radio', value='1', required='')
+                    input(type='radio', value='1', required='', name="content_type", class="content_type" data-id="chatter")
                     | Chatter
         section.main-section
           .row
