@@ -127,7 +127,8 @@ function FnLoadTweets() {
 			}
 			
 			tweetSection += '<div class="large-5 small-5 columns"><div class="rankBox">';
-			tweetSection += '<div class="progress success round"><span  data-tooltip  class = "has-tip tip-top"  title = "'+parseFloat(tweet.score).toFixed(2)+'" >';
+			// tweetSection += '<div class="progress success round"><span  data-tooltip  class = "has-tip tip-top"  title = "'+parseFloat(tweet.score).toFixed(2)+'" >';
+			tweetSection += '<div class="'+decideRankColor(tweet.score)+'"><span  data-tooltip  class = "has-tip tip-top"  title = "'+parseFloat(tweet.score).toFixed(2)+'" >';
 
 		    var percent = 	(parseFloat(tweet.score).toFixed(2))*100/max_score;			
 
@@ -299,3 +300,13 @@ $('.typeahead').typeahead(null, {
 	displayKey: 'name',
 	source: followers.ttAdapter()
 });
+
+//Decide color based on the tweet score.
+function decideRankColor(score){
+	if(score > 15)
+		return "progress sucess round";
+	else if (score > 10)
+		return "progress secondary round";
+	else
+		return "progress alert round";
+};
