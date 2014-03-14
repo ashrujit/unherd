@@ -84,7 +84,7 @@ html.no-js(lang='en')
           .row
             .large-24.columns
               .tabs-content
-                #panel2-1.content.active
+                #panel2-1.content.active	
                   .large-24.columns
                     ul#mainSection.large-block-grid-3.small-block-grid-1.medium-block-grid-2
                 #panel2-2.content
@@ -162,3 +162,16 @@ html.no-js(lang='en')
     script(src="/foundation/js/newtheme/twitter-entities.js")
     script(src="/foundation/js/newtheme/bootstrap-typeahead.min.js")
     script(src="/foundation/js/newtheme/unherd.js")
+    script(src="js/jquery-1.7.1.min.js")
+    script(src="js/jquery.masonry.js")
+    script(src="text/javascript").
+		var $containter = $('#panel2-1');
+		$containter.imagesLoaded( function(){
+		$containter.masonry({
+			itemSelector: '.large-24.small-24.no-Pg.columns.optimize.tweetsclass.type-topstories',
+        	isAnimated: !Modernizr.csstransitions,
+        	containerStyle: { position: 'absolute' },
+        	isFitWidth: true
+			});	
+		});
+	
