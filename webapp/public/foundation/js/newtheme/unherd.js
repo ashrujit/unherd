@@ -86,7 +86,6 @@ function FnLoadTweets() {
 				statRT="true";
 			}
 			
-			tweet.text = linkify_entities(tweet);
 			
 			tweet_class="topnews";
 			
@@ -135,9 +134,17 @@ function FnLoadTweets() {
             }
             
             if(typeof(tweet.retweeted_status)!="undefined") {
-				tweetSection += '<p>'+tweet.retweeted_status.text+'</p>';
+				
+				var retweet = tweet.retweeted_status;
+				retweet.text = linkify_entities(retweet);
+				tweetSection += '<p>'+retweet.text+'</p>';
+			
 			} else {
+		
+					
+				tweet.text = linkify_entities(tweet);
 				tweetSection += '<p>'+tweet.text+'</p>';
+
 			}
 			
             if(typeof(tweet.entities)!="undefined" && typeof(tweet.entities.media)!="undefined" && typeof(tweet.entities.media[0])!="undefined" && typeof(tweet.entities.media[0].media_url_https)!="undefined") {
