@@ -39,13 +39,14 @@ var twitter = require("./twitter.js")(),
                 if(data){
                     data = JSON.parse(data);
                     var users = [];
+					var ttl = Math.floor(new Date().getTime()/1000) + 86400;
                     data.forEach(function(user){
 						users.push(user.screen_name);
 						self.followerList.push(user.screen_name);
                     });
 					mongo.FnUpdate('followers',
 									{_id: parseInt(user.providers.twitter.id,10)},
-									{$addToSet:{'followers': {$each : users}}},
+									{$addToSet:{'followers': {$each : users}},$set: {ttl:ttl}},
 									{upsert: true},
 									function(e,r){
 										console.log(r);
