@@ -21,7 +21,7 @@ var twitter = require("./twitter.js")(),
         
         function getFollowerDetails(user,err,resp){
           var queue = async.queue(twitterCalls.bind(null, user), 10);
-          var size = 500;
+          var size = 100;
           resp = JSON.parse(resp);
 		  var ids = [];
 		  while(resp && resp.ids.length){
