@@ -95,15 +95,23 @@ html.no-js(lang='en')
     //Tweet reply box 
     .tweetReply
       #reply.f-dropdown.content(data-dropdown-content='data-dropdown-content')
-        form
+        form#normalBox
           .row
+            input(type="hidden",value="",id="ReplyTo")
             label
-              textarea.radius(placeholder='@paul', rows='5')
-            input.button.tiny.radius.no-Mn(type='submit', value='Tweet')
-            span(style='position: relative;')
-              i.fa.fa-picture-o
-              small  Add image
-              input(type='file', style='position: absolute; top: 0; left: 0; opacity: 0;')
+              textarea.radius(placeholder='@username', rows='5',id="TweetText2")
+            input.button.tiny.radius.no-Mn(type='button', value='Reply', id='REPLYBtn')
+            span(style='position: relative;')              
+            span.no-Mn.right 140
+        form#recommendBox
+          .row
+            input(type="hidden",value="",id="ForwTweet")
+            label
+              input(placeholder="@username",class="radius",style="width: 100%;margin-bottom: 10px;",id="ForwardTo")
+            label
+              textarea.radius(placeholder='Your message', rows='5',id="RecText")
+            input.button.tiny.radius.no-Mn(type='button', value='Reply', id='RcBtn')
+            span(style='position: relative;')              
             span.no-Mn.right 140
     //Message Box 
     ul#message.f-dropdown(data-dropdown-content='data-dropdown-content')
