@@ -1,6 +1,8 @@
 $(document).ready(function(){ 
 	
 	FnLoadTweets();
+	$("#recommendBox").hide();	
+	$("#normalBox").show();
 	
 	$("#TwBtn").click(function(){
 		
@@ -29,26 +31,23 @@ $(document).ready(function(){
 		
 	});
 	
-	//$("#RcBtn").click(function(){
+	$("#RcBtn").click(function(){
+				
+		var recommendto = $("#ForwardTo").val();
+		var custommsg = $("#RecText").val();
+		var tweet = $("#ForwTweet").val();		
 		
-		//$("#recommendBox").hide();	
-		//$("#normalBox").show();
-		//var recommendto = $("#ForwardTo").val();
-		//var custommsg = $("#RecText").val();
-		//var tweet = $("#ForwTweet").val();
-		
-		
-		//$.post("/ajaxRecommend", {"tweet_id":tweet,"forward_to": recommendto,"custom_msg":custommsg}, function( data ) {
+		$.post("/ajaxRecommend", {"tweet_id":tweet,"forward_to": recommendto,"custom_msg":custommsg}, function( data ) {
 			
-			//console.log(data);
-			//$("#RecText").val("");
-			//$("#ForwardTo").val("");
-			//$("#tweetbox").slideUp('fast');
-			//$(".tweetCloudIcon").removeClass("cloudup");
+			$("#RecText").val("");
+			$("#ForwardTo").val("");
+			$("#ForwTweet").val("");
+			$("#recommendBox").hide();	
+			$("#normalBox").show();
 			  
-		//});	
+		});	
 		
-	//});
+	});
 
 
 	
@@ -226,6 +225,8 @@ function FnLoadTweets() {
 
 		$(".BtnRP").on("click", function() {
 		  
+		  $("#recommendBox").hide();	
+		  $("#normalBox").show();
 		  $("#TweetText2").val("");
 		  $("#ReplyTo").val("");
 		  var tid = $( this ).data("tid");
@@ -237,12 +238,11 @@ function FnLoadTweets() {
 	
 		$(".BtnFW").on("click", function() {
 		  
-		  var tid = $( this ).data("tid");
-		  $("#recommendBox").show();	
-		  $("#ForwTweet").val(tid);
 		  $("#normalBox").hide(); 
-		  $("#tweetbox").slideDown('fast');
-		  $(".tweetCloudIcon").addClass("cloudup");	  
+		  var tid = $( this ).data("tid");
+		  $("#ForwTweet").val(tid);
+		  $("#recommendBox").show();
+		 
 
 		});
 			
