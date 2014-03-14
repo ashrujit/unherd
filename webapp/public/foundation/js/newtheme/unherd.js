@@ -9,13 +9,26 @@ $(document).ready(function(){
 		$.post("/ajaxTweet", {"tweet":tweet,"replyto":""}, function( data ) {
 			
 			$("#TweetText").val("");
-			$("#composer").removeClass('open').css({"top": "4px",
-"left": "-99999px"});
+			$("#composer").removeClass('open').css({"left": "-99999px"});
 			  
 		});	
 		
 	});
-
+	
+	$("#REPLYBtn").click(function(){
+		
+		var tweet = $("#TweetText2").val();
+		var replyto = $("#ReplyTo").val();
+				
+		$.post("/ajaxTweet", {"tweet":tweet,"replyto":replyto}, function( data ) {
+			
+			$("#TweetText2").val("");
+			$("#reply").removeClass('open').css({"left": "-99999px"});
+			  
+		});	
+		
+	});
+	
 	//$("#RcBtn").click(function(){
 		
 		//$("#recommendBox").hide();	
@@ -159,7 +172,7 @@ function FnLoadTweets() {
             tweetSection += '<div class="large-24 columns"><div class="tweetAction"><ul class="inline-list right no-Mn-Bm hoverEffect">';
 			tweetSection += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'" href="javascript: void(0)" title="Retweet"><i class="fa fa-retweet"></i> '+tweet.retweet_count+'</a></li>';
 			tweetSection += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statFV+'" class="BtnFv'+favorited+'" href="javascript: void(0)" title="Favourite"><i class="fa fa-star"></i> '+tweet.favorite_count+'</a></li>';
-			tweetSection += '<li><a class="BtnRP" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Reply"><i class="fa fa-reply"></i> </a></li>';
+			tweetSection += '<li><a class="BtnRP" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Reply"><i class="fa fa-reply"></i> </a></li>';
 			tweetSection += '<li><a class="BtnFW" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Forward"><i class="fa fa-mail-forward"></i> </a></li>';
 			tweetSection += '</ul></div></div></article></li>';
 						
@@ -213,14 +226,12 @@ function FnLoadTweets() {
 
 		$(".BtnRP").on("click", function() {
 		  
-		  $("#recommendBox").hide();	
-		  $("#normalBox").show(); 
+		  $("#TweetText2").val("");
+		  $("#ReplyTo").val("");
 		  var tid = $( this ).data("tid");
 		  var user = $( this ).data("user");
-		  $("#TweetText").val("@"+user);
-		  $("#ReplyTo").val(tid);
-		  $("#tweetbox").slideDown('fast');
-		  $(".tweetCloudIcon").addClass("cloudup");	  
+		  $("#TweetText2").val("@"+user);
+		  $("#ReplyTo").val(tid);		  	  
 
 		});
 	
