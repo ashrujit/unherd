@@ -288,15 +288,54 @@ function FnLoadMessage(topic_id) {
 		html += '<img src="'+recomend.from.profile_pic+'" alt="'+recomend.from_id+'" class="radius round"></div>';
 		html += '<div class="large-21 small-16 columns">';
 		html += '<h1><a href="https://twitter.com/'+recomend.from_id+'">'+recomend.from.displayName+'</a> </h1>';
-		html += '<h2><a href="">@'+recomend.from_id+'</a> <span></span></h2>';
+		html += '<h2><a href="">@'+recomend.from_id+'</a> '+FnTimeAgo(recomend.at)+'<span></span></h2>';
 		html += '</div>';
 		html += '<div class="large-24 small-24 columns no-Pg">';
 		html += '<div class="content"><p>'+recomend.custom_msg+' : <a href="https://twitter.com/go/status/'+recomend.tweet.id_str+'">https://twitter.com/go/status/'+recomend.tweet.id_str+'</a></p></div></div><div class="clearfix"></div>';
 		
+		var user_detail = {};
+		user_detail[recomend.from_id] = recomend.from;
+		user_detail[recomend.to_id] = recomend.to;
+		
+		var msg = data.msg;
+		
+		for(x in msg) {
+			
+			html += '<blockquote><article class="tweetBox clearfix no-Br"><div class="large-2 small-2 columns no-Pg">';
+			html += '<img src="'+user_detail[msg[x].from_id].profile_pic+'" alt="'+msg[x].from_id+'" class="radius">';
+			html += '</div><div class="large-22 small-22 columns"><h1><a href="https://twitter.com/'+msg[x].from_id+'">'+user_detail[msg[x].from_id].displayName+'</a> </h1><h2><a href="">@'+msg[x].from_id+' </a> <span>| '+FnTimeAgo(msg[x].at)+'</span></h2></div>';
+			html += '<div class="large-24 small-24 columns no-Pg"><div class="content "><p>'+msg[x].message+'</p></div></div></article></blockquote>';
+						
+		}
+		var to = recomend.to_id;
+		if(data.user.username != recomend.from_id) {
+			to = recomend.from_id;
+		}
+		html += '<form><div class="row"><label><textarea id="MyChatMsg" placeholder="Reply" rows="2" class="radius messageBox"></textarea></label>';
+		html += '<input id="SendChatMsg" type="button" class="button tiny radius no-Mn right" value="Reply"></div></form>';
 		
 		$("#recDetail").html(html);
+		
+		$("#SendChatMsg").on("click", function() {
+		  
+		  $.post( "/ajax/readRecommendations/"+topic_id
+			,{
+				message:$("#MyChatMsg").val()
+				,topic_id:topic_id
+				,msg_to:to
+			}
+			, function( data ) {
+			  
+			  FnLoadMessage(topic_id);
+			  
+		  });
+		 
+
+		});
+		
+		
 						
-	});;
+	});
 		
 }
 
@@ -304,8 +343,14 @@ function FnUpdateRecommendations() {
 	
 	$.get( "/ajax/getRecommendations", function( msgs ) {
 		
+		$(".notify").hide();
 		var html = "";
-		console.log(msgs);
+		var num = parseInt(msgs.num);		
+		if(num>0){
+			$(".notify").text(num).show(200);
+		}
+		 
+		msgs = msgs.data;
 		for(x in msgs) {
 			
 			html += "<li><a href='#' onclick=\"FnLoadMessage('"+msgs[x].topic_id+"')\" data-reveal-id='msgModal' data-reveal='data-reveal'>"+msgs[x].custom_msg+"</a></li>";
@@ -313,7 +358,7 @@ function FnUpdateRecommendations() {
 		}
 		$("#message").html(html);		
 		
-	});;
+	});
 	
 }
 

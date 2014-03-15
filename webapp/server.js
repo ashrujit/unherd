@@ -287,12 +287,20 @@ app.get('/getRecommendations', validate.ensureAuthenticated, function(req, res){
 
 app.get('/ajax/getRecommendations', validate.ensureAuthenticated, function(req, res){
 	
-	mongo.find("Forwards",{"$or":[{"from_id":req.user.username},{"to_id":req.user.username}]},function(data,err){ 
+	var checker = {};  checker["checked."+req.user.username] = false;
+	mongo.find("Forwards",{$and:[{$or:[{from_id:req.user.username},{to_id:req.user.username}]},checker]},function(d,e) {
 		
-		res.json(data);
-	
+		if(typeof(d.length) == "undefined")
+		d.length = 0;
+		
+		mongo.find("Forwards",{"$or":[{"from_id":req.user.username},{"to_id":req.user.username}]},function(data,err){ 
+			
+			res.json({data:data,num:d.length});
+		
+		});	
+		
 	});
-
+	
 });
 
 
@@ -388,7 +396,7 @@ app.all('/ajax/readRecommendations/:id', validate.ensureAuthenticated, function(
 				
 					mongo.find("ForwardReplies",{"topic_id":req.params.id},function(data1,err1){ 
 					
-						res.json({ recomend:data[0], msg:data1 });
+						res.json({ user: req.user,recomend:data[0], msg:data1 });
 							
 					});
 					
@@ -412,7 +420,7 @@ app.all('/ajax/readRecommendations/:id', validate.ensureAuthenticated, function(
 					,{"$set":tmp_obj}
 					,{}
 					,function(d,e){
-					res.json({ recomend:data[0], msg:data1 });
+					res.json({ user: req.user,recomend:data[0], msg:data1 });
 				});
 			});
 			
