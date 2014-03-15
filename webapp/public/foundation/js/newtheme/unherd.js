@@ -37,13 +37,14 @@ $(document).ready(function(){
 		var custommsg = $("#RecText").val();
 		var tweet = $("#ForwTweet").val();		
 		
-		$.post("/ajaxRecommend", {"tweet_id":tweet,"forward_to": recommendto,"custom_msg":custommsg}, function( data ) {
+		$.post("/ajaxRecommend", {"tweet_id":tweet,"forward_to": recommendto.substring(1),"custom_msg":custommsg}, function( data ) {
 			
 			$("#RecText").val("");
 			$("#ForwardTo").val("");
 			$("#ForwTweet").val("");
 			$("#recommendBox").hide();	
 			$("#normalBox").show();
+			$("#reply").removeClass('open').css({"left": "-99999px"});
 			  
 		});	
 		
