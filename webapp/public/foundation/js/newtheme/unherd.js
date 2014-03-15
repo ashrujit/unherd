@@ -167,7 +167,7 @@ function FnLoadTweets() {
             tweetSection += '</div></div>';
                         
             tweetSection += '<div class="large-24 columns"><div class="tweetAction"><ul class="inline-list right no-Mn-Bm hoverEffect">';
-			tweetSection += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'" href="javascript: void(0)" title="Retweet"><i class="fa fa-retweet"></i> '+tweet.retweet_count+'</a></li>';
+			tweetSection += '<li><a data-user="'+tweet.user.screen_name+'" data-tweet="'+tweet.text+'" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'" href="javascript: void(0)" title="Retweet"><i class="fa fa-retweet"></i> '+tweet.retweet_count+'</a></li>';
 			tweetSection += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statFV+'" class="BtnFv'+favorited+'" href="javascript: void(0)" title="Favourite"><i class="fa fa-star"></i> '+tweet.favorite_count+'</a></li>';
 			tweetSection += '<li><a class="BtnRP" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Reply"><i class="fa fa-reply"></i> </a></li>';
 			tweetSection += '<li><a class="BtnFW" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Forward"><i class="fa fa-mail-forward"></i> </a></li>';
@@ -181,7 +181,7 @@ function FnLoadTweets() {
 		FnUpdateMyProfile();
 		
 	
-		$(".BtnRT").on("click", function() {
+		/*$(".BtnRT").on("click", function() {
 		  
 		  var tid = $( this ).data("tid");
 		  var stat = $( this ).data("stat");
@@ -197,7 +197,7 @@ function FnLoadTweets() {
 			  });
 		  }			
 			
-		});
+		});*/
 
 		$(".BtnFv").on("click", function() {
 		  
@@ -217,6 +217,19 @@ function FnLoadTweets() {
 			//FnLoadTweets();
 			  
 		  });
+
+		});
+
+		$(".BtnRT").on("click", function() {
+		  
+		  $("#recommendBox").hide();	
+		  $("#normalBox").show();
+		  $("#TweetText2").val("");
+		  $("#ReplyTo").val("");
+		  var tid = $( this ).data("tid");
+		  var user = $( this ).data("user");
+		  var tweet = $( this ).data("tweet");
+		  $("#TweetText2").val("RT:@"+user+" "+tweet);		  	  
 
 		});
 
