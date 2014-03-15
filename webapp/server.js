@@ -285,6 +285,16 @@ app.get('/getRecommendations', validate.ensureAuthenticated, function(req, res){
 
 });
 
+app.get('/ajax/getRecommendations', validate.ensureAuthenticated, function(req, res){
+	
+	mongo.find("Forwards",{"$or":[{"from_id":req.user.username},{"to_id":req.user.username}]},function(data,err){ 
+		
+		res.json(data);
+	
+	});
+
+});
+
 
 app.all('/readRecommendations/:id', validate.ensureAuthenticated, function(req, res){
 	
@@ -340,6 +350,69 @@ app.all('/readRecommendations/:id', validate.ensureAuthenticated, function(req, 
 					,{}
 					,function(d,e){
 					res.render('recommenddetails', { user: req.user, recomend:data[0], msg:data1 });
+				});
+			});
+			
+		});
+	
+	}
+	
+	
+});
+
+app.all('/ajax/readRecommendations/:id', validate.ensureAuthenticated, function(req, res){
+	
+	if(req.method == 'POST') {
+		
+		var insertdoc = {
+			"topic_id":req.params.id,
+			"from_id":req.user.username,
+			"message":req.body.message,
+			"at":new Date()
+		};
+
+		mongo.insert("ForwardReplies",insertdoc,function(){
+			
+			var tmp_obj = {}; 
+			tmp_obj["checked."+req.body.msg_to] = false;
+			tmp_obj["checked."+req.user.username] = true;
+			
+			
+			mongo.FnUpdate("Forwards"
+				,{"topic_id":req.body.topic_id}
+				,{"$inc":{"message_count":1},"$set":tmp_obj}
+				,{}
+				,function(d,e){
+				
+				mongo.find("Forwards",{"topic_id":req.params.id},function(data,err){ 
+				
+					mongo.find("ForwardReplies",{"topic_id":req.params.id},function(data1,err1){ 
+					
+						res.json({ recomend:data[0], msg:data1 });
+							
+					});
+					
+				});
+
+			});	
+
+		});
+		
+	} else {
+
+		mongo.find("Forwards",{"topic_id":req.params.id},function(data,err){ 
+		
+			mongo.find("ForwardReplies",{"topic_id":req.params.id},function(data1,err1){ 
+				
+				var tmp_obj = {}; 
+				tmp_obj["checked."+req.user.username] = true;
+							
+				mongo.FnUpdate("Forwards"
+					,{"topic_id":req.params.id}
+					,{"$set":tmp_obj}
+					,{}
+					,function(d,e){
+					res.json({ recomend:data[0], msg:data1 });
 				});
 			});
 			

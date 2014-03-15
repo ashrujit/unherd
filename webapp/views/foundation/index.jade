@@ -115,47 +115,11 @@ html.no-js(lang='en')
             span(style='position: relative;')              
             span.no-Mn.right 140
     //Message Box 
-    ul#message.f-dropdown(data-dropdown-content='data-dropdown-content')
-      li
-        a(href='#', data-reveal-id='msgModal', data-reveal='data-reveal') Message
-      li
-        a(href='#') This is another
-      li
-        a(href='#') Yet another
+    ul#message.f-dropdown(data-dropdown-content='data-dropdown-content')      
     //Message modal 
     #msgModal.reveal-modal.small(data-reveal='data-reveal', style='z-index: 100;')
       a.close-reveal-modal ×
-      article.tweetBox.clearfix
-        .large-3.small-3.columns.no-Pg
-          img.radius(src='https://pbs.twimg.com/profile_images/420826194083213312/CP1RmLa3.jpeg', alt='Paul')
-        .large-21.small-16.columns
-          h1
-            a(href='') Paul Irish
-          h2
-            a(href='') @paul_irish 
-            span | 3s
-        .large-24.small-24.columns.no-Pg
-          .content
-            p
-              | With the continuous evolution of the Web, web industry job titles are created at a very impressive rate
-              a(href='') http://bit.ly/P4pxXZ
-        .large-24.columns
-          .tweetAction
-            ul.inline-list.right.no-Mn-Bm.hoverEffect
-              li
-                a(href='', title='Retweet')
-                  i.fa.fa-retweet
-                  | 4
-              li
-                a(href='', title='Favourite')
-                  i.fa.fa-star
-                  | 10
-              li
-                a(href='', title='Reply')
-                  i.fa.fa-reply
-              li
-                a(href='', title='Forward')
-                  i.fa.fa-mail-forward
+      article#recDetail.tweetBox.clearfix
     script(src='/foundation/bower_components/jquery/dist/jquery.min.js')
     script(src='/foundation/bower_components/foundation/js/foundation.min.js')
     script(src='/foundation/js/masonry.pkgd.min.js')

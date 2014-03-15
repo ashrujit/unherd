@@ -200,3 +200,25 @@ a {
     margin-bottom: 10px;
   }
 }
+
+
+.messageBox {
+	margin:10px 0;
+}
+
+.messageModal {
+
+	max-height: 500px;
+	overflow-y: scroll;
+		
+	blockquote {
+		margin:0;
+		border-bottom: 1px solid #ddd;	
+		padding: 1px;
+		
+	}
+}
+
+
+
+

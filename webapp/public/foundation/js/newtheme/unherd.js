@@ -182,7 +182,7 @@ function FnLoadTweets() {
 		$("#mainSection").html(tweetSection);
 		$(".type-chatter").hide();
 		FnUpdateMyProfile();
-		
+		FnUpdateRecommendations();
 	
 		/*$(".BtnRT").on("click", function() {
 		  
@@ -273,6 +273,45 @@ function FnUpdateMyProfile() {
 		$("#my_status_count").text(user.statuses_count);
 		$("#my_friends_count").text(user.friends_count);
 		$("#my_followers_count").text(user.followers_count);
+				
+	});
+	
+}
+
+function FnLoadMessage(topic_id) {
+	
+	$.get( "/ajax/readRecommendations/"+topic_id, function( data ) {
+		
+		var recomend = data.recomend;
+		var html = '';
+		html += '<div class="large-3 small-3 columns no-Pg">';
+		html += '<img src="'+recomend.from.profile_pic+'" alt="'+recomend.from_id+'" class="radius round"></div>';
+		html += '<div class="large-21 small-16 columns">';
+		html += '<h1><a href="https://twitter.com/'+recomend.from_id+'">'+recomend.from.displayName+'</a> </h1>';
+		html += '<h2><a href="">@'+recomend.from_id+'</a> <span></span></h2>';
+		html += '</div>';
+		html += '<div class="large-24 small-24 columns no-Pg">';
+		html += '<div class="content"><p>'+recomend.custom_msg+' : <a href="https://twitter.com/go/status/'+recomend.tweet.id_str+'">https://twitter.com/go/status/'+recomend.tweet.id_str+'</a></p></div></div><div class="clearfix"></div>';
+		
+		
+		$("#recDetail").html(html);
+						
+	});;
+		
+}
+
+function FnUpdateRecommendations() {
+	
+	$.get( "/ajax/getRecommendations", function( msgs ) {
+		
+		var html = "";
+		console.log(msgs);
+		for(x in msgs) {
+			
+			html += "<li><a href='#' onclick=\"FnLoadMessage('"+msgs[x].topic_id+"')\" data-reveal-id='msgModal' data-reveal='data-reveal'>"+msgs[x].custom_msg+"</a></li>";
+			
+		}
+		$("#message").html(html);		
 		
 	});;
 	
