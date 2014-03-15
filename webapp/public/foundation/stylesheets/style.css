@@ -1,24 +1,4 @@
-/* code for loading indicator. pace.js */
-
-.pace .pace-progress {
-  background: #29d;
-  position: fixed;
-  z-index: 2000;
-  top: 0;
-  left: 0;
-  height: 2px;
-
-  -webkit-transition: width 1s;
-  -moz-transition: width 1s;
-  -o-transition: width 1s;
-  transition: width 1s;
-}
-
-.pace-inactive {
-  display: none;
-}
-
-
+@charset "UTF-8";
 /* line 300, ../bower_components/foundation/scss/foundation/components/_global.scss */
 meta.foundation-version {
   font-family: "/5.2.0/";
@@ -11241,4 +11221,21 @@ a:hover, a:active, a:focus {
 /* line 199, ../scss/_ui.scss */
 .tweetReply textarea {
   margin-bottom: 10px;
+}
+
+/* line 205, ../scss/_ui.scss */
+.messageBox {
+  margin: 10px 0;
+}
+
+/* line 209, ../scss/_ui.scss */
+.messageModal {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+/* line 214, ../scss/_ui.scss */
+.messageModal blockquote {
+  margin: 0;
+  border-bottom: 1px solid #ddd;
+  padding: 1px;
 }

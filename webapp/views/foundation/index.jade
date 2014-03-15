@@ -10,11 +10,12 @@ html.no-js(lang='en')
     script(src='/foundation/bower_components/modernizr/modernizr.js')
     script(src="/foundation/js/newtheme/pace.min.js")
   body
+ 
     .off-canvas-wrap
       .inner-wrap
         nav.tab-bar.fixed
           section.left-small.no-Br
-            b.notify 5
+            b.notify(style="display:none;") 
             a.left-off-canvas-toggle.menu-icon
               span
           .row
@@ -34,8 +35,8 @@ html.no-js(lang='en')
                   span(style='position: relative;')
                     i.fa.fa-picture-o
                     small  Add image
-                    input(type='file', style='position: absolute; top: 0; left: 0; opacity: 0;')
-                  span.no-Mn.right 140
+                    input(type='file', style='position: absolute; top: 0; left: 0; opacity: 0;')                  
+                  span.no-Mn.right 140(id='charCountId')
         aside.left-off-canvas-menu
           ul.off-canvas-list
             .large-24.columns
@@ -45,7 +46,7 @@ html.no-js(lang='en')
                     a(href='#') UnHerd
               ul.large-block-grid-2.left
                 li
-                  a(href='', data-dropdown='message', data-options='is_hover:true')
+                  a(href='#', data-dropdown='message', data-options='is_hover:true')
                     i.fa.fa-envelope-o
                 li
                   a(href='/logout')
@@ -61,15 +62,15 @@ html.no-js(lang='en')
               .large-8.small-8.columns.no-Pg
                 .large-24.columns.sectionHeader Tweets
                 .large-24.columns.no-Pg
-                  p #{user.statuses_count}
+                  p#my_status_count #{user.statuses_count}
               .large-8.small-8.columns.no-Pg
                 .large-24.columns.sectionHeader Following
                 .large-24.columns.no-Pg
-                  p #{user.friends_count}
+                  p#my_friends_count #{user.friends_count}
               .large-8.small-8.columns.no-Pg
                 .large-24.columns.sectionHeader Followers
                 .large-24.columns.no-Pg
-                  p #{user.followers_count}
+                  p#my_followers_count #{user.followers_count}
             .large-24.columns.no-Pg.preferences
               h5.sectionHeader Select Preferences
               .large-24.columns
@@ -107,54 +108,18 @@ html.no-js(lang='en')
           .row
             input(type="hidden",value="",id="ForwTweet")
             label
-              input(placeholder="@username",class="radius",style="width: 100%;margin-bottom: 10px;",id="ForwardTo")
+              input(placeholder="@username",class="radius typeahead",style="width: 100%;margin-bottom: 10px;",id="ForwardTo")
             label
               textarea.radius(placeholder='Your message', rows='5',id="RecText")
-            input.button.tiny.radius.no-Mn(type='button', value='Reply', id='RcBtn')
+            input.button.tiny.radius.no-Mn(type='button', value='Forward', id='RcBtn')
             span(style='position: relative;')              
             span.no-Mn.right 140
     //Message Box 
-    ul#message.f-dropdown(data-dropdown-content='data-dropdown-content')
-      li
-        a(href='#', data-reveal-id='msgModal', data-reveal='data-reveal') Message
-      li
-        a(href='#') This is another
-      li
-        a(href='#') Yet another
+    ul#message.f-dropdown(data-dropdown-content='data-dropdown-content')      
     //Message modal 
     #msgModal.reveal-modal.small(data-reveal='data-reveal', style='z-index: 100;')
       a.close-reveal-modal ×
-      article.tweetBox.clearfix
-        .large-3.small-3.columns.no-Pg
-          img.radius(src='https://pbs.twimg.com/profile_images/420826194083213312/CP1RmLa3.jpeg', alt='Paul')
-        .large-21.small-16.columns
-          h1
-            a(href='') Paul Irish
-          h2
-            a(href='') @paul_irish 
-            span | 3s
-        .large-24.small-24.columns.no-Pg
-          .content
-            p
-              | With the continuous evolution of the Web, web industry job titles are created at a very impressive rate
-              a(href='') http://bit.ly/P4pxXZ
-        .large-24.columns
-          .tweetAction
-            ul.inline-list.right.no-Mn-Bm.hoverEffect
-              li
-                a(href='', title='Retweet')
-                  i.fa.fa-retweet
-                  | 4
-              li
-                a(href='', title='Favourite')
-                  i.fa.fa-star
-                  | 10
-              li
-                a(href='', title='Reply')
-                  i.fa.fa-reply
-              li
-                a(href='', title='Forward')
-                  i.fa.fa-mail-forward
+      article#recDetail.tweetBox.clearfix
     script(src='/foundation/bower_components/jquery/dist/jquery.min.js')
     script(src='/foundation/bower_components/foundation/js/foundation.min.js')
     script(src='/foundation/js/masonry.pkgd.min.js')
