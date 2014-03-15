@@ -333,3 +333,17 @@ function decideRankColor(score){
 	else
 		return "progress alert round";
 };
+
+//Remaining chars limit.
+$("#TweetText").keyup(function(e) {
+	// console.log($(this).val().length);	
+	var len = $(this).val().length;
+	if(len > 140){
+		var subString = $(this).val().substring(0, 140);
+		$(this).val(subString);		
+	}
+	else{
+		$('#charCountId').text(140 - len);
+	}	
+	
+});             
