@@ -85,7 +85,6 @@ function FnLoadTweets() {
 	  	for(i=0; i<tweets.length;i++) {
 			
 			var tweet = tweets[i];
-
 				
 			var retweeted = "",favorited = "",statRT="false",statFV="false",RTtext="Retweet";
 			if(tweet.favorited!=false) {
@@ -97,8 +96,7 @@ function FnLoadTweets() {
 				RTtext="Retweeted"
 				statRT="true";
 			}
-			
-			
+		
 			tweet_class="topnews";
 			
 			if(i<=tweets.length/2) {
@@ -130,6 +128,7 @@ function FnLoadTweets() {
 			// tweetSection += '<div class="progress success round"><span  data-tooltip  class = "has-tip tip-top"  title = "'+parseFloat(tweet.score).toFixed(2)+'" >';
 			tweetSection += '<div class="'+decideRankColor(tweet.score)+'"><span  data-tooltip  class = "has-tip tip-top"  title = "'+parseFloat(tweet.score).toFixed(2)+'" >';
 
+			
 		    var percent = 	(parseFloat(tweet.score).toFixed(2))*100/max_score;			
 
 			tweetSection += '<span class="meter" style="width: '+percent.toFixed(0)+'%"></span> </span>';
@@ -139,10 +138,10 @@ function FnLoadTweets() {
 			tweetSection += '<div class="content">';
 			
 			if(typeof(tweet.retweeted_status)!="undefined" && typeof(tweet.retweeted_status.entities)!="undefined" && typeof(tweet.retweeted_status.entities.media)!="undefined" && typeof(tweet.retweeted_status.entities.media[0])!="undefined" && typeof(tweet.retweeted_status.entities.media[0].media_url_https)!="undefined") {
-				tweetSection += '<div class="large-24 columns media text-center"><img src="'+tweet.retweeted_status.entities.media[0].media_url_https+'" alt="" /></div>';
+				tweetSection += '<div class="large-24 columns media text-center"><a target="_blank" href="https://twitter.com/'+tweet.user.screen_name+'/status/'+tweet.id_str+'" title="Go to Tweet"><img src="'+tweet.retweeted_status.entities.media[0].media_url_https+'" alt="" /></a></div>';
 				tweetSection += '<div class="large-24 columns">';
             } else if(typeof(tweet.entities)!="undefined" && typeof(tweet.entities.media)!="undefined" && typeof(tweet.entities.media[0])!="undefined" && typeof(tweet.entities.media[0].media_url_https)!="undefined") {
-				tweetSection += '<div class="large-24 columns media text-center"><img src="'+tweet.entities.media[0].media_url_https+'" alt="" /></div>';
+				tweetSection += '<div class="large-24 columns media text-center"><a target="_blank" href="https://twitter.com/'+tweet.user.screen_name+'/status/'+tweet.id_str+'" title="Go to Tweet"><img src="'+tweet.entities.media[0].media_url_https+'" alt="" /></a></div>';
 				tweetSection += '<div class="large-24 columns">';
             }
             
@@ -152,8 +151,7 @@ function FnLoadTweets() {
 				retweet.text = linkify_entities(retweet);
 				tweetSection += '<p>'+retweet.text+'</p>';
 			
-			} else {
-		
+			} else {	
 					
 				tweet.text = linkify_entities(tweet);
 				tweetSection += '<p>'+tweet.text+'</p>';
@@ -167,22 +165,20 @@ function FnLoadTweets() {
 			    tweetSection += '</div>';
             }
             tweetSection += '</div></div>';
-            
-            
+                        
             tweetSection += '<div class="large-24 columns"><div class="tweetAction"><ul class="inline-list right no-Mn-Bm hoverEffect">';
 			tweetSection += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'" href="javascript: void(0)" title="Retweet"><i class="fa fa-retweet"></i> '+tweet.retweet_count+'</a></li>';
 			tweetSection += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statFV+'" class="BtnFv'+favorited+'" href="javascript: void(0)" title="Favourite"><i class="fa fa-star"></i> '+tweet.favorite_count+'</a></li>';
 			tweetSection += '<li><a class="BtnRP" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Reply"><i class="fa fa-reply"></i> </a></li>';
 			tweetSection += '<li><a class="BtnFW" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Forward"><i class="fa fa-mail-forward"></i> </a></li>';
+			tweetSection += '<li><a target="_blank" href="https://twitter.com/'+tweet.user.screen_name+'/status/'+tweet.id_str+'" title="Go to Tweet"><i class="fa fa-link"></i> </a></li>';
 			tweetSection += '</ul></div></div></article></li>';
-						
-			
-			
-					
+							
 		}
 		
 		$("#mainSection").html(tweetSection);
-		$(".type-chatter").hide();	
+		$(".type-chatter").hide();
+		FnUpdateMyProfile();
 		
 	
 		$(".BtnRT").on("click", function() {
@@ -254,7 +250,17 @@ function FnLoadTweets() {
 	
 }
 
-
+function FnUpdateMyProfile() {
+	
+	$.get( "/json/profile", function( user ) {
+		
+		$("#my_status_count").text(user.statuses_count);
+		$("#my_friends_count").text(user.friends_count);
+		$("#my_followers_count").text(user.followers_count);
+		
+	});;
+	
+}
 
 function FnTimeAgo(time){
 	
@@ -300,6 +306,7 @@ $('.typeahead').typeahead(null, {
 	displayKey: 'name',
 	source: followers.ttAdapter()
 });
+
 
 //Decide color based on the tweet score.
 function decideRankColor(score){

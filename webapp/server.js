@@ -431,6 +431,13 @@ app.get('/json/timeline/:id', validate.ensureAuthenticated, function(req, res){
 	});
 });
 
+app.get('/json/profile', validate.ensureAuthenticated, function(req, res){
+	twitter.timeline(req.user,req.user.username,function(err,data){
+		var resp = JSON.parse(data);
+		res.json(resp[0].user);
+	});
+});
+
 app.get('/account', validate.ensureAuthenticated, function(req, res){ 
   res.render('account', { user: req.user });
 });

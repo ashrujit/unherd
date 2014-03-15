@@ -10,6 +10,7 @@ html.no-js(lang='en')
     script(src='/foundation/bower_components/modernizr/modernizr.js')
     script(src="/foundation/js/newtheme/pace.min.js")
   body
+ 
     .off-canvas-wrap
       .inner-wrap
         nav.tab-bar.fixed
@@ -61,15 +62,15 @@ html.no-js(lang='en')
               .large-8.small-8.columns.no-Pg
                 .large-24.columns.sectionHeader Tweets
                 .large-24.columns.no-Pg
-                  p #{user.statuses_count}
+                  p#my_status_count #{user.statuses_count}
               .large-8.small-8.columns.no-Pg
                 .large-24.columns.sectionHeader Following
                 .large-24.columns.no-Pg
-                  p #{user.friends_count}
+                  p#my_friends_count #{user.friends_count}
               .large-8.small-8.columns.no-Pg
                 .large-24.columns.sectionHeader Followers
                 .large-24.columns.no-Pg
-                  p #{user.followers_count}
+                  p#my_followers_count #{user.followers_count}
             .large-24.columns.no-Pg.preferences
               h5.sectionHeader Select Preferences
               .large-24.columns
@@ -110,7 +111,7 @@ html.no-js(lang='en')
               input(placeholder="@username",class="radius",style="width: 100%;margin-bottom: 10px;",id="ForwardTo")
             label
               textarea.radius(placeholder='Your message', rows='5',id="RecText")
-            input.button.tiny.radius.no-Mn(type='button', value='Reply', id='RcBtn')
+            input.button.tiny.radius.no-Mn(type='button', value='Forward', id='RcBtn')
             span(style='position: relative;')              
             span.no-Mn.right 140
     //Message Box 
