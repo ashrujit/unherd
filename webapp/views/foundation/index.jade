@@ -46,7 +46,7 @@ html.no-js(lang='en')
                     a(href='#') UnHerd
               ul.large-block-grid-2.left
                 li
-                  a(href='', data-dropdown='message', data-options='is_hover:true')
+                  a(href='#', data-dropdown='message', data-options='is_hover:true')
                     i.fa.fa-envelope-o
                 li
                   a(href='/logout')
@@ -108,7 +108,7 @@ html.no-js(lang='en')
           .row
             input(type="hidden",value="",id="ForwTweet")
             label
-              input(placeholder="@username",class="radius",style="width: 100%;margin-bottom: 10px;",id="ForwardTo")
+              input(placeholder="@username",class="radius typeahead",style="width: 100%;margin-bottom: 10px;",id="ForwardTo")
             label
               textarea.radius(placeholder='Your message', rows='5',id="RecText")
             input.button.tiny.radius.no-Mn(type='button', value='Forward', id='RcBtn')
