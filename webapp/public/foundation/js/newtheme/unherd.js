@@ -243,7 +243,7 @@ function FnLoadTweets() {
 		  var tid = $( this ).data("tid");
 		  var user = $( this ).data("user");
 		  var tweet = $( this ).data("tweet");
-		  $("#TweetText2").val("RT:@"+user+" "+tweet);		  	  
+		  $("#TweetText2").val("RT:@"+user+" "+tweet).keyup();		  	  
 
 		});
 
@@ -255,7 +255,7 @@ function FnLoadTweets() {
 		  $("#ReplyTo").val("");
 		  var tid = $( this ).data("tid");
 		  var user = $( this ).data("user");
-		  $("#TweetText2").val("@"+user);
+		  $("#TweetText2").val("@"+user).keyup();
 		  $("#ReplyTo").val(tid);		  	  
 
 		});
@@ -265,8 +265,9 @@ function FnLoadTweets() {
 		  $("#normalBox").hide(); 
 		  var tid = $( this ).data("tid");
 		  $("#ForwTweet").val(tid);
+		  $("#RecText").val("").keyup();
 		  $("#recommendBox").show();
-		 
+		  
 
 		});
 			
@@ -430,15 +431,14 @@ function decideRankColor(score){
 };
 
 //Remaining chars limit.
-$("#TweetText").keyup(function(e) {
-	// console.log($(this).val().length);	
+$(".LimitedTextField").keyup(function(e) {
+	
 	var len = $(this).val().length;
+	var el = $(this).data("target");
+	$('#'+el).text(140 - len);
+	$('#'+el).css({"color":"#b3b3b3","font-weight":"normal"});
 	if(len > 140){
-		var subString = $(this).val().substring(0, 140);
-		$(this).val(subString);		
-	}
-	else{
-		$('#charCountId').text(140 - len);
+		$('#'+el).css({"color":"#b30204","font-weight":"900"});		
 	}	
 	
 });             
