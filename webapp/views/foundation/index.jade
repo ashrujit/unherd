@@ -76,10 +76,10 @@ html.no-js(lang='en')
               .large-24.columns
                 form(style='margin: 10px 0;')
                   label
-                    input(type='radio', value='1', required='', name="content_type", class="content_type" data-id="topstories")
+                    input(type='radio', value='1', required='', name="content_type", class="content_type" data-id="1")
                     | Top Stories
                   label
-                    input(type='radio', value='1', required='', name="content_type", class="content_type" data-id="chatter")
+                    input(type='radio', value='1', required='', name="content_type", class="content_type" data-id="2")
                     | Chatter
         section.main-section
           .row
@@ -89,7 +89,8 @@ html.no-js(lang='en')
                   .large-24.columns
                     ul#mainSection.large-block-grid-3.small-block-grid-1.medium-block-grid-2
                 #panel2-2.content
-                  p Chatter content
+                  .large-24.columns
+                    ul#mainSection2.large-block-grid-3.small-block-grid-1.medium-block-grid-2
                 #panel2-3.content
                   p Personal tweets
         a.exit-off-canvas

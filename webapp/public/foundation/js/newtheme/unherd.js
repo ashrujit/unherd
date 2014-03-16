@@ -55,8 +55,8 @@ $(document).ready(function(){
 	$(".content_type").click(function() {
 
 		var el = $(this).data("id");	
-		$(".tweetsclass").hide();
-		$(".type-"+el).show();			
+		$(".tabs-content .content").removeClass("active");
+		$("#panel2-"+el).addClass("active");			
 		
 	});
 	
@@ -71,8 +71,7 @@ function FnLoadTweets() {
 		
 		var tophtml = "";
 		var chatterhtml = "";
-		var tweetSection = "";
-		
+				
 		/**percent calculation**/
 		var max_score = 1;
 		if(typeof(tweets)!="undefined" && typeof(tweets[0])!="undefined" ) {
@@ -86,6 +85,7 @@ function FnLoadTweets() {
 	  	for(i=0; i<tweets.length;i++) {
 			
 			var tweet = tweets[i];
+			var tweetSection = "";
 				
 			var retweeted = "",favorited = "",statRT="false",statFV="false",RTtext="Retweet";
 			if(tweet.favorited!=false) {
@@ -98,8 +98,7 @@ function FnLoadTweets() {
 				statRT="true";
 			}
 		
-			tweet_class="topnews";
-			
+			var tweet_class;			
 			if(i<=tweets.length/2) {
 				tweet_class="type-topstories";
 			} else {
@@ -178,11 +177,20 @@ function FnLoadTweets() {
 			tweetSection += '<li><a target="_blank" href="https://twitter.com/'+tweet.user.screen_name+'/status/'+tweet.id_str+'" title="Go to Tweet"><i class="fa fa-link"></i> </a></li>';
 			tweetSection += '</ul></div></div></article></li>';
 							
+			if(i<=tweets.length/2) {
+				tophtml += tweetSection;
+			} else {
+				chatterhtml += tweetSection;
+			}
+		
 		}
 		
-		$("#mainSection").html(tweetSection);
-		FnDoMasonry();
-		$(".type-chatter").hide();
+		
+		
+		$("#mainSection").html(tophtml);
+		$("#mainSection2").html(chatterhtml);
+		FnDoMasonry("#mainSection",".type-topstories");
+		FnDoMasonry("#mainSection2",".type-chatter");
 		FnUpdateMyProfile();
 		FnUpdateRecommendations();
 	
@@ -435,12 +443,12 @@ $("#TweetText").keyup(function(e) {
 });             
 
 
-function FnDoMasonry(){
-	var $containter = $('#mainSection');
+function FnDoMasonry(container,data){
+	var $containter = $(container);
 	//alert(1);
 	$containter.imagesLoaded( function(){
 		$containter.masonry({
-		itemSelector: '.optimize',
+		itemSelector: data,
 		isAnimated: !Modernizr.csstransitions,
 		isFitWidth: true
 	});	
