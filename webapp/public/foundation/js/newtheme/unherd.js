@@ -181,6 +181,7 @@ function FnLoadTweets() {
 		}
 		
 		$("#mainSection").html(tweetSection);
+		FnDoMasonry();
 		$(".type-chatter").hide();
 		FnUpdateMyProfile();
 		FnUpdateRecommendations();
@@ -432,3 +433,16 @@ $("#TweetText").keyup(function(e) {
 	}	
 	
 });             
+
+
+function FnDoMasonry(){
+	var $containter = $('#mainSection');
+	//alert(1);
+	$containter.imagesLoaded( function(){
+		$containter.masonry({
+		itemSelector: '.optimize',
+		isAnimated: !Modernizr.csstransitions,
+		isFitWidth: true
+	});	
+});
+}
