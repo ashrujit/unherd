@@ -55,8 +55,8 @@ $(document).ready(function(){
 	$(".content_type").click(function() {
 
 		var el = $(this).data("id");	
-		$(".tabs-content .content").removeClass("active");
-		$("#panel2-"+el).addClass("active");			
+		$(".alltweets").hide();
+		$("#mainSection"+el).show();			
 		
 	});
 	
@@ -191,6 +191,7 @@ function FnLoadTweets() {
 		$("#mainSection2").html(chatterhtml);
 		FnDoMasonry("#mainSection",".type-topstories");
 		FnDoMasonry("#mainSection2",".type-chatter");
+		//$("#mainSection2").hide();
 		FnUpdateMyProfile();
 		FnUpdateRecommendations();
 	
