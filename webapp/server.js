@@ -256,8 +256,13 @@ app.post('/ajaxRecommend', validate.ensureAuthenticated, function(req, res){
 				});			
 
 			} else {
-
-				var dmmsg = "You have a tweet recommendation on unherd.Check the tweet here. https://twitter.com/sample/status/"+req.body.tweet_id;
+				
+				var dmmsg;
+				if(typeof(req.body.custom_msg)!="undefined" && req.body.custom_msg!=null && req.body.custom_msg!=""){
+					dmmsg = "@"+req.body.forward_to+" "+req.body.custom_msg+" https://twitter.com/t/status/"+req.body.tweet_id+" - via unherd.co";
+				} else{
+					dmmsg = "@"+req.body.forward_to+" thought may find this tweet interesting https://twitter.com/t/status/"+req.body.tweet_id+" - via unherd.co";
+				}
 				twitter.directmessage(req.user,req.body.forward_to,dmmsg,function(){
 						
 					res.json({ "status":"OK","error":null });
