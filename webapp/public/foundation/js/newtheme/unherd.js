@@ -145,17 +145,19 @@ function FnLoadTweets() {
 				tweetSection += '<div class="large-24 columns">';
             }
             
-            var RTstuff;
+            var RT={};
             if(typeof(tweet.retweeted_status)!="undefined") {
 				
-				RTstuff = tweet.retweeted_status.text;
+				RT.stuff = tweet.retweeted_status.text;
+				RT.user = tweet.retweeted_status.user.screen_name;
 				var retweet = tweet.retweeted_status;
 				retweet.text = linkify_entities(retweet);
 				tweetSection += '<p>'+retweet.text+'</p>';
 			
 			} else {	
 				
-				RTstuff = tweet.text;	
+				RT.stuff = tweet.text;	
+				RT.user = tweet.user.screen_name;	
 				tweet.text = linkify_entities(tweet);
 				tweetSection += '<p>'+tweet.text+'</p>';
 
@@ -170,7 +172,7 @@ function FnLoadTweets() {
             tweetSection += '</div></div>';
                         
             tweetSection += '<div class="large-24 columns"><div class="tweetAction"><ul class="inline-list right no-Mn-Bm hoverEffect">';
-			tweetSection += '<li><a data-user="'+tweet.user.screen_name+'" data-tweet="'+RTstuff+'" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'" href="javascript: void(0)" title="Retweet"><i class="fa fa-retweet"></i> '+tweet.retweet_count+'</a></li>';
+			tweetSection += '<li><a data-user="'+RT.user+'" data-tweet="'+RT.stuff+'" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'" href="javascript: void(0)" title="Retweet"><i class="fa fa-retweet"></i> '+tweet.retweet_count+'</a></li>';
 			tweetSection += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statFV+'" class="BtnFv'+favorited+'" href="javascript: void(0)" title="Favourite"><i class="fa fa-star"></i> '+tweet.favorite_count+'</a></li>';
 			tweetSection += '<li><a class="BtnRP" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Reply"><i class="fa fa-reply"></i> </a></li>';
 			tweetSection += '<li><a class="BtnFW" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Forward"><i class="fa fa-mail-forward"></i> </a></li>';
