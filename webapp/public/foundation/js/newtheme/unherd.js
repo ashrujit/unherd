@@ -382,14 +382,14 @@ function FnUpdateRecommendations() {
 			html += '<div class="large-4 columns no-Pg"><img src="'+msgs[x].from.profile_pic+'" alt="'+msgs[x].from.displayName+'" class="circular"></div>';	
 			html += '<div class="large-20 columns"><p class="no-Mn">'+msgs[x].from.displayName+'</p></div>';	
 			html += '</div><div class="clearfix"></div>';			
-			html += "</a></li><li class=""></li>";
+			html += "</a></li><li class=''></li>";
 			
 			
-			popuphtml += '<a href="#" class="messageLink" onclick=\"FnLoadMessage('"+msgs[x].topic_id+"')\"></a>';
+			popuphtml += '<a href="#" class="messageLink" onclick=\'FnLoadMessage("'+msgs[x].topic_id+'")\'></a>';
 			popuphtml += '<div class="large-1 small-1 columns no-Pg"><img src="'+msgs[x].from.profile_pic+'" alt="'+msgs[x].from.displayName+'" class="circular"> </div>';
 			popuphtml += '<div class="large-23 small-23 columns"><h1 class="left"><a href="">'+msgs[x].from.displayName+' </a></h1><h2 class="left"><a href="">&nbsp; | @'+msgs[x].from_id+' </a><span>| '+FnTimeAgo(msgs[x].at)+'</span></h2></div>';
 			popuphtml += '<div class="large-24 small-24 columns no-Pg"><div class="content ">';
-			popuphtml += '<p>'+msgs[x].message+'</p>';
+			popuphtml += '<p>'+msgs[x].custom_msg+' : <a href="https://twitter.com/go/status/'+msgs[x].tweet.id_str+'">https://twitter.com/go/status/'+msgs[x].tweet.id_str+'</a></p>';
 			popuphtml += '</div></div><div class="clearfix"></div>';
 		}
 		html += '<li class="text-center"><a href="" onclick=\"FnLoadAllMessage()\" data-reveal-id="msgModal" data-reveal><small>View all messages</small></a></li>';
