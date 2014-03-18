@@ -1,0 +1,89 @@
+doctype html5
+html.no-js(lang='en')
+head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Unherd
+    link(rel='stylesheet', href='/foundation/stylesheets/foundation.min.css')
+    link(rel='stylesheet', href='/foundation/bower_components/foundation/css/normalize.css')
+    link(rel='stylesheet', href='/foundation/stylesheets/home.css')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300', rel='stylesheet', type='text/css')
+    script(src='/foundation/bower_components/modernizr/modernizr.js')
+  body
+    header
+      .large-24.columns
+        .large-12.small-12.columns
+          .name
+            img(src='/foundation/img/logo.png', alt='Unherd')
+        .large-12.small-12.columns.text-right
+          p#sign_area
+            small
+              | Have a account?
+              br
+              a.blueButtton(href='/auth/twitter') Sign In
+      .large-24.columns.heading
+        h1 Less sorting, more following.
+        .large-12.columns
+          p
+            | Unherd scores, sorts & ranks your Twitter stream,
+            | so you can spend more time following & engaging with what really matters.
+        .large-24.columns.text-center.followSection.text-center
+          .large-12.columns.large-centered.followBg
+            h3 Follow us on Twitter to receive an early invite.
+            a.twitter-follow-button(href='https://twitter.com/unherd_', data-show-count='false', data-size='large', data-dnt='true') Follow @unherd_
+      .clearfix
+    .large-24.columns
+      .large-18.columns.large-centered.feature
+        .large-24.columns.paddingExtra
+          .large-16.medium-16.columns
+            h1 Get to the important stuff first
+            p
+              | The relevant always on top - we score, rank and sort your most recent Tweets according to relevance.
+              p
+                | You spend less time managing lists, scanning through your stream to find what's relevant, and more sharing, following, engaging.
+          .large-7.medium-7.large-offset-1.medium-offset-1.columns.hide-for-small
+            img(src='/foundation/img/important.png')
+        .clearfix
+        .large-12.large-centered.columns.dottedLine
+        .large-24.columns.paddingExtra
+          .large-7.medium-7.columns.hide-for-small
+            img(src='/foundation/img/private-conversation.png')
+          .large-16.large-offset-1.medium-16.medium-offset-1.columns
+            h1 Some are meant to be private
+            p
+              | Found something interesting, but want to discuss that in private?
+              p
+                | We got that covered. Share discreetly, and continue the conversation in private.
+        .clearfix
+        .large-12.large-centered.columns.dottedLine
+        .large-24.columns.paddingExtra
+          .large-16.medium-16.columns
+            h1 Go brave follower (no more regrets)
+            p
+              | No more endless cycle of following and unfollowing. With relevant always on top, you don't regret when someone gets chatty, or decides to write an entire blog post in tweets.
+          .large-7.large-offset-1.medium-7.medium-offset-1.columns.hide-for-small
+            img(src='/foundation/img/followers.png')
+        .clearfix
+        .large-12.large-centered.columns.dottedLine
+        .large-24.columns.paddingExtra
+          .large-7.medium-7.columns.hide-for-small
+            img(src='/foundation/img/discover.png')
+          .large-16.medium-16.medium-offset-1.large-offset-1.columns
+            h1 Discover awesome
+            p
+              | With suggestions from your followers, you discover what's new, interesting, and awesome. Join us to help you followers discover something new today.
+    .clearfix
+    .large-12.columns.large-centered.followBottom.text-center
+      p.left Join us to experience social media as its meant to be 
+      a.twitter-follow-button(href='https://twitter.com/unherd_', data-show-count='false', data-size='large', data-dnt='true') Follow @unherd_
+    footer.large-24.columns.text-center
+      p unherd.co &copy 2014
+    script(src='/foundation/bower_components/jquery/dist/jquery.min.js', type='text/javascript')
+    script(src='/foundation/bower_components/foundation/js/foundation.min.js', type='text/javascript')
+    script(type='text/javascript')
+      $(document).foundation();
+      $(window).load(function(){if( $(window).width()>$(window).height() && $(window).width()>768  ){
+      var newHeight = $(window).height();
+      $('header').css('height', newHeight);}});
+    script
+      function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs'); mixpanel.track("TwitterFollow"); 

@@ -304,7 +304,7 @@ function FnLoadMessage(topic_id) {
 	$("#recDetail").html("").show();
 		
 	$.get( "/ajax/readRecommendations/"+topic_id, function( data ) {
-		
+		console.log(data);
 		var recomend = data.recomend;
 		var html = '';
 		html += '<div class="large-2 small-2 columns no-Pg">';

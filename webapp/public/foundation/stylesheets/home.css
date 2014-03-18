@@ -1,0 +1,35 @@
+
+
+body { font-family: 'Open Sans', sans-serif !important;}
+
+.name { margin:3% 0 0 3%;}
+header { background: url("../img/unherd.jpg") center center no-repeat fixed #000; float: left; width: 100%; color: #fff;}
+header h1 { font-size:3.25rem; color:#fff; font-weight:300; margin: 0 0 2.5%;}
+header p { color: #FFF; font-weight: 400; font-size: 1.3rem;}
+header h2 strong { color: #fff;}	
+header .followSection { margin:8% 0 3%;}
+.followBg { background: rgba(0, 0, 0, 0.5); border-radius: 3px; padding: 1% 0%;}
+header h3 {color:#FAAA31; font-size:1.75rem; }
+.heading { margin:0; padding: 7% 2% 0;}
+.follow { margin: 5% 0;}
+.blueButtton { background: #409bed; border: 1px solid #89C7FF; border-radius: 3px; padding: 3px 7px; font-size: 1em; box-shadow: 0px 0px 60px 0px #000;}
+a.blueButtton  { color: #fff;} 
+a:hover.whiteButtton  { background: #fff; color:#409bed;} 
+
+.feature h1 { color: #384450; font-size: 2.1rem}
+.feature p { color: #5E6D75; font-weight: 400; letter-spacing: 1px; font-size:1.1rem;}
+.paddingExtra { padding: 7% 0;}
+.dottedLine { border-top: 1px dotted #D7E3E7;}
+.followBottom { background: rgba(0, 0, 0, 0.05); border-radius: 3px; padding: 1.5%; margin-bottom:20px;}
+.followBottom p { margin-right: 15px; font-size:1.2em;}
+footer p { color: #8DA2B4; font-weight: 100; letter-spacing: 1px; font-size: .9em;}
+
+header signin {
+font-size: 1rem;
+font-weight: 100;
+color:blue;
+line-height: 3rem;
+border:1px;
+-webkit-border-radius:.25rem;
+-moz-border-radius:.25rem;
+}

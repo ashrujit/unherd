@@ -18,33 +18,17 @@ app.configure(function() {
   app.use(express.session({ secret: 'keyboard cat' }));
   app.use(passport.initialize());
   app.use(passport.session());
-  app.use(app.router);
   app.use(express.static(__dirname + '/public'));
+  app.use(app.router);
 });
 
-app.get('/', function(req, res){
-  res.render('index', { user: req.user });
-});
-
-app.get('/foundation',validate.ensureAuthenticated, function(req, res){
+app.get('/',validate.ensureAuthenticated, function(req, res){
   res.render('foundation/index',{user: req.user});
 });
 
-app.get('/test',validate.ensureAuthenticated, function(req, res){
-  
-  twitter.gettweets(req.user,10,function(err,data){
-		res.render('new', { user: req.user, tweets:JSON.parse(data) });
-  });
-  
+app.get('/login', function(req, res){
+  res.render('foundation/home', {  });
 });
-app.get('/newui',validate.ensureAuthenticated, function(req, res){
-  
-  twitter.gettweets(req.user,10,function(err,data){
-		res.render('newtheme/home', { user: req.user, tweets:JSON.parse(data) });
-  });
-  
-});
-
 
 app.get('/ranktweet',validate.ensureAuthenticated, function(req, res){
   
@@ -280,15 +264,6 @@ app.post('/ajaxRecommend', validate.ensureAuthenticated, function(req, res){
 
 
 
-app.get('/getRecommendations', validate.ensureAuthenticated, function(req, res){
-	
-	mongo.find("Forwards",{"$or":[{"from_id":req.user.username},{"to_id":req.user.username}]},function(data,err){ 
-		
-		res.render('recommendlist', { user: req.user, rec:data });
-	
-	});
-
-});
 
 app.get('/ajax/getRecommendations', validate.ensureAuthenticated, function(req, res){
 	
@@ -305,71 +280,6 @@ app.get('/ajax/getRecommendations', validate.ensureAuthenticated, function(req, 
 		});	
 		
 	});
-	
-});
-
-
-app.all('/readRecommendations/:id', validate.ensureAuthenticated, function(req, res){
-	
-	if(req.method == 'POST') {
-		
-		var insertdoc = {
-			"topic_id":req.params.id,
-			"from_id":req.user.username,
-			"message":req.body.message,
-			"at":new Date()
-		};
-
-		mongo.insert("ForwardReplies",insertdoc,function(){
-			
-			var tmp_obj = {}; 
-			tmp_obj["checked."+req.body.msg_to] = false;
-			tmp_obj["checked."+req.user.username] = true;
-			
-			
-			mongo.FnUpdate("Forwards"
-				,{"topic_id":req.body.topic_id}
-				,{"$inc":{"message_count":1},"$set":tmp_obj}
-				,{}
-				,function(d,e){
-				
-				mongo.find("Forwards",{"topic_id":req.params.id},function(data,err){ 
-				
-					mongo.find("ForwardReplies",{"topic_id":req.params.id},function(data1,err1){ 
-					
-						res.render('recommenddetails', { user: req.user, recomend:data[0], msg:data1 });
-							
-					});
-					
-				});
-
-			});	
-
-		});
-		
-	} else {
-
-		mongo.find("Forwards",{"topic_id":req.params.id},function(data,err){ 
-		
-			mongo.find("ForwardReplies",{"topic_id":req.params.id},function(data1,err1){ 
-				
-				var tmp_obj = {}; 
-				tmp_obj["checked."+req.user.username] = true;
-			
-				
-				mongo.FnUpdate("Forwards"
-					,{"topic_id":req.params.id}
-					,{"$set":tmp_obj}
-					,{}
-					,function(d,e){
-					res.render('recommenddetails', { user: req.user, recomend:data[0], msg:data1 });
-				});
-			});
-			
-		});
-	
-	}
-	
 	
 });
 
@@ -459,45 +369,7 @@ app.post('/ajaxMessageOnTopic', validate.ensureAuthenticated, function(req, res)
 
 });
 
-app.all('/tweet', validate.ensureAuthenticated, function(req, res){
-	
-	if(req.method == 'POST') {
-		
-		twitter.tweet(req.user,req.body.tweet,"",function(){
-			res.render('maketweet', { user: req.user, done:true });
-		});
-		
-	} else {
-		res.render('maketweet', { user: req.user, done:false });
-	}
-	
-});
 
-app.all('/DM', validate.ensureAuthenticated, function(req, res){
-	
-	if(req.method == 'POST') {
-		
-		twitter.directmessage(req.user,req.body.to,req.body.dm,function(){
-			res.render('makedm', { user: req.user, done:true });
-		});
-
-	} else {
-		res.render('makedm', { user: req.user, done:false });
-	}
-	
-});
-
-app.get('/getTweets', validate.ensureAuthenticated, function(req, res){
-	twitter.gettweets(req.user,10,function(err,data){
-		res.render('tweetlist', { user: req.user, tweets:JSON.parse(data) });
-	});
-});
-
-app.post('/doReTweet', validate.ensureAuthenticated, function(req, res){
-	twitter.doretweet(req.user,req.body.tid,function(err,data){
-		res.json(data);
-	});
-});
 
 app.get('/json/getTweets', validate.ensureAuthenticated, function(req, res){
 	twitter.gettweets(req.user,10,function(err,data){
@@ -505,11 +377,6 @@ app.get('/json/getTweets', validate.ensureAuthenticated, function(req, res){
 	});
 });
 
-app.get('/timeline/:id', validate.ensureAuthenticated, function(req, res){
-	twitter.timeline(req.user,req.params.id,function(err,data){
-		res.render('tweetlist', { user: req.user, tweets:JSON.parse(data) });
-	});
-});
 
 app.get('/json/timeline/:id', validate.ensureAuthenticated, function(req, res){
 	twitter.timeline(req.user,req.params.id,function(err,data){
@@ -524,14 +391,6 @@ app.get('/json/profile', validate.ensureAuthenticated, function(req, res){
 	});
 });
 
-app.get('/account', validate.ensureAuthenticated, function(req, res){ 
-  res.render('account', { user: req.user });
-});
-
-app.get('/login', function(req, res){
-  res.render('login', { user: req.user });
-});
-
 app.get('/auth/twitter',
   passport.authenticate('twitter'),
   function(req, res){
@@ -540,14 +399,21 @@ app.get('/auth/twitter',
 app.get('/auth/twitter/callback', 
   passport.authenticate('twitter', { failureRedirect: '/login' }),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('/foundation');
 });
 
 app.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
 });
+
 app.get('/api/followers',validate.ensureAuthenticated,api.followers);
+
+app.get('/*', function(req, res){
+  res.redirect('/');
+});
+
+
 
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var ip = process.env.OPENSHIFT_NODEJS_IP||"172.31.47.200";
