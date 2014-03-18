@@ -1,3 +1,10 @@
+$(window).load(function() {
+	if( $(window).width()>$(window).height() && $(window).width()>768  ){
+	var newHeight = $(window).height();
+	$('.fixHeight').css('min-height', newHeight);
+   }
+});
+
 $(document).ready(function(){ 
 	
 	FnLoadTweets();
