@@ -244,6 +244,7 @@ function FnLoadTweets() {
 
 		$(".BtnRT").on("click", function() {
 		  
+		  $("#REPLYBtn").val("Retweet");
 		  $("#recommendBox").hide();	
 		  $("#normalBox").show();
 		  $("#TweetText2").val("");
@@ -257,6 +258,7 @@ function FnLoadTweets() {
 
 		$(".BtnRP").on("click", function() {
 		  
+		  $("#REPLYBtn").val("Reply");
 		  $("#recommendBox").hide();	
 		  $("#normalBox").show();
 		  $("#TweetText2").val("");
@@ -377,20 +379,22 @@ function FnUpdateRecommendations() {
 		var html = "";
 		var popuphtml = "";
 		
-		var num = parseInt(msgs.num);		
-		if(num>0){
-			$(".notify").text(num).show(200);
-		}
-		 
+		var num = 0;		
+		var user = msgs.user;
 		msgs = msgs.data;
 		for(x in msgs) { 			
+			var me = user.username;
 			
-			html += "<li><a href='#' onclick=\"FnLoadMessage('"+msgs[x].topic_id+"')\" data-reveal-id='msgModal' data-reveal='data-reveal'><div class='large-24 columns no-Pg '>";
-			html += '<div class="large-4 columns no-Pg"><img src="'+msgs[x].from.profile_pic+'" alt="'+msgs[x].from.displayName+'" class="circular"></div>';	
-			html += '<div class="large-20 columns"><p class="no-Mn">'+msgs[x].from.displayName+'</p></div>';	
-			html += '</div><div class="clearfix"></div>';			
-			html += "</a></li><li class=''></li>";
-			
+			if(msgs[x]["checked"][me] == false) {
+				
+				html += "<li><a href='#' onclick=\"FnLoadMessage('"+msgs[x].topic_id+"')\" data-reveal-id='msgModal' data-reveal='data-reveal'><div class='large-24 columns no-Pg '>";
+				html += '<div class="large-4 columns no-Pg"><img src="'+msgs[x].from.profile_pic+'" alt="'+msgs[x].from.displayName+'" class="circular"></div>';	
+				html += '<div class="large-20 columns"><p class="no-Mn">'+msgs[x].from.displayName+'</p></div>';	
+				html += '</div><div class="clearfix"></div>';			
+				html += "</a></li><li class=''></li>";
+				num++;
+				
+			}
 			
 			popuphtml += '<a href="#" class="messageLink" onclick=\'FnLoadMessage("'+msgs[x].topic_id+'")\'></a>';
 			popuphtml += '<div class="large-1 small-1 columns no-Pg"><img src="'+msgs[x].from.profile_pic+'" alt="'+msgs[x].from.displayName+'" class="circular"> </div>';
@@ -400,6 +404,10 @@ function FnUpdateRecommendations() {
 			popuphtml += '</div></div><div class="clearfix"></div>';
 		}
 		html += '<li class="text-center"><a href="" onclick=\"FnLoadAllMessage()\" data-reveal-id="msgModal" data-reveal><small>View all messages</small></a></li>';
+		
+		if(num>0){
+			$(".notify").text(num).show(200);
+		}
 		
 		$("#message").html(html);
 		$("#recList").html(popuphtml);
