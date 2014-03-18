@@ -23,11 +23,12 @@ html.no-js(lang='en')
     link(rel='stylesheet', href='/foundation/stylesheets/font-awesome.min.css')
     link(rel='stylesheet', href='/foundation/stylesheets/dev.css')
     link(rel='stylesheet', href='/foundation/js/newtheme/typehead.css')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300')
     script(src='/foundation/bower_components/modernizr/modernizr.js')
     script(src="/foundation/js/newtheme/pace.min.js")
   body
  
-    .off-canvas-wrap
+    div#topPosition.off-canvas-wrap.fixHeight
       .inner-wrap
         nav.tab-bar.fixed
           section.left-small.no-Br
@@ -38,7 +39,8 @@ html.no-js(lang='en')
             ul.title-area.left
               li.name.hide-for-small.hide-for-medium
                 h1
-                  a(href='#') UnHerd.co
+                  a(href='#')
+				    img(src="/fav/unherd-icon.png",width="40",alt="Unherd")
           .tweetComposer.right
             a.button(href='#', data-dropdown='composer', data-options='align:left')
               i.fa.fa-pencil-square-o.fa-2x
@@ -48,24 +50,24 @@ html.no-js(lang='en')
                   label
                     textarea.radius.LimitedTextField(placeholder='Compose tweet', rows='5', id="TweetText",data-target="charCountId")
                   input#TwBtn.button.tiny.radius.no-Mn(type='button', value='Tweet')
-                  span(style='position: relative;')
+                  span(style='position: relative; left:10px;')
                     i.fa.fa-picture-o
                     small  Add image
                     input(type='file', style='position: absolute; top: 0; left: 0; opacity: 0;')                  
                   span.no-Mn.right(id='charCountId') 140
         aside.left-off-canvas-menu
           ul.off-canvas-list
-            .large-24.columns
-              ul.title-area.left.no-Mn-Lt
+            .large-24.columns.topHeader
+              ul.large-block-grid-2.left
                 li.name.hide-for-large.hide-for-medium.left
                   h3.no-Mn
                     a(href='#') UnHerd
               ul.large-block-grid-2.left
-                li
-                  a(href='#', data-dropdown='message', data-options='is_hover:true')
+                li.no-Pg-Bm
+                  a.no-Bd(href='#', data-dropdown='message', data-options='is_hover:true')
                     i.fa.fa-envelope-o
-                li
-                  a(href='/logout')
+                li.no-Pg-Bm
+                  a.no-Bd(href='/logout')
                     i.fa.fa-sign-out
             .large-24.columns.no-Pg.profile
               .large-7.columns.no-Pg-Rt
@@ -134,9 +136,16 @@ html.no-js(lang='en')
     //Message Box 
     ul#message.f-dropdown(data-dropdown-content='data-dropdown-content')      
     //Message modal 
-    #msgModal.reveal-modal.small(data-reveal='data-reveal', style='z-index: 100;')
+    #msgModal.reveal-modal.small(data-reveal='data-reveal')
+      ul.breadcrumbs.no-Br-Rs
+        li.current
+          a(href="#") Messages
       a.close-reveal-modal ×
-      article#recDetail.tweetBox.clearfix
+      article#recDetail.tweetBox.clearfix.no-Br
+      article#recList.tweetBox.clearfix.no-Br(style="display:none;")
+    div.scrollTop
+      a(href="#topPosition",id="scrollUp",class="button tiny radius secondary no-Mn",title="Scroll up")
+        i(class="fa fa-arrow-circle-o-up")
     script(src='/foundation/bower_components/jquery/dist/jquery.min.js')
     script(src='/foundation/bower_components/foundation/js/foundation.min.js')
     script(src='/foundation/js/jquery.masonry.js')

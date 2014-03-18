@@ -108,25 +108,24 @@ function FnLoadTweets() {
 			tweetSection += '<li class="large-24 small-24 no-Pg columns optimize tweetsclass '+tweet_class+'">';
 			tweetSection += '<article class="tweetBox clearfix">';
 			if(tweet.isNew == true) {
-				tweetSection += '<span class="newAlert"></span>';
+				tweetSection += '<div data-tooltip class="tip-top radius" title="New Tweet"><span class="newAlert"></span></div>';
 			}
 			
 			if(typeof(tweet.retweeted_status)!="undefined") {
 			
-				tweetSection += '<div class="large-24 columns"><h2>Retweeted by <a target="_blank" href="https://twitter.com/'+tweet.user.screen_name+'">'+tweet.user.name+'</a></h2></div>';
-				tweetSection += '<div class="large-3 small-3 columns no-Pg"><img src="'+tweet.retweeted_status.user.profile_image_url_https+'" alt="'+tweet.retweeted_status.user.name+'" class="radius"> </div>';
+				tweetSection += '<span class="retweetStatus">Retweeted by <a target="_blank" href="https://twitter.com/'+tweet.user.screen_name+'">'+tweet.user.name+'</a></span>';
+				tweetSection += '<div class="large-3 small-3 columns no-Pg"><img src="'+tweet.retweeted_status.user.profile_image_url_https+'" alt="'+tweet.retweeted_status.user.name+'" class="circular"> </div>';
 				tweetSection += '<div class="large-16 small-16 columns"><h1><a target="_blank" href="https://twitter.com/'+tweet.retweeted_status.user.screen_name+'">'+tweet.retweeted_status.user.name+'</a> </h1><h2><a target="_blank" href="https://twitter.com/'+tweet.retweeted_status.user.screen_name+'">@'+tweet.retweeted_status.user.screen_name+' </a> <span>| '+FnTimeAgo(tweet.retweeted_status.created_at)+'</span></h2></div>';
 					
 			} else {
 			
-				tweetSection += '<div class="large-3 small-3 columns no-Pg"><img src="'+tweet.user.profile_image_url_https+'" alt="'+tweet.user.name+'" class="radius"> </div>';
+				tweetSection += '<div class="large-3 small-3 columns no-Pg"><img src="'+tweet.user.profile_image_url_https+'" alt="'+tweet.user.name+'" class="circular"> </div>';
 				tweetSection += '<div class="large-16 small-16 columns"><h1><a target="_blank" href="https://twitter.com/'+tweet.user.screen_name+'">'+tweet.user.name+'</a> </h1><h2><a target="_blank" href="https://twitter.com/'+tweet.user.screen_name+'">@'+tweet.user.screen_name+' </a> <span>| '+FnTimeAgo(tweet.created_at)+'</span></h2></div>';
 			
 			}
 			
 			tweetSection += '<div class="large-5 small-5 columns"><div class="rankBox">';
-			// tweetSection += '<div class="progress success round"><span  data-tooltip  class = "has-tip tip-top"  title = "'+parseFloat(tweet.score).toFixed(2)+'" >';
-			tweetSection += '<div class="'+decideRankColor(tweet.score)+'"><span  data-tooltip  class = "has-tip tip-top"  title = "'+parseFloat(tweet.score).toFixed(2)+'" >';
+			tweetSection += '<div class="'+decideRankColor(tweet.score)+'"><span  data-tooltip  class = "has-tip tip-top radius"  title = "Relevance score: '+parseFloat(tweet.score).toFixed(2)+'" >';
 
 			
 		    var percent = 	(parseFloat(tweet.score).toFixed(2))*100/max_score;			
@@ -174,8 +173,8 @@ function FnLoadTweets() {
             tweetSection += '<div class="large-24 columns"><div class="tweetAction"><ul class="inline-list right no-Mn-Bm hoverEffect">';
 			tweetSection += '<li><a data-user="'+RT.user+'" data-tweet="'+RT.stuff+'" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'" href="javascript: void(0)" title="Retweet"><i class="fa fa-retweet"></i> '+tweet.retweet_count+'</a></li>';
 			tweetSection += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statFV+'" class="BtnFv'+favorited+'" href="javascript: void(0)" title="Favourite"><i class="fa fa-star"></i> '+tweet.favorite_count+'</a></li>';
-			tweetSection += '<li><a class="BtnRP" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Reply"><i class="fa fa-reply"></i> </a></li>';
-			tweetSection += '<li><a class="BtnFW" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Forward"><i class="fa fa-mail-forward"></i> </a></li>';
+			tweetSection += '<li><a class="BtnRP marginTop" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Reply"><i class="fa fa-reply"></i> </a></li>';
+			tweetSection += '<li><a class="BtnFW marginTop" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Forward"><i class="fa fa-mail-forward"></i> </a></li>';
 			tweetSection += '<li><a target="_blank" href="https://twitter.com/'+tweet.user.screen_name+'/status/'+tweet.id_str+'" title="Go to Tweet"><i class="fa fa-link"></i> </a></li>';
 			tweetSection += '</ul></div></div></article></li>';
 							
@@ -294,13 +293,16 @@ function FnUpdateMyProfile() {
 
 function FnLoadMessage(topic_id) {
 	
+	$("#recList").hide();
+	$("#recDetail").html("").show();
+		
 	$.get( "/ajax/readRecommendations/"+topic_id, function( data ) {
 		
 		var recomend = data.recomend;
 		var html = '';
-		html += '<div class="large-3 small-3 columns no-Pg">';
+		html += '<div class="large-2 small-2 columns no-Pg">';
 		html += '<img src="'+recomend.from.profile_pic+'" alt="'+recomend.from_id+'" class="radius round"></div>';
-		html += '<div class="large-21 small-16 columns">';
+		html += '<div class="large-22 small-22 columns">';
 		html += '<h1><a href="https://twitter.com/'+recomend.from_id+'">'+recomend.from.displayName+'</a> </h1>';
 		html += '<h2><a href="">@'+recomend.from_id+'</a> '+FnTimeAgo(recomend.at)+'<span></span></h2>';
 		html += '</div>';
@@ -315,9 +317,9 @@ function FnLoadMessage(topic_id) {
 		
 		for(x in msg) {
 			
-			html += '<blockquote><article class="tweetBox clearfix no-Br"><div class="large-2 small-2 columns no-Pg">';
+			html += '<blockquote><article class="tweetBox clearfix no-Br"><div class="large-1 small-1 columns no-Pg">';
 			html += '<img src="'+user_detail[msg[x].from_id].profile_pic+'" alt="'+msg[x].from_id+'" class="radius">';
-			html += '</div><div class="large-22 small-22 columns"><h1><a href="https://twitter.com/'+msg[x].from_id+'">'+user_detail[msg[x].from_id].displayName+'</a> </h1><h2><a href="">@'+msg[x].from_id+' </a> <span>| '+FnTimeAgo(msg[x].at)+'</span></h2></div>';
+			html += '</div><div class="large-23 small-23 columns"><h1 class="left"><a href="https://twitter.com/'+msg[x].from_id+'">'+user_detail[msg[x].from_id].displayName+'</a> </h1><h2 class="left"><a href="">&nbsp; | @'+msg[x].from_id+' </a> <span>| '+FnTimeAgo(msg[x].at)+'</span></h2></div>';
 			html += '<div class="large-24 small-24 columns no-Pg"><div class="content "><p>'+msg[x].message+'</p></div></div></article></blockquote>';
 						
 		}
@@ -353,24 +355,48 @@ function FnLoadMessage(topic_id) {
 		
 }
 
+function FnLoadAllMessage() {
+	
+	$("#recList").show();
+	$("#recDetail").html("").hide();
+	
+}
+
 function FnUpdateRecommendations() {
 	
 	$.get( "/ajax/getRecommendations", function( msgs ) {
 		
 		$(".notify").hide();
 		var html = "";
+		var popuphtml = "";
+		
 		var num = parseInt(msgs.num);		
 		if(num>0){
 			$(".notify").text(num).show(200);
 		}
 		 
 		msgs = msgs.data;
-		for(x in msgs) {
+		for(x in msgs) { 			
 			
-			html += "<li><a href='#' onclick=\"FnLoadMessage('"+msgs[x].topic_id+"')\" data-reveal-id='msgModal' data-reveal='data-reveal'>"+msgs[x].custom_msg+"</a></li>";
+			html += "<li><a href='#' onclick=\"FnLoadMessage('"+msgs[x].topic_id+"')\" data-reveal-id='msgModal' data-reveal='data-reveal'><div class='large-24 columns no-Pg '>";
+			html += '<div class="large-4 columns no-Pg"><img src="'+msgs[x].from.profile_pic+'" alt="'+msgs[x].from.displayName+'" class="circular"></div>';	
+			html += '<div class="large-20 columns"><p class="no-Mn">'+msgs[x].from.displayName+'</p></div>';	
+			html += '</div><div class="clearfix"></div>';			
+			html += "</a></li><li class=""></li>";
 			
+			
+			popuphtml += '<a href="#" class="messageLink" onclick=\"FnLoadMessage('"+msgs[x].topic_id+"')\"></a>';
+			popuphtml += '<div class="large-1 small-1 columns no-Pg"><img src="'+msgs[x].from.profile_pic+'" alt="'+msgs[x].from.displayName+'" class="circular"> </div>';
+			popuphtml += '<div class="large-23 small-23 columns"><h1 class="left"><a href="">'+msgs[x].from.displayName+' </a></h1><h2 class="left"><a href="">&nbsp; | @'+msgs[x].from_id+' </a><span>| '+FnTimeAgo(msgs[x].at)+'</span></h2></div>';
+			popuphtml += '<div class="large-24 small-24 columns no-Pg"><div class="content ">';
+			popuphtml += '<p>'+msgs[x].message+'</p>';
+			popuphtml += '</div></div><div class="clearfix"></div>';
 		}
-		$("#message").html(html);		
+		html += '<li class="text-center"><a href="" onclick=\"FnLoadAllMessage()\" data-reveal-id="msgModal" data-reveal><small>View all messages</small></a></li>';
+		
+		$("#message").html(html);
+		$("#recList").html(popuphtml);
+				
 		
 	});
 	

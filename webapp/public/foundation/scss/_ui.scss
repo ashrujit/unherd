@@ -2,7 +2,7 @@
 
 
 body {
-  background: #F0F3F5;
+  background: #f8f8f8;
   font-size: $bodyFontSize;
   font-family: $body-font-family;}
 
@@ -32,7 +32,7 @@ a {
   background: $lightestColor;
   border: darken($lightestColor,10%) 1px solid;
   border-radius: $borderRadius;
-  padding: 10px;
+  padding: 17px 10px 10px;
   margin: 2px;
 
   &:hover {
@@ -56,8 +56,9 @@ a {
     span {
       font-weight: 100;
     }
+	
   }
-
+	
   .rankBox {
 
   }
@@ -94,8 +95,11 @@ a {
 
     a {
       font-size: $tweetText;
+	  
     }
-    
+    .marginTop {
+		margin-top:5px;
+	  }
     .hoverEffect {
       visibility: hidden;
 
@@ -110,6 +114,13 @@ a {
 	height: 0;
 	border-top: 15px solid #f04124;
 	border-right: 15px solid transparent;
+  }
+  .retweetStatus {
+	position: absolute;
+    top: 0;
+    left: 15px;
+	font-size:.8 * $tweetUser;
+	color:darken($lightestColor,30%);
   }
 }
 
@@ -155,13 +166,16 @@ a {
 }
 
 .preferences {
-  input[type="radio"] {
-    opacity: .4;
-  }
+//  input[type="radio"] {
+//    opacity: .4;
+//  }
   label {
-    color:  darken($lightestColor,50%);
+    color:lighten($link-color,15%)  ;
   }
 }
+.topHeader {
+	border-bottom: 1px solid darken($lightestColor, 70%);
+} 
 .sectionHeader {
   background: darken($lightestColor,50%)  ;
   padding: 3px;
@@ -177,8 +191,8 @@ a {
     border-radius: 3px;
     font-size: .75em;
     position: fixed;
-    top: 4px;
-    right: 4px;
+    top: 45px;
+    right: -2px;
   }
 
   .content {
@@ -210,6 +224,8 @@ a {
 
 	max-height: 500px;
 	overflow-y: scroll;
+	overflow-x: hidden;
+	padding: 0;
 		
 	blockquote {
 		margin:0;
@@ -219,6 +235,28 @@ a {
 	}
 }
 
+.messageLink { 
+	display: block; 
+	padding: 10% 5%; 
+	float: left; 
+	position: absolute; 
+	z-index: 10; 
+	width: 100%;
+	}
 
-
-
+.reveal-modal-bg { 
+	z-index:90;
+	}
+	
+.circular {
+		border-radius: 50%;
+	}
+.scrollTop {
+	position:fixed;
+	bottom:0;
+	left:0; 
+	
+	a {
+		font-size: 1.4em !important;
+	}
+}
