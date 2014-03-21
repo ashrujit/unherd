@@ -3,7 +3,7 @@
 "TWITTER_CONSUMER_SECRET" : "eP31J3rNFmduhKPUN9SxNkUsNq2nAI2P6Pywkgcc3h8",
 "host":"127.0.0.1:8080",
 "port":"80",
-"tweet_fetch_count":100,
+"tweet_fetch_count":120,
 "tweet_fetch_gap":3,
 "db" : {
 

@@ -199,10 +199,8 @@ function FnLoadTweets() {
 		$("#mainSection2").html(chatterhtml);
 		FnDoMasonry("#mainSection",".type-topstories");
 		FnDoMasonry("#mainSection2",".type-chatter");
-		//$("#mainSection2").hide();
 		FnUpdateMyProfile();
-		FnUpdateRecommendations();
-	
+		FnUpdateRecommendations();		
 		/*$(".BtnRT").on("click", function() {
 		  
 		  var tid = $( this ).data("tid");
@@ -280,6 +278,7 @@ function FnLoadTweets() {
 		  
 
 		});
+		
 			
 		
 	});
@@ -295,7 +294,9 @@ function FnUpdateMyProfile() {
 		$("#my_status_count").text(user.statuses_count);
 		$("#my_friends_count").text(user.friends_count);
 		$("#my_followers_count").text(user.followers_count);
-				
+		$(".alltweets").hide();
+		$("#mainSection").show();
+		
 	});
 	
 }
