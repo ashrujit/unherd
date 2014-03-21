@@ -294,8 +294,7 @@ function FnUpdateMyProfile() {
 		$("#my_status_count").text(user.statuses_count);
 		$("#my_friends_count").text(user.friends_count);
 		$("#my_followers_count").text(user.followers_count);
-		$(".alltweets").hide();
-		$("#mainSection").show();
+		
 		
 	});
 	
@@ -496,6 +495,12 @@ function FnDoMasonry(container,data){
 		itemSelector: data,
 		isAnimated: !Modernizr.csstransitions,
 		isFitWidth: true
-	});	
+		});
+		
+		if(container=="#mainSection2") {
+			$(".alltweets").hide();
+			$("#mainSection").show();
+		}
+			
 });
 }
