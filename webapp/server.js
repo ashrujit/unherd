@@ -1,3 +1,4 @@
+require('newrelic');
 var express = require('express');
 var mongo = require("./lib/mongodb.js");
 var passport = require("./lib/passport.js");
@@ -407,7 +408,7 @@ app.get('/*', function(req, res){
 
 
 
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var ip = process.env.OPENSHIFT_NODEJS_IP||"172.31.47.200";
+var port = 8080;
+var ip = "10.0.1.100";
 
 app.listen(port,ip);
