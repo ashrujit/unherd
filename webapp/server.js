@@ -43,8 +43,9 @@ app.get('/ranktweet',validate.ensureAuthenticated, function(req, res){
 				
 				lasttimeobj = lastfetch[0].lastfetch;
 				if (typeof(lasttimeobj) == "undefined" || lasttimeobj == null) {
-                   lasttimeobj = new Date(new Date().getTime() - 3600000) ;
+                   			lasttimeobj = new Date(new Date().getTime() - 3600000) ;
 				}
+				console.log("lastime:", lasttimeobj);
 				
 				twitter.gettweets(req.user,config.tweet_fetch_count,function(err,data){
 					
