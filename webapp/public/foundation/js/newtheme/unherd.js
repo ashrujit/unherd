@@ -178,11 +178,11 @@ function FnLoadTweets() {
             tweetSection += '</div></div>';
                         
             tweetSection += '<div class="large-24 columns"><div class="tweetAction"><ul class="inline-list right no-Mn-Bm hoverEffect">';
-			tweetSection += '<li><a data-user="'+RT.user+'" data-tweet="'+RT.stuff+'" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'" href="javascript: void(0)" title="Retweet"><i class="fa fa-retweet"></i> '+tweet.retweet_count+'</a></li>';
-			tweetSection += '<li><a data-tid="'+tweet.id_str+'" data-stat="'+statFV+'" class="BtnFv'+favorited+'" href="javascript: void(0)" title="Favourite"><i class="fa fa-star"></i> '+tweet.favorite_count+'</a></li>';
-			tweetSection += '<li><a class="BtnRP marginTop" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Reply"><i class="fa fa-reply"></i> </a></li>';
+			tweetSection += '<li><a onclick=\'mixpanel.track("Retweet");\' data-user="'+RT.user+'" data-tweet="'+RT.stuff+'" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'" href="javascript: void(0)" title="Retweet"><i class="fa fa-retweet"></i> '+tweet.retweet_count+'</a></li>';
+			tweetSection += '<li><a onclick=\'mixpanel.track("Favorite");\' data-tid="'+tweet.id_str+'" data-stat="'+statFV+'" class="BtnFv'+favorited+'" href="javascript: void(0)" title="Favourite"><i class="fa fa-star"></i> '+tweet.favorite_count+'</a></li>';
+			tweetSection += '<li><a onclick=\'mixpanel.track("Reply");\' class="BtnRP marginTop" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Reply"><i class="fa fa-reply"></i> </a></li>';
 			tweetSection += '<li><a onclick=\'mixpanel.track("Forward");\' class="BtnFW marginTop" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Forward"><i class="fa fa-mail-forward"></i> </a></li>';
-			tweetSection += '<li><a target="_blank" href="https://twitter.com/'+tweet.user.screen_name+'/status/'+tweet.id_str+'" title="Go to Tweet"><i class="fa fa-link"></i> </a></li>';
+			tweetSection += '<li><a onclick=\'mixpanel.track("Link_out");\' target="_blank" class="marginTop" href="https://twitter.com/'+tweet.user.screen_name+'/status/'+tweet.id_str+'" title="Go to Tweet"><i class="fa fa-link"></i> </a></li>';
 			tweetSection += '</ul></div></div></article></li>';
 							
 			if(i<=tweets.length/2) {
