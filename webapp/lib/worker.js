@@ -24,8 +24,8 @@ var twitter = require("./twitter.js")(),
           var size = 100;
           resp = JSON.parse(resp);
 		  var ids = [];
-		  while(typeof(resp.ids)!="undefined" && resp && resp.ids.length){
-                ids =resp.ids.splice(0, size);
+                while(resp && resp.ids.length){
+		ids =resp.ids.splice(0, size);
                 queue.push(ids.join(','));
           }
           queue.drain = function(){
