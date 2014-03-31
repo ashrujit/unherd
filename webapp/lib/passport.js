@@ -48,6 +48,9 @@ passport.use(new TwitterStrategy({
 			} else {
 				
 				//old account !!
+				// TO DO
+				//make an extra varify credentials call to check if the secret token is still valid
+				
 				results[0].AddProfile = false;
 				results[0].profile_pic = profile._json.profile_image_url_https; 
 				results[0].followers_count = profile._json.followers_count; 
