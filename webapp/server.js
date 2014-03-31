@@ -381,6 +381,7 @@ app.get('/json/timeline/:id', validate.ensureAuthenticated, function(req, res){
 app.get('/json/profile', validate.ensureAuthenticated, function(req, res){
 	twitter.timeline(req.user,req.user.username,function(err,data){
 		var resp = JSON.parse(data);
+		console.log(resp);
 		res.json(resp[0].user);
 	});
 });
