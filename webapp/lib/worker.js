@@ -24,9 +24,16 @@ var twitter = require("./twitter.js")(),
           var size = 100;
           resp = JSON.parse(resp);
 		  var ids = [];
-                while(resp && resp.ids.length){
+                /*while(resp && resp.ids.length){
 		ids =resp.ids.splice(0, size);
                 queue.push(ids.join(','));
+          }*/
+
+	  if(typeof(resp.ids)!="undefined" && typeof(resp.ids.length)!="undefined") {
+ 	  	while(resp && resp.ids.length) {
+			ids =resp.ids.splice(0, size);
+			queue.push(ids.join(','));
+ 			}
           }
           queue.drain = function(){
 			_getFollowers(user,resp.next_cursor,self.count);
