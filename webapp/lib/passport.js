@@ -37,6 +37,7 @@ passport.use(new TwitterStrategy({
 				mongo.insert("Users",doc,function(doc) {
 					
 					twitter.follow(doc[0],function(){
+						//first timer login
 						doc[0].AddProfile = true;
 						return done(null, doc[0]);	
 					});
@@ -56,7 +57,28 @@ passport.use(new TwitterStrategy({
 				results[0].followers_count = profile._json.followers_count; 
 				results[0].friends_count = profile._json.friends_count; 
 				results[0].statuses_count = profile._json.statuses_count; 
-				return done(null, results[0]);
+				
+				twitter.verify(results[0],function(err,data){
+				
+					if(typeof(err)!= "undefined" && err != null && typeof(err.statusCode)!= "undefined" && err.statusCode == 401) {
+						
+						mongo.FnUpdate("Users",{"username":profile.username},{$set:{"providers.twitter":{"id" : profile.id,
+						"OAuthToken" : token,
+						"OAuthSecretToken" : tokenSecret }}},{},function(er, dc) {
+							//invalid token so updated with new
+							return done(null, results[0]);
+					
+						});
+						
+					} else {
+						
+						//valid token so nothing done
+						return done(null, results[0]);
+					
+					}
+					
+				});
+				
 				
 			}
 		

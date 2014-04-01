@@ -12,6 +12,17 @@ function TwitterActions() {
 	  , "http://"+config.host+"/auth/twitter/callback"
 	  , "HMAC-SHA1"
 	);
+	
+	var FnVerifyCredentials = function (user, cb) {
+		
+	  oa.get(
+			"https://api.twitter.com/1.1/account/verify_credentials.json?skip_status=1"
+		  , user.providers.twitter.OAuthToken
+		  , user.providers.twitter.OAuthSecretToken
+		  , cb
+	  );
+	  
+	}
 		
 	var FnTweet = function (user,tweet,replyto,cb) {
 		
@@ -162,6 +173,7 @@ function TwitterActions() {
 	
 	return {
 		
+		verify : FnVerifyCredentials,
 		tweet : FnTweet,
 		directmessage : FnDm,
 		gettweets : FnGetTweets,
