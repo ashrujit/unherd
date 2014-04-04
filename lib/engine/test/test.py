@@ -17,10 +17,14 @@ class BasicUnitTests(unittest.TestCase):
     
     def tearDown(self):
         t = time.time() - self.startTime
-        print "%s: %.3f" % (self.id(), t)
-    
-    def testRaw(self):
-        model = tscore.ScoreModel()
+        print "\n%s: %.3f\n" % (self.id(), t)
+
+    def testBasicSlow(self):
+        """
+            Test for the library. It directly calls the python
+            module.
+        """        
+	model = tscore.ScoreModel()
         f = open(self.raw_sample, 'r')
         responseArr = []
 
@@ -35,21 +39,9 @@ class BasicUnitTests(unittest.TestCase):
             print res[0], res[1]
 
 
-    # def testBatchCallToAPI(self):
-    #     """
-    #         Testing the node interface for batch tweet processing.
-    #     """
-    #     tweetJSONArr = []
-        
-    #     f = open(self.api_batch_sample, 'r')
-        
-    #     for line in f.readlines():
-    #         tweetJSONArr.append(line)
-    #     f.close()
-
-    def NOtestAPI(self):
+    def testAPIFast(self):
         """
-            Fire post request to the API.
+		Fire post request to the API. It needs the sever live.
         """
         
 
@@ -57,7 +49,7 @@ class BasicUnitTests(unittest.TestCase):
         
         f = open(self.api_sample, 'r')
         dataArr = []
-        for i in range(20):
+        for i in range(180):
             line = f.readline()
             line = line.replace("\n", "")
             # This works as well
