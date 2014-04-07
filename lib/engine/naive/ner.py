@@ -30,13 +30,13 @@ def getValue(tweetObj):
 			Faster way to get the NER from the sentence.
 		"""	
 		tweet = tweetObj['text']
-		words = nltk.word_tokenize('Obama is the president of America')
+		words = nltk.word_tokenize(tweet)
 		tagger = nltk.data.load(nltk.tag._POS_TAGGER)
 		chunks = tagger.tag(words)
 		score = 0
 		for chunk in chunks:
 			if(chunk[1] == 'NNP'):
 				score += 1
-
+		# print tweet, score
 		return score;
 

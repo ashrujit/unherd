@@ -25,7 +25,7 @@ class LinearModel:
 			of weighted average for the features
 		"""
 		self.featuresValues.append(ner.getValue(tweetObj))
-		self.featuresValues.append(1)
+		# self.featuresValues.append(1)
 		self.featuresValues.append(tweetFeatures.getRetweet(tweetObj))
 		self.featuresValues.append(tweetFeatures.getURL(tweetObj))
 		self.featuresValues.append(tweetFeatures.getFavorite(tweetObj))		

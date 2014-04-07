@@ -35,8 +35,8 @@ class BasicUnitTests(unittest.TestCase):
         f.close()
 
         responseArr.sort(key = lambda tup:tup[0], reverse=True)
-        for res in responseArr:
-            print res[0], res[1]
+        # for res in responseArr:
+        #     print res[0], res[1]
 
     def testAPIFast(self):
         """
