@@ -35,7 +35,7 @@ html.no-js(lang='en')
         nav.tab-bar.fixed
           section.left-small.no-Br
             b.notify(style="display:none;") 
-            a.left-off-canvas-toggle.menu-icon
+            a#instruction1.left-off-canvas-toggle.menu-icon
               span
           .row
             ul.title-area.left
@@ -44,7 +44,7 @@ html.no-js(lang='en')
                   a(href='#')
                     img(src="/fav/unherd-icon.png",width="40",alt="")
           .tweetComposer.right
-            a.button(href='#', data-dropdown='composer', data-options='align:left')
+            a#instruction2.button(href='#', data-dropdown='composer', data-options='align:left')
               i.fa.fa-pencil-square-o.fa-2x
             #composer.f-dropdown.content(data-dropdown-content='data-dropdown-content')
               form
@@ -149,6 +149,15 @@ html.no-js(lang='en')
     div.scrollTop
       a(href="#topPosition",id="scrollUp",class="button tiny radius secondary no-Mn",title="Scroll up")
         i(class="fa fa-arrow-circle-o-up")
+        
+    ol.joyride-list(data-joyride)
+      li(data-id='instruction1',data-text='Next',data-options='tip_location: top')
+        p This is menu, click to see your messages, followers and following
+      li(data-id="instruction2", data-text="End",data-options='tip_location: left')
+        p Compose Tweet
+      
+     
+        
     script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js')
     script(src='/foundation/bower_components/foundation/js/foundation.min.js')
     script(src='/foundation/js/jquery.masonry.js')
