@@ -33,3 +33,17 @@ border:1px;
 -webkit-border-radius:.25rem;
 -moz-border-radius:.25rem;
 }
+
+.btn-orange {
+text-shadow: none;
+color: #fff;
+background: #ff8000;
+border-color: #ff8000;
+}
+
+.btn-orange:hover,.btn-orange:active {
+text-shadow: none;
+color: #fff;
+background: #ff9200;
+border-color: #ff9200;
+}
