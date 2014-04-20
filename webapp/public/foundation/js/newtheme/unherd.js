@@ -5,9 +5,13 @@ $(window).load(function() {
    }
 });
 
+
+
+
 $(document).ready(function(){ 
 	
 	FnLoadTweets();
+	
 	$("#recommendBox").hide();	
 	$("#normalBox").show();
 	
@@ -131,7 +135,11 @@ function FnLoadTweets() {
 			
 			}
 			
-			tweetSection += '<div class="large-5 small-5 columns"><div class="rankBox">';
+			tweetSection += '<div class="large-5 small-5 columns"><div class="rankBox"';
+			if(i==0) {
+				tweetSection += ' id="JoyrideRankbox" ';
+			}
+			tweetSection += '>';
 			tweetSection += '<div class="'+decideRankColor(tweet.score)+'"><span  data-tooltip  class = "has-tip tip-top radius"  title = "Relevance score: '+parseFloat(tweet.score).toFixed(2)+'" >';
 
 			
@@ -177,8 +185,11 @@ function FnLoadTweets() {
             }
             tweetSection += '</div></div>';
                         
-            tweetSection += '<div class="large-24 columns"><div class="tweetAction"><ul class="inline-list right no-Mn-Bm hoverEffect">';
-			tweetSection += '<li><a onclick=\'mixpanel.track("Retweet");\' data-user="'+RT.user+'" data-tweet="'+quoteattr(RT.stuff)+'" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'" href="javascript: void(0)" title="Retweet"><i class="fa fa-retweet"></i> '+tweet.retweet_count+'</a></li>';
+            tweetSection += '<div class="large-24 columns"><div class="tweetAction"><ul class="inline-list right no-Mn-Bm hoverEffect"';
+            if(i==0) {
+				tweetSection += ' id="JoyrideTweetAction" ';
+			}
+			tweetSection += '><li><a onclick=\'mixpanel.track("Retweet");\' data-user="'+RT.user+'" data-tweet="'+quoteattr(RT.stuff)+'" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-stat="'+statRT+'" class="BtnRT'+retweeted+'" href="javascript: void(0)" title="Retweet"><i class="fa fa-retweet"></i> '+tweet.retweet_count+'</a></li>';
 			tweetSection += '<li><a onclick=\'mixpanel.track("Favorite");\' data-tid="'+tweet.id_str+'" data-stat="'+statFV+'" class="BtnFv'+favorited+'" href="javascript: void(0)" title="Favourite"><i class="fa fa-star"></i> '+tweet.favorite_count+'</a></li>';
 			tweetSection += '<li><a onclick=\'mixpanel.track("Reply");\' class="BtnRP marginTop" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Reply"><i class="fa fa-reply"></i> </a></li>';
 			tweetSection += '<li><a onclick=\'mixpanel.track("Forward");\' class="BtnFW marginTop" data-dropdown="reply" data-tid="'+tweet.id_str+'" data-user="'+tweet.user.screen_name+'" href="javascript: void(0)" title="Forward"><i class="fa fa-mail-forward"></i> </a></li>';
@@ -195,13 +206,16 @@ function FnLoadTweets() {
 		}
 		
 		
-		
+		$(document).foundation('joyride', 'start');
 		$("#mainSection").html(tophtml);
+		
 		//$("#mainSection2").html(chatterhtml);
 		FnDoMasonry("#mainSection",".type-topstories");
 		//FnDoMasonry("#mainSection2",".type-chatter");
 		FnUpdateMyProfile();
 		FnUpdateRecommendations();		
+		
+		
 		/*$(".BtnRT").on("click", function() {
 		  
 		  var tid = $( this ).data("tid");
