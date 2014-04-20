@@ -59,13 +59,13 @@ $(document).ready(function(){
 
 
 	
-	$(".content_type").click(function() {
+	/*$(".content_type").click(function() {
 
 		var el = $(this).data("id");	
 		$(".alltweets").hide();
 		$("#mainSection"+el).show();			
 		
-	});
+	});*/
 	
 	
 		
@@ -105,12 +105,12 @@ function FnLoadTweets() {
 				statRT="true";
 			}
 		
-			var tweet_class;			
-			if(i<=tweets.length/2) {
+			var tweet_class = "type-topstories";			
+			/*if(i<=tweets.length/2) {
 				tweet_class="type-topstories";
 			} else {
 				tweet_class="type-chatter";
-			}
+			}*/
 			
 			tweetSection += '<li class="large-24 small-24 no-Pg columns optimize tweetsclass '+tweet_class+'">';
 			tweetSection += '<article class="tweetBox clearfix">';
@@ -185,20 +185,21 @@ function FnLoadTweets() {
 			tweetSection += '<li><a onclick=\'mixpanel.track("Link_out");\' target="_blank" class="marginTop" href="https://twitter.com/'+tweet.user.screen_name+'/status/'+tweet.id_str+'" title="Go to Tweet"><i class="fa fa-link"></i> </a></li>';
 			tweetSection += '</ul></div></div></article></li>';
 							
-			if(i<=tweets.length/2) {
+			tophtml += tweetSection;
+			/*if(i<=tweets.length/2) {
 				tophtml += tweetSection;
 			} else {
 				chatterhtml += tweetSection;
-			}
+			}*/
 		
 		}
 		
 		
 		
 		$("#mainSection").html(tophtml);
-		$("#mainSection2").html(chatterhtml);
+		//$("#mainSection2").html(chatterhtml);
 		FnDoMasonry("#mainSection",".type-topstories");
-		FnDoMasonry("#mainSection2",".type-chatter");
+		//FnDoMasonry("#mainSection2",".type-chatter");
 		FnUpdateMyProfile();
 		FnUpdateRecommendations();		
 		/*$(".BtnRT").on("click", function() {
@@ -497,10 +498,10 @@ function FnDoMasonry(container,data){
 		isFitWidth: true
 		});
 		
-		if(container=="#mainSection2") {
+		/*if(container=="#mainSection2") {
 			$(".alltweets").hide();
 			$("#mainSection").show();
-		}
+		}*/
 			
 });
 }

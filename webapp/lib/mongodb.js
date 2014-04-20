@@ -5,6 +5,7 @@ var connect = function(host, port, database, cb) {
 	
 	database = 'web';
 	MongoClient.connect('mongodb://10.0.1.200:27017/'+database, function(err, db) {
+	//MongoClient.connect('mongodb://127.0.0.1:27017/'+database, function(err, db) {
 
 		if(err) throw err;
 			

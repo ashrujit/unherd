@@ -91,17 +91,7 @@ html.no-js(lang='en')
               .large-8.small-8.columns.no-Pg
                 .large-24.columns.sectionHeader Followers
                 .large-24.columns.no-Pg
-                  p#my_followers_count #{user.followers_count}
-            .large-24.columns.no-Pg.preferences
-              h5.sectionHeader Select Preferences
-              .large-24.columns
-                form(style='margin: 10px 0;')
-                  label
-                    input(type='radio', checked="true", value='1', required='', name="content_type", class="content_type", data-id="")
-                    | Top Stories
-                  label
-                    input(type='radio', value='1', required='', name="content_type", class="content_type", data-id="2")
-                    | Chatter
+                  p#my_followers_count #{user.followers_count}                            
         section.main-section
           .row
             .large-24.columns
