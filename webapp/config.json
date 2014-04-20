@@ -1,13 +1,13 @@
 {
-"TWITTER_CONSUMER_KEY" : "g34C31fQlElMLpFMgHwWRA",
-"TWITTER_CONSUMER_SECRET" : "FXIp8N1YrAZQ6bfXJlsAk7vNdL01cld96ZmXRAGsW4",
-"host":"unherd.co",
-"port":"443",
-"tweet_fetch_count":180,
+"TWITTER_CONSUMER_KEY" : "iO2xRN4miLiTzSgLslpJig",
+"TWITTER_CONSUMER_SECRET" : "KXt8l0Oax36uIVka85K6HUAnmjLc9WLYAd2f70N0",
+"host":"127.0.0.1:8080",
+"port":"8080",
+"tweet_fetch_count":20,
 "tweet_fetch_gap":3,
 "db" : {
 
-	"host":"10.0.1.200",
+	"host":"127.0.0.1",
 	"port":27017,
 	"database" : "unherd"
 

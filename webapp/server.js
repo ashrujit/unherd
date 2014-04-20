@@ -1,4 +1,3 @@
-require('newrelic');
 var express = require('express');
 var mongo = require("./lib/mongodb.js");
 var passport = require("./lib/passport.js");
@@ -457,7 +456,7 @@ app.get('/*', function(req, res){
 
 
 var port = 8080;
-var ip = "10.0.1.100";
-//var ip = "127.0.0.1";
+//var ip = "10.0.1.100";
+var ip = "127.0.0.1";
 
 app.listen(port,ip);
