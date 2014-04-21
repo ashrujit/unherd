@@ -44,7 +44,7 @@ html.no-js(lang='en')
                   a(href='#')
                     img(src="/fav/unherd-icon.png",width="40",alt="")
           .tweetComposer.right
-            a.button(href='#', data-dropdown='composer', data-options='align:left')
+            a#joy7.button(href='#', data-dropdown='composer', data-options='align:left')
               i.fa.fa-pencil-square-o.fa-2x
             #composer.f-dropdown.content(data-dropdown-content='data-dropdown-content')
               form
@@ -91,17 +91,7 @@ html.no-js(lang='en')
               .large-8.small-8.columns.no-Pg
                 .large-24.columns.sectionHeader Followers
                 .large-24.columns.no-Pg
-                  p#my_followers_count #{user.followers_count}
-            .large-24.columns.no-Pg.preferences
-              h5.sectionHeader Select Preferences
-              .large-24.columns
-                form(style='margin: 10px 0;')
-                  label
-                    input(type='radio', checked="true", value='1', required='', name="content_type", class="content_type", data-id="")
-                    | Top Stories
-                  label
-                    input(type='radio', value='1', required='', name="content_type", class="content_type", data-id="2")
-                    | Chatter
+                  p#my_followers_count #{user.followers_count}                            
         section.main-section
           .row
             .large-24.columns
@@ -149,7 +139,23 @@ html.no-js(lang='en')
     div.scrollTop
       a(href="#topPosition",id="scrollUp",class="button tiny radius secondary no-Mn",title="Scroll up")
         i(class="fa fa-arrow-circle-o-up")
+    ol(class="joyride-list",id="my-tour",data-joyride)
+      li(data-id="panel2-1",data-text="Next",data-options="tip_location: top")
+        h6 TIP#1: Relevant at Top
+        p  Unherd sorts your most recent tweets according to relevance.
+      li(data-id="JoyrideRankbox",data-text="Next",data-options="tip_location: right")
+        h6 TIP#2: The Relevance Score
+        p  You can move your mouse over these bars to see the Relevance Score of each tweet.
+      li(data-id="joy7",data-text="Next",data-options="tip_location: left")
+        p  You can compose a new tweet by clicking here.
+      li(data-id="JoyrideTweetAction",data-text="Next",data-options="tip_location: right")
+        p  You can move your mouse over a tweet to find the buttons to Retweet, Favorite & Reply to a tweet.
+      li(data-id="JoyrideTweetAction",data-text="Next",data-options="tip_location: right")
+        p  You can also view the entire related conversation by clicking on the chain-link icon to the far right.
+      li(data-id="JoyrideTweetAction",data-text="Next",data-options="tip_location: right")
+        p  You can forward a tweet to your followers in a private conversation as well.
     script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js')
+    script(src='/foundation/bower_components/foundation/js/foundation.min.js')
     script(src='/foundation/bower_components/foundation/js/foundation.min.js')
     script(src='/foundation/js/jquery.masonry.js')
     script(src='/foundation/js/app.js')
