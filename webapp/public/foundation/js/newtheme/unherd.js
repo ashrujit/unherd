@@ -205,7 +205,14 @@ function FnLoadTweets() {
 		
 		}
 		
-		
+		$(document).foundation({
+		  joyride: {
+			cookieMonster: true,
+			cookieName: 'joyride',
+			cookieDomain: true,
+			cookieExpires: 3,
+			//other options
+		}});
 		$(document).foundation('joyride', 'start');
 		$("#mainSection").html(tophtml);
 		
