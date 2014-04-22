@@ -205,15 +205,10 @@ function FnLoadTweets() {
 		
 		}
 		
-		$(document).foundation({
-		  joyride: {
-			cookieMonster: true,
-			cookieName: 'joyride',
-			cookieDomain: true,
-			cookieExpires: 3,
-			//other options
-		}});
-		$(document).foundation('joyride', 'start');
+		$(document).foundation({'joyride': {'cookie_monster': !$.cookie('joyride') ? false : true, post_ride_callback : function () {
+                                        !$.cookie('joyride') ? $.cookie('joyride', 'ridden') : null;
+        }}}).foundation('joyride', 'start');
+		
 		$("#mainSection").html(tophtml);
 		
 		//$("#mainSection2").html(chatterhtml);
