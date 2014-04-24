@@ -1,25 +1,27 @@
-Source
 We can use simplified git-workflow which is mentioned here
   http://nvie.com/posts/a-successful-git-branching-model/
+
 The approach I am describing below is what I think will 
 suffice our needs and is simple enough. Please feel free to make any suggestions.
 
-There are basically 3 types of remote branches at any time.
+BRANCHES
+=======
+There are basically 3 types of remote branches at any time :
 
-1. master : Contains only stable versions. We can easily revert
++ master : Contains only stable versions. We can easily revert
             back to old stable version if anything goes wrong
             in latest release.
-2. dev :   State with the latest delivered development changes for the next
++ dev :   State with the latest delivered development changes for the next
            release.
 
-3. Support branches (Temporary) 
++ Support branches (Temporary) 
   feature-tag : branch for any feature to be developed.
   hotfix-tag : branch to fix some bug in the prod.
 
 WORKFLOW
 ========
 
-++ New feature development
++ New feature development
 
 1. Branch off from master or dev branch.
 2. Create a temporary <feature-tag> branch for development.

@@ -80,6 +80,8 @@ function FnLoadTweets() {
 	
 	$.get( "/ranktweet", function( tweets ) {
 		
+		$('#page-loader').hide();
+
 		var tophtml = "";
 		var chatterhtml = "";
 				

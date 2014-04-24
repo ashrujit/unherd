@@ -94,8 +94,12 @@ html.no-js(lang='en')
                   p#my_followers_count #{user.followers_count}                            
         section.main-section
           .row
+            #page-loader(align="center")
+                      p Wait. We are doing something with your tweets...
+                      img(src="/fav/loader1.gif")
             .large-24.columns
               .tabs-content
+                
                 #panel2-1.content.active
                   .large-24.columns
                     ul#mainSection.alltweets.large-block-grid-3.small-block-grid-1.medium-block-grid-2
